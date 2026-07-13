@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.23.9"
+__generated_with = "0.23.14"
 app = marimo.App()
 
 
@@ -138,11 +138,11 @@ def _(df_polars):
         )
     )
     _chart
-    return
+    return (alt,)
 
 
-app._unparsable_cell(
-    r"""
+@app.cell
+def _(alt, df_polars, pl):
     # Use df_polars directly and reshape to long format for Altair
     trace_columns = [c for c in df_polars.columns if c != '0']
     alt_df = (
@@ -185,17 +185,17 @@ app._unparsable_cell(
         .properties(
             title="Marimo with user/AI generated altair code</sup>"
             ),
-            width=600,
-            height=600,
+            # width=600,
+            # height=600,
+        # .configure_axis(grid=True, gridColor='lightgray')
+        # .configure_view(stroke=None)
         )
-        .configure_axis(grid=True, gridColor='lightgray')
-        .configure_view(stroke=None)
-    )
+        # .configure_axis(grid=True, gridColor='lightgray')
+        # .configure_view(stroke=None)
+    # )
 
     alt_chart
-    """,
-    name="_"
-)
+    return
 
 
 if __name__ == "__main__":

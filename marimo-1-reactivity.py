@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.23.9"
+__generated_with = "0.23.14"
 app = marimo.App()
 
 
@@ -61,6 +61,55 @@ def _(mo):
 @app.cell
 def _(x_1):
     print(f'x = {x_1}')
+    return
+
+
+@app.cell
+def _(mo):
+    simple_slider = mo.ui.slider(1, 10, 1)
+    simple_slider
+    return
+
+
+@app.cell
+def _(mo):
+    better_slider = mo.ui.slider(1, 10, 1, label = 'better slider')
+    better_slider
+    return
+
+
+@app.cell
+def _(mo):
+    best_slider = mo.ui.slider(1, 100, 1, label = 'best slider', value = 25)
+    return (best_slider,)
+
+
+@app.cell
+def _(best_slider, mo):
+    mo.md(f"""
+    {best_slider} value: {best_slider.value}
+    """)
+    return
+
+
+@app.cell
+def _(best_slider, mo):
+
+    # print(' x'*best_slider.value)
+    mo.md('\U0001F530  '*best_slider.value)
+    return
+
+
+app._unparsable_cell(
+    r"""
+    mo.md(f'best slider value: best_slider.value}')
+    """,
+    name="_"
+)
+
+
+@app.cell
+def _():
     return
 
 
