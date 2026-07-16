@@ -14,8 +14,8 @@ def _():
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    ### Jupyter Notebook
-    This brief notebook showcases key Jupyter features. Hold onto these concepts as we transition to the Marimo demo.
+    ### Marimo Notebook
+    This notebook showcases datavisualization with Marimo
     """)
     return
 
@@ -49,7 +49,7 @@ def _(pl):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    ### Bring your own data viz
+    ### Marimo with Plotly
     Jupyter does not provide built-in data visualization tools.
     Libraries like Plotly, Matplotlib, Altair or others are required.
     """)
@@ -187,12 +187,7 @@ def _(alt, df_polars, pl):
             ),
             # width=600,
             # height=600,
-        # .configure_axis(grid=True, gridColor='lightgray')
-        # .configure_view(stroke=None)
         )
-        # .configure_axis(grid=True, gridColor='lightgray')
-        # .configure_view(stroke=None)
-    # )
 
     alt_chart
     return

@@ -131,7 +131,7 @@
         {
           "type": "data",
           "data": {
-            "text/html": "<marimo-ui-element object-id='SFPL-0' random-id='239eed10-9c72-d8a7-82c1-28ed87b66ff9'><marimo-slider data-initial-value='1' data-label='null' data-start='1' data-stop='10' data-step='1' data-steps='[]' data-debounce='false' data-disabled='false' data-orientation='&quot;horizontal&quot;' data-show-value='false' data-include-input='false' data-full-width='false'></marimo-slider></marimo-ui-element>"
+            "text/html": "<marimo-ui-element object-id='SFPL-0' random-id='c023a929-9b42-1b3b-5b1b-cfbba5ec1fab'><marimo-slider data-initial-value='1' data-label='null' data-start='1' data-stop='10' data-step='1' data-steps='[]' data-debounce='false' data-disabled='false' data-orientation='&quot;horizontal&quot;' data-show-value='false' data-include-input='false' data-full-width='false'></marimo-slider></marimo-ui-element>"
           }
         }
       ],
@@ -144,7 +144,7 @@
         {
           "type": "data",
           "data": {
-            "text/html": "<marimo-ui-element object-id='BYtC-0' random-id='4f116358-78da-4096-db69-e1d7b4b6486b'><marimo-slider data-initial-value='1' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003ebetter slider&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-start='1' data-stop='10' data-step='1' data-steps='[]' data-debounce='false' data-disabled='false' data-orientation='&quot;horizontal&quot;' data-show-value='false' data-include-input='false' data-full-width='false'></marimo-slider></marimo-ui-element>"
+            "text/html": "<marimo-ui-element object-id='BYtC-0' random-id='35919733-83c6-f373-0e7a-fcb26715d9af'><marimo-slider data-initial-value='1' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003ebetter slider&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-start='1' data-stop='10' data-step='1' data-steps='[]' data-debounce='false' data-disabled='false' data-orientation='&quot;horizontal&quot;' data-show-value='false' data-include-input='false' data-full-width='false'></marimo-slider></marimo-ui-element>"
           }
         }
       ],
@@ -170,7 +170,7 @@
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><marimo-ui-element object-id='RGSE-0' random-id='88348220-4fc0-47dc-5dc5-f2fdd0042824'><marimo-slider data-initial-value='25' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003ebest slider&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-start='1' data-stop='100' data-step='1' data-steps='[]' data-debounce='false' data-disabled='false' data-orientation='&quot;horizontal&quot;' data-show-value='false' data-include-input='false' data-full-width='false'></marimo-slider></marimo-ui-element> value: 78</span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><marimo-ui-element object-id='RGSE-0' random-id='ad7d673f-db1b-faac-6fd7-f9745d233efb'><marimo-slider data-initial-value='25' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003ebest slider&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-start='1' data-stop='100' data-step='1' data-steps='[]' data-debounce='false' data-disabled='false' data-orientation='&quot;horizontal&quot;' data-show-value='false' data-include-input='false' data-full-width='false'></marimo-slider></marimo-ui-element> value: 8</span></span>"
           }
         }
       ],
@@ -183,20 +183,7 @@
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">\ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  </span></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "Hstk",
-      "code_hash": "5254858252fdcdaf49e53ab95daf05a6",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">slider value 78</span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">\ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  </span></span>"
           }
         }
       ],

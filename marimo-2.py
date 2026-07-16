@@ -14,7 +14,7 @@ def _():
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    ### Jupyter Notebook
+    ### Marimo Notebook
     This brief notebook showcases marimo dataframe displays
     """)
     return
@@ -45,7 +45,7 @@ def _(pd):
         pd.DataFrame({str(i): [j * i for j in range(11)] for i in range(11)}, dtype='uint8')
     )
     df_pandas # displays columns, index. No data types or dataframe shape
-    return
+    return (df_pandas,)
 
 
 @app.cell(hide_code=True)
@@ -58,12 +58,14 @@ def _(mo):
 
 
 @app.cell
-def _(pl):
-    df_polars = (
-        pl.DataFrame({str(i): [j * i for j in range(11)] for i in range(11)})
-        .with_columns(pl.all().cast(pl.UInt8))
-    )
-    df_polars  # no index with polars. display has columns,  data types or shape
+def _(df_pandas, pl):
+    df_polars =  pl.from_pandas(df_pandas)
+    df_polars 
+    return
+
+
+@app.cell
+def _():
     return
 
 
