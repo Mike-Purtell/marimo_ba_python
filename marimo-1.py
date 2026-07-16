@@ -151,7 +151,6 @@ def _(form):
 @app.cell
 def _(mo):
     checkbox = mo.ui.checkbox(label="yes I read the T's and C's")
-
     return (checkbox,)
 
 
@@ -170,7 +169,9 @@ def _(checkbox):
 @app.cell
 def _(mo):
     multiselect = mo.ui.multiselect(
-        options=['San Jose', 'San Francisco', 'San Mateo'], label='pick your favorite town'
+        options=['Chicago', 'New York', 'Detroit', 'Springfield'], 
+        label='pick your favorite town',
+        max_selections=2 # Optional, None for no limit, integer for specific limit'
     )
     return (multiselect,)
 
@@ -190,7 +191,11 @@ def _(multiselect):
 @app.cell
 def _(mo):
     radio = mo.ui.radio(
-        options=sorted(['Green Day', 'Jefferson Airplane',  'Metallica', 'Grateful Dead', 'Santana','Journey', 'Petrichor']), label='pick your favorite bay area band'
+        options=sorted([
+                'Green Day', 'Jefferson Airplane',  'Metallica', 'Grateful Dead', 
+                'Santana','Journey', 'Petrichor'
+        ]),
+        label='Your favorite bay area band'
     )
     return (radio,)
 
@@ -204,7 +209,6 @@ def _(radio):
 @app.cell
 def _(radio):
     radio.value
-
     return
 
 
@@ -217,7 +221,6 @@ def _(checkbox, mo, multiselect, radio):
             'radio': radio,
         }
     )
-
     return (marimo_ui_dictionary,)
 
 
@@ -254,7 +257,14 @@ def _(mo):
 
 @app.cell
 def _(mo):
-    mo.mermaid("graph TD\n  A[Christmas] -->|Get money| B(Go shopping)\n  B --> C{Let me think}\n  C -->|One| D[Laptop]\n  C -->|Two| E[iPhone]\n  C -->|Three| F[Car]")
+    mo.mermaid(
+    	"graph TD\n" +
+    	"A[Christmas] -->|Get money| B(Go shopping)\n" +
+    	"B --> C{Think}\n" + 
+    	"C -->|One| D[Laptop]\n" +   
+    	"C -->|Two| E[iPhone]\n" +
+    	"C -->|Three| F[Car]"
+    )
     return
 
 
