@@ -31,27 +31,6 @@ def _():
     return
 
 
-@app.cell
-def _():
-    # declare X, assign value of 1
-    x = 1
-    print(f'{x = }')
-    return
-
-
-@app.cell
-def _():
-    # declare x, assign value of 3
-    x_1 = 3
-    print(f'x = {x_1}')
-    return (x_1,)
-
-
-@app.cell
-def _():
-    return
-
-
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -60,26 +39,6 @@ def _(mo):
 
     Notice the error when x is initialized in 2 different cells. No problem is x is assigned twice in the same cell.
     """)
-    return
-
-
-@app.cell
-def _(x_1):
-    print(f'x_1 = {x_1}')
-    return
-
-
-@app.cell
-def _(mo):
-    simple_slider = mo.ui.slider(1, 10, 1)
-    simple_slider
-    return
-
-
-@app.cell
-def _(mo):
-    better_slider = mo.ui.slider(1, 10, 1, label = 'better slider')
-    better_slider
     return
 
 
@@ -233,12 +192,14 @@ def _(marimo_ui_dictionary):
 @app.cell
 def _(mo):
     diagram = '''
-    graph LR
+    graph LR      
         A[Square Rect] -- Link text --> B((Circle))
         A --> C(Round Rect)
         B --> D{Rhombus}
         C --> D
     '''
+    # graph LR means Left to Right
+
     mo.mermaid(diagram)
 
     mo.mermaid(
@@ -265,6 +226,8 @@ def _(mo):
     	"C -->|Two| E[iPhone]\n" +
     	"C -->|Three| F[Car]"
     )
+
+    # graph TD means Top Down
     return
 
 

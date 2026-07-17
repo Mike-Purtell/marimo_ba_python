@@ -40,9 +40,18 @@ def _(mo):
 
 
 @app.cell
+def _(df_pandas):
+    print(df_pandas)
+    return
+
+
+@app.cell
 def _(pd):
     df_pandas = (
-        pd.DataFrame({str(i): [j * i for j in range(11)] for i in range(11)}, dtype='uint8')
+        pd.DataFrame(
+            {str(i): [j * i for j in range(11)] for i in range(11)}, 
+            dtype='uint8'
+        )
     )
     df_pandas # displays columns, index. No data types or dataframe shape
     return (df_pandas,)
@@ -58,10 +67,16 @@ def _(mo):
 
 
 @app.cell
+def _(df_polars):
+    print(df_polars)
+    return
+
+
+@app.cell
 def _(df_pandas, pl):
     df_polars =  pl.from_pandas(df_pandas)
     df_polars 
-    return
+    return (df_polars,)
 
 
 @app.cell

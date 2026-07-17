@@ -1,0 +1,118 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.23.14",
+    "script_metadata_hash": null
+  },
+  "cells": [
+    {
+      "id": "Hbol",
+      "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "MJUe",
+      "code_hash": "ec6166b4006fe99ef966da4cfc4147be",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"marimo-notebook\">Marimo Notebook</h3>\n<span class=\"paragraph\">This notebook showcases datavisualization with Marimo</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vblA",
+      "code_hash": "e2b9436c51e4d6e75ae3b48634a85308",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Polars version 1.42.1\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "bkHC",
+      "code_hash": "0fc14352e92ec6e7436786ba3a692671",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='bkHC-0' random-id='78c8574e-5cc6-7a0c-92d2-de8bec293b29'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;County&#92;&quot;:&#92;&quot;Alameda&#92;&quot;,&#92;&quot;A&#92;&quot;:1682246,&#92;&quot;2020-POP&#92;&quot;:1680489,&#92;&quot;2021-POP&#92;&quot;:1644275,&#92;&quot;2022-POP&#92;&quot;:1633138,&#92;&quot;2023-POP&#92;&quot;:1633055,&#92;&quot;2024-POP&#92;&quot;:1636624,&#92;&quot;2025-POP&#92;&quot;:1636630,&#92;&quot;B&#92;&quot;:&#92;&quot;7&#92;&quot;,&#92;&quot;2020-RANK&#92;&quot;:7,&#92;&quot;2021-RANK&#92;&quot;:7,&#92;&quot;2022-RANK&#92;&quot;:7,&#92;&quot;2023-RANK&#92;&quot;:7,&#92;&quot;2024-RANK&#92;&quot;:7,&#92;&quot;2025-RANK&#92;&quot;:7},{&#92;&quot;County&#92;&quot;:&#92;&quot;Alpine&#92;&quot;,&#92;&quot;A&#92;&quot;:1178,&#92;&quot;2020-POP&#92;&quot;:1180,&#92;&quot;2021-POP&#92;&quot;:1194,&#92;&quot;2022-POP&#92;&quot;:1149,&#92;&quot;2023-POP&#92;&quot;:1105,&#92;&quot;2024-POP&#92;&quot;:1086,&#92;&quot;2025-POP&#92;&quot;:1043,&#92;&quot;B&#92;&quot;:&#92;&quot;58&#92;&quot;,&#92;&quot;2020-RANK&#92;&quot;:58,&#92;&quot;2021-RANK&#92;&quot;:58,&#92;&quot;2022-RANK&#92;&quot;:58,&#92;&quot;2023-RANK&#92;&quot;:58,&#92;&quot;2024-RANK&#92;&quot;:58,&#92;&quot;2025-RANK&#92;&quot;:58},{&#92;&quot;County&#92;&quot;:&#92;&quot;Amador&#92;&quot;,&#92;&quot;A&#92;&quot;:40487,&#92;&quot;2020-POP&#92;&quot;:40567,&#92;&quot;2021-POP&#92;&quot;:41225,&#92;&quot;2022-POP&#92;&quot;:41465,&#92;&quot;2023-POP&#92;&quot;:41783,&#92;&quot;2024-POP&#92;&quot;:41974,&#92;&quot;2025-POP&#92;&quot;:41876,&#92;&quot;B&#92;&quot;:&#92;&quot;46&#92;&quot;,&#92;&quot;2020-RANK&#92;&quot;:46,&#92;&quot;2021-RANK&#92;&quot;:46,&#92;&quot;2022-RANK&#92;&quot;:46,&#92;&quot;2023-RANK&#92;&quot;:46,&#92;&quot;2024-RANK&#92;&quot;:46,&#92;&quot;2025-RANK&#92;&quot;:46},{&#92;&quot;County&#92;&quot;:&#92;&quot;Butte&#92;&quot;,&#92;&quot;A&#92;&quot;:211629,&#92;&quot;2020-POP&#92;&quot;:210204,&#92;&quot;2021-POP&#92;&quot;:206353,&#92;&quot;2022-POP&#92;&quot;:207312,&#92;&quot;2023-POP&#92;&quot;:207286,&#92;&quot;2024-POP&#92;&quot;:208586,&#92;&quot;2025-POP&#92;&quot;:209211,&#92;&quot;B&#92;&quot;:&#92;&quot;28&#92;&quot;,&#92;&quot;2020-RANK&#92;&quot;:28,&#92;&quot;2021-RANK&#92;&quot;:28,&#92;&quot;2022-RANK&#92;&quot;:28,&#92;&quot;2023-RANK&#92;&quot;:28,&#92;&quot;2024-RANK&#92;&quot;:28,&#92;&quot;2025-RANK&#92;&quot;:28},{&#92;&quot;County&#92;&quot;:&#92;&quot;Calaveras&#92;&quot;,&#92;&quot;A&#92;&quot;:45285,&#92;&quot;2020-POP&#92;&quot;:45349,&#92;&quot;2021-POP&#92;&quot;:46259,&#92;&quot;2022-POP&#92;&quot;:46545,&#92;&quot;2023-POP&#92;&quot;:46563,&#92;&quot;2024-POP&#92;&quot;:46496,&#92;&quot;2025-POP&#92;&quot;:46605,&#92;&quot;B&#92;&quot;:&#92;&quot;44&#92;&quot;,&#92;&quot;2020-RANK&#92;&quot;:44,&#92;&quot;2021-RANK&#92;&quot;:44,&#92;&quot;2022-RANK&#92;&quot;:44,&#92;&quot;2023-RANK&#92;&quot;:44,&#92;&quot;2024-RANK&#92;&quot;:44,&#92;&quot;2025-RANK&#92;&quot;:44},{&#92;&quot;County&#92;&quot;:&#92;&quot;Colusa&#92;&quot;,&#92;&quot;A&#92;&quot;:21835,&#92;&quot;2020-POP&#92;&quot;:21858,&#92;&quot;2021-POP&#92;&quot;:21949,&#92;&quot;2022-POP&#92;&quot;:21927,&#92;&quot;2023-POP&#92;&quot;:22052,&#92;&quot;2024-POP&#92;&quot;:22016,&#92;&quot;2025-POP&#92;&quot;:21836,&#92;&quot;B&#92;&quot;:&#92;&quot;50&#92;&quot;,&#92;&quot;2020-RANK&#92;&quot;:50,&#92;&quot;2021-RANK&#92;&quot;:50,&#92;&quot;2022-RANK&#92;&quot;:50,&#92;&quot;2023-RANK&#92;&quot;:50,&#92;&quot;2024-RANK&#92;&quot;:50,&#92;&quot;2025-RANK&#92;&quot;:50},{&#92;&quot;County&#92;&quot;:&#92;&quot;Contra Costa&#92;&quot;,&#92;&quot;A&#92;&quot;:1166035,&#92;&quot;2020-POP&#92;&quot;:1166249,&#92;&quot;2021-POP&#92;&quot;:1164370,&#92;&quot;2022-POP&#92;&quot;:1160163,&#92;&quot;2023-POP&#92;&quot;:1161953,&#92;&quot;2024-POP&#92;&quot;:1169534,&#92;&quot;2025-POP&#92;&quot;:1170070,&#92;&quot;B&#92;&quot;:&#92;&quot;9&#92;&quot;,&#92;&quot;2020-RANK&#92;&quot;:9,&#92;&quot;2021-RANK&#92;&quot;:9,&#92;&quot;2022-RANK&#92;&quot;:9,&#92;&quot;2023-RANK&#92;&quot;:9,&#92;&quot;2024-RANK&#92;&quot;:9,&#92;&quot;2025-RANK&#92;&quot;:9},{&#92;&quot;County&#92;&quot;:&#92;&quot;Del Norte&#92;&quot;,&#92;&quot;A&#92;&quot;:27749,&#92;&quot;2020-POP&#92;&quot;:27619,&#92;&quot;2021-POP&#92;&quot;:27549,&#92;&quot;2022-POP&#92;&quot;:26694,&#92;&quot;2023-POP&#92;&quot;:26520,&#92;&quot;2024-POP&#92;&quot;:26959,&#92;&quot;2025-POP&#92;&quot;:26410,&#92;&quot;B&#92;&quot;:&#92;&quot;49&#92;&quot;,&#92;&quot;2020-RANK&#92;&quot;:49,&#92;&quot;2021-RANK&#92;&quot;:49,&#92;&quot;2022-RANK&#92;&quot;:49,&#92;&quot;2023-RANK&#92;&quot;:49,&#92;&quot;2024-RANK&#92;&quot;:49,&#92;&quot;2025-RANK&#92;&quot;:49},{&#92;&quot;County&#92;&quot;:&#92;&quot;El Dorado&#92;&quot;,&#92;&quot;A&#92;&quot;:191189,&#92;&quot;2020-POP&#92;&quot;:191237,&#92;&quot;2021-POP&#92;&quot;:193631,&#92;&quot;2022-POP&#92;&quot;:192914,&#92;&quot;2023-POP&#92;&quot;:192090,&#92;&quot;2024-POP&#92;&quot;:192371,&#92;&quot;2025-POP&#92;&quot;:192323,&#92;&quot;B&#92;&quot;:&#92;&quot;29&#92;&quot;,&#92;&quot;2020-RANK&#92;&quot;:29,&#92;&quot;2021-RANK&#92;&quot;:29,&#92;&quot;2022-RANK&#92;&quot;:29,&#92;&quot;2023-RANK&#92;&quot;:29,&#92;&quot;2024-RANK&#92;&quot;:29,&#92;&quot;2025-RANK&#92;&quot;:29},{&#92;&quot;County&#92;&quot;:&#92;&quot;Fresno&#92;&quot;,&#92;&quot;A&#92;&quot;:1008661,&#92;&quot;2020-POP&#92;&quot;:1009563,&#92;&quot;2021-POP&#92;&quot;:1012952,&#92;&quot;2022-POP&#92;&quot;:1017870,&#92;&quot;2023-POP&#92;&quot;:1025304,&#92;&quot;2024-POP&#92;&quot;:1033698,&#92;&quot;2025-POP&#92;&quot;:1035456,&#92;&quot;B&#92;&quot;:&#92;&quot;10&#92;&quot;,&#92;&quot;2020-RANK&#92;&quot;:10,&#92;&quot;2021-RANK&#92;&quot;:10,&#92;&quot;2022-RANK&#92;&quot;:10,&#92;&quot;2023-RANK&#92;&quot;:10,&#92;&quot;2024-RANK&#92;&quot;:10,&#92;&quot;2025-RANK&#92;&quot;:10}]&quot;' data-total-rows='58' data-total-columns='15' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;County&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;A&quot;,[&quot;integer&quot;,&quot;i64&quot;]],[&quot;2020-POP&quot;,[&quot;integer&quot;,&quot;i64&quot;]],[&quot;2021-POP&quot;,[&quot;integer&quot;,&quot;i64&quot;]],[&quot;2022-POP&quot;,[&quot;integer&quot;,&quot;i64&quot;]],[&quot;2023-POP&quot;,[&quot;integer&quot;,&quot;i64&quot;]],[&quot;2024-POP&quot;,[&quot;integer&quot;,&quot;i64&quot;]],[&quot;2025-POP&quot;,[&quot;integer&quot;,&quot;i64&quot;]],[&quot;B&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;2020-RANK&quot;,[&quot;integer&quot;,&quot;u8&quot;]],[&quot;2021-RANK&quot;,[&quot;integer&quot;,&quot;u8&quot;]],[&quot;2022-RANK&quot;,[&quot;integer&quot;,&quot;u8&quot;]],[&quot;2023-RANK&quot;,[&quot;integer&quot;,&quot;u8&quot;]],[&quot;2024-RANK&quot;,[&quot;integer&quot;,&quot;u8&quot;]],[&quot;2025-RANK&quot;,[&quot;integer&quot;,&quot;u8&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='true' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "lEQa",
+      "code_hash": "dd393ea2d1a8d57c5f41d6aa56c62844",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"hello-world-of-dataframes\">Hello World of dataframes</h3>\n<span class=\"paragraph\">Multiplication tables are often the first structured table people learn</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "PKri",
+      "code_hash": "62aa7c60f87de2e1555f52e8c2c1f750",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "Xref",
+      "code_hash": "c4ddac54c6a7c1d92890c6ad8df43d57",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"marimo-with-plotly\">Marimo with Plotly</h3>\n<span class=\"paragraph\">Jupyter does not provide built-in data visualization tools.\nLibraries like Plotly, Matplotlib, Altair or others are required.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "SFPL",
+      "code_hash": "582df229b6d98c885d387f40178d4b83",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "BYtC",
+      "code_hash": "dd437d73e53de0f4291a94aed65c8111",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "RGSE",
+      "code_hash": "905db6e5b4d1b4c2dc114d215e658858",
+      "outputs": [],
+      "console": []
+    }
+  ]
+}

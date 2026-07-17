@@ -1,0 +1,84 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.23.14",
+    "script_metadata_hash": null
+  },
+  "cells": [
+    {
+      "id": "Hbol",
+      "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "MJUe",
+      "code_hash": "ec6166b4006fe99ef966da4cfc4147be",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"marimo-notebook\">Marimo Notebook</h3>\n<span class=\"paragraph\">This notebook showcases datavisualization with Marimo</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vblA",
+      "code_hash": "86d2993351ebf9be3be5391463886f68",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "bkHC",
+      "code_hash": "dd393ea2d1a8d57c5f41d6aa56c62844",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"hello-world-of-dataframes\">Hello World of dataframes</h3>\n<span class=\"paragraph\">Multiplication tables are often the first structured table people learn</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "lEQa",
+      "code_hash": "62aa7c60f87de2e1555f52e8c2c1f750",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "PKri",
+      "code_hash": "c4ddac54c6a7c1d92890c6ad8df43d57",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"marimo-with-plotly\">Marimo with Plotly</h3>\n<span class=\"paragraph\">Jupyter does not provide built-in data visualization tools.\nLibraries like Plotly, Matplotlib, Altair or others are required.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Xref",
+      "code_hash": "582df229b6d98c885d387f40178d4b83",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "SFPL",
+      "code_hash": "dd437d73e53de0f4291a94aed65c8111",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "BYtC",
+      "code_hash": "905db6e5b4d1b4c2dc114d215e658858",
+      "outputs": [],
+      "console": []
+    }
+  ]
+}
