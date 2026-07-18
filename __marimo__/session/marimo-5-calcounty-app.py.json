@@ -33,7 +33,7 @@
     },
     {
       "id": "vblA",
-      "code_hash": "e2b9436c51e4d6e75ae3b48634a85308",
+      "code_hash": "8e481f1912244ec0d0d0e01164c80622",
       "outputs": [
         {
           "type": "data",
@@ -53,12 +53,12 @@
     },
     {
       "id": "bkHC",
-      "code_hash": "0fc14352e92ec6e7436786ba3a692671",
+      "code_hash": "501dccce945ddac0b6bcc91e9145897c",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<marimo-ui-element object-id='bkHC-0' random-id='78c8574e-5cc6-7a0c-92d2-de8bec293b29'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;County&#92;&quot;:&#92;&quot;Alameda&#92;&quot;,&#92;&quot;A&#92;&quot;:1682246,&#92;&quot;2020-POP&#92;&quot;:1680489,&#92;&quot;2021-POP&#92;&quot;:1644275,&#92;&quot;2022-POP&#92;&quot;:1633138,&#92;&quot;2023-POP&#92;&quot;:1633055,&#92;&quot;2024-POP&#92;&quot;:1636624,&#92;&quot;2025-POP&#92;&quot;:1636630,&#92;&quot;B&#92;&quot;:&#92;&quot;7&#92;&quot;,&#92;&quot;2020-RANK&#92;&quot;:7,&#92;&quot;2021-RANK&#92;&quot;:7,&#92;&quot;2022-RANK&#92;&quot;:7,&#92;&quot;2023-RANK&#92;&quot;:7,&#92;&quot;2024-RANK&#92;&quot;:7,&#92;&quot;2025-RANK&#92;&quot;:7},{&#92;&quot;County&#92;&quot;:&#92;&quot;Alpine&#92;&quot;,&#92;&quot;A&#92;&quot;:1178,&#92;&quot;2020-POP&#92;&quot;:1180,&#92;&quot;2021-POP&#92;&quot;:1194,&#92;&quot;2022-POP&#92;&quot;:1149,&#92;&quot;2023-POP&#92;&quot;:1105,&#92;&quot;2024-POP&#92;&quot;:1086,&#92;&quot;2025-POP&#92;&quot;:1043,&#92;&quot;B&#92;&quot;:&#92;&quot;58&#92;&quot;,&#92;&quot;2020-RANK&#92;&quot;:58,&#92;&quot;2021-RANK&#92;&quot;:58,&#92;&quot;2022-RANK&#92;&quot;:58,&#92;&quot;2023-RANK&#92;&quot;:58,&#92;&quot;2024-RANK&#92;&quot;:58,&#92;&quot;2025-RANK&#92;&quot;:58},{&#92;&quot;County&#92;&quot;:&#92;&quot;Amador&#92;&quot;,&#92;&quot;A&#92;&quot;:40487,&#92;&quot;2020-POP&#92;&quot;:40567,&#92;&quot;2021-POP&#92;&quot;:41225,&#92;&quot;2022-POP&#92;&quot;:41465,&#92;&quot;2023-POP&#92;&quot;:41783,&#92;&quot;2024-POP&#92;&quot;:41974,&#92;&quot;2025-POP&#92;&quot;:41876,&#92;&quot;B&#92;&quot;:&#92;&quot;46&#92;&quot;,&#92;&quot;2020-RANK&#92;&quot;:46,&#92;&quot;2021-RANK&#92;&quot;:46,&#92;&quot;2022-RANK&#92;&quot;:46,&#92;&quot;2023-RANK&#92;&quot;:46,&#92;&quot;2024-RANK&#92;&quot;:46,&#92;&quot;2025-RANK&#92;&quot;:46},{&#92;&quot;County&#92;&quot;:&#92;&quot;Butte&#92;&quot;,&#92;&quot;A&#92;&quot;:211629,&#92;&quot;2020-POP&#92;&quot;:210204,&#92;&quot;2021-POP&#92;&quot;:206353,&#92;&quot;2022-POP&#92;&quot;:207312,&#92;&quot;2023-POP&#92;&quot;:207286,&#92;&quot;2024-POP&#92;&quot;:208586,&#92;&quot;2025-POP&#92;&quot;:209211,&#92;&quot;B&#92;&quot;:&#92;&quot;28&#92;&quot;,&#92;&quot;2020-RANK&#92;&quot;:28,&#92;&quot;2021-RANK&#92;&quot;:28,&#92;&quot;2022-RANK&#92;&quot;:28,&#92;&quot;2023-RANK&#92;&quot;:28,&#92;&quot;2024-RANK&#92;&quot;:28,&#92;&quot;2025-RANK&#92;&quot;:28},{&#92;&quot;County&#92;&quot;:&#92;&quot;Calaveras&#92;&quot;,&#92;&quot;A&#92;&quot;:45285,&#92;&quot;2020-POP&#92;&quot;:45349,&#92;&quot;2021-POP&#92;&quot;:46259,&#92;&quot;2022-POP&#92;&quot;:46545,&#92;&quot;2023-POP&#92;&quot;:46563,&#92;&quot;2024-POP&#92;&quot;:46496,&#92;&quot;2025-POP&#92;&quot;:46605,&#92;&quot;B&#92;&quot;:&#92;&quot;44&#92;&quot;,&#92;&quot;2020-RANK&#92;&quot;:44,&#92;&quot;2021-RANK&#92;&quot;:44,&#92;&quot;2022-RANK&#92;&quot;:44,&#92;&quot;2023-RANK&#92;&quot;:44,&#92;&quot;2024-RANK&#92;&quot;:44,&#92;&quot;2025-RANK&#92;&quot;:44},{&#92;&quot;County&#92;&quot;:&#92;&quot;Colusa&#92;&quot;,&#92;&quot;A&#92;&quot;:21835,&#92;&quot;2020-POP&#92;&quot;:21858,&#92;&quot;2021-POP&#92;&quot;:21949,&#92;&quot;2022-POP&#92;&quot;:21927,&#92;&quot;2023-POP&#92;&quot;:22052,&#92;&quot;2024-POP&#92;&quot;:22016,&#92;&quot;2025-POP&#92;&quot;:21836,&#92;&quot;B&#92;&quot;:&#92;&quot;50&#92;&quot;,&#92;&quot;2020-RANK&#92;&quot;:50,&#92;&quot;2021-RANK&#92;&quot;:50,&#92;&quot;2022-RANK&#92;&quot;:50,&#92;&quot;2023-RANK&#92;&quot;:50,&#92;&quot;2024-RANK&#92;&quot;:50,&#92;&quot;2025-RANK&#92;&quot;:50},{&#92;&quot;County&#92;&quot;:&#92;&quot;Contra Costa&#92;&quot;,&#92;&quot;A&#92;&quot;:1166035,&#92;&quot;2020-POP&#92;&quot;:1166249,&#92;&quot;2021-POP&#92;&quot;:1164370,&#92;&quot;2022-POP&#92;&quot;:1160163,&#92;&quot;2023-POP&#92;&quot;:1161953,&#92;&quot;2024-POP&#92;&quot;:1169534,&#92;&quot;2025-POP&#92;&quot;:1170070,&#92;&quot;B&#92;&quot;:&#92;&quot;9&#92;&quot;,&#92;&quot;2020-RANK&#92;&quot;:9,&#92;&quot;2021-RANK&#92;&quot;:9,&#92;&quot;2022-RANK&#92;&quot;:9,&#92;&quot;2023-RANK&#92;&quot;:9,&#92;&quot;2024-RANK&#92;&quot;:9,&#92;&quot;2025-RANK&#92;&quot;:9},{&#92;&quot;County&#92;&quot;:&#92;&quot;Del Norte&#92;&quot;,&#92;&quot;A&#92;&quot;:27749,&#92;&quot;2020-POP&#92;&quot;:27619,&#92;&quot;2021-POP&#92;&quot;:27549,&#92;&quot;2022-POP&#92;&quot;:26694,&#92;&quot;2023-POP&#92;&quot;:26520,&#92;&quot;2024-POP&#92;&quot;:26959,&#92;&quot;2025-POP&#92;&quot;:26410,&#92;&quot;B&#92;&quot;:&#92;&quot;49&#92;&quot;,&#92;&quot;2020-RANK&#92;&quot;:49,&#92;&quot;2021-RANK&#92;&quot;:49,&#92;&quot;2022-RANK&#92;&quot;:49,&#92;&quot;2023-RANK&#92;&quot;:49,&#92;&quot;2024-RANK&#92;&quot;:49,&#92;&quot;2025-RANK&#92;&quot;:49},{&#92;&quot;County&#92;&quot;:&#92;&quot;El Dorado&#92;&quot;,&#92;&quot;A&#92;&quot;:191189,&#92;&quot;2020-POP&#92;&quot;:191237,&#92;&quot;2021-POP&#92;&quot;:193631,&#92;&quot;2022-POP&#92;&quot;:192914,&#92;&quot;2023-POP&#92;&quot;:192090,&#92;&quot;2024-POP&#92;&quot;:192371,&#92;&quot;2025-POP&#92;&quot;:192323,&#92;&quot;B&#92;&quot;:&#92;&quot;29&#92;&quot;,&#92;&quot;2020-RANK&#92;&quot;:29,&#92;&quot;2021-RANK&#92;&quot;:29,&#92;&quot;2022-RANK&#92;&quot;:29,&#92;&quot;2023-RANK&#92;&quot;:29,&#92;&quot;2024-RANK&#92;&quot;:29,&#92;&quot;2025-RANK&#92;&quot;:29},{&#92;&quot;County&#92;&quot;:&#92;&quot;Fresno&#92;&quot;,&#92;&quot;A&#92;&quot;:1008661,&#92;&quot;2020-POP&#92;&quot;:1009563,&#92;&quot;2021-POP&#92;&quot;:1012952,&#92;&quot;2022-POP&#92;&quot;:1017870,&#92;&quot;2023-POP&#92;&quot;:1025304,&#92;&quot;2024-POP&#92;&quot;:1033698,&#92;&quot;2025-POP&#92;&quot;:1035456,&#92;&quot;B&#92;&quot;:&#92;&quot;10&#92;&quot;,&#92;&quot;2020-RANK&#92;&quot;:10,&#92;&quot;2021-RANK&#92;&quot;:10,&#92;&quot;2022-RANK&#92;&quot;:10,&#92;&quot;2023-RANK&#92;&quot;:10,&#92;&quot;2024-RANK&#92;&quot;:10,&#92;&quot;2025-RANK&#92;&quot;:10}]&quot;' data-total-rows='58' data-total-columns='15' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;County&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;A&quot;,[&quot;integer&quot;,&quot;i64&quot;]],[&quot;2020-POP&quot;,[&quot;integer&quot;,&quot;i64&quot;]],[&quot;2021-POP&quot;,[&quot;integer&quot;,&quot;i64&quot;]],[&quot;2022-POP&quot;,[&quot;integer&quot;,&quot;i64&quot;]],[&quot;2023-POP&quot;,[&quot;integer&quot;,&quot;i64&quot;]],[&quot;2024-POP&quot;,[&quot;integer&quot;,&quot;i64&quot;]],[&quot;2025-POP&quot;,[&quot;integer&quot;,&quot;i64&quot;]],[&quot;B&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;2020-RANK&quot;,[&quot;integer&quot;,&quot;u8&quot;]],[&quot;2021-RANK&quot;,[&quot;integer&quot;,&quot;u8&quot;]],[&quot;2022-RANK&quot;,[&quot;integer&quot;,&quot;u8&quot;]],[&quot;2023-RANK&quot;,[&quot;integer&quot;,&quot;u8&quot;]],[&quot;2024-RANK&quot;,[&quot;integer&quot;,&quot;u8&quot;]],[&quot;2025-RANK&quot;,[&quot;integer&quot;,&quot;u8&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='true' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+            "text/html": "<marimo-ui-element object-id='bkHC-0' random-id='2f349ae6-26cb-a85a-4e69-a5735f679eec'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;County&#92;&quot;:&#92;&quot;Alameda&#92;&quot;,&#92;&quot;2020-POP&#92;&quot;:1680489,&#92;&quot;2021-POP&#92;&quot;:1644275,&#92;&quot;2022-POP&#92;&quot;:1633138,&#92;&quot;2023-POP&#92;&quot;:1633055,&#92;&quot;2024-POP&#92;&quot;:1636624,&#92;&quot;2025-POP&#92;&quot;:1636630,&#92;&quot;2020-RANK&#92;&quot;:7,&#92;&quot;2021-RANK&#92;&quot;:7,&#92;&quot;2022-RANK&#92;&quot;:7,&#92;&quot;2023-RANK&#92;&quot;:7,&#92;&quot;2024-RANK&#92;&quot;:7,&#92;&quot;2025-RANK&#92;&quot;:7},{&#92;&quot;County&#92;&quot;:&#92;&quot;Alpine&#92;&quot;,&#92;&quot;2020-POP&#92;&quot;:1180,&#92;&quot;2021-POP&#92;&quot;:1194,&#92;&quot;2022-POP&#92;&quot;:1149,&#92;&quot;2023-POP&#92;&quot;:1105,&#92;&quot;2024-POP&#92;&quot;:1086,&#92;&quot;2025-POP&#92;&quot;:1043,&#92;&quot;2020-RANK&#92;&quot;:58,&#92;&quot;2021-RANK&#92;&quot;:58,&#92;&quot;2022-RANK&#92;&quot;:58,&#92;&quot;2023-RANK&#92;&quot;:58,&#92;&quot;2024-RANK&#92;&quot;:58,&#92;&quot;2025-RANK&#92;&quot;:58},{&#92;&quot;County&#92;&quot;:&#92;&quot;Amador&#92;&quot;,&#92;&quot;2020-POP&#92;&quot;:40567,&#92;&quot;2021-POP&#92;&quot;:41225,&#92;&quot;2022-POP&#92;&quot;:41465,&#92;&quot;2023-POP&#92;&quot;:41783,&#92;&quot;2024-POP&#92;&quot;:41974,&#92;&quot;2025-POP&#92;&quot;:41876,&#92;&quot;2020-RANK&#92;&quot;:46,&#92;&quot;2021-RANK&#92;&quot;:46,&#92;&quot;2022-RANK&#92;&quot;:46,&#92;&quot;2023-RANK&#92;&quot;:46,&#92;&quot;2024-RANK&#92;&quot;:46,&#92;&quot;2025-RANK&#92;&quot;:46},{&#92;&quot;County&#92;&quot;:&#92;&quot;Butte&#92;&quot;,&#92;&quot;2020-POP&#92;&quot;:210204,&#92;&quot;2021-POP&#92;&quot;:206353,&#92;&quot;2022-POP&#92;&quot;:207312,&#92;&quot;2023-POP&#92;&quot;:207286,&#92;&quot;2024-POP&#92;&quot;:208586,&#92;&quot;2025-POP&#92;&quot;:209211,&#92;&quot;2020-RANK&#92;&quot;:28,&#92;&quot;2021-RANK&#92;&quot;:28,&#92;&quot;2022-RANK&#92;&quot;:28,&#92;&quot;2023-RANK&#92;&quot;:28,&#92;&quot;2024-RANK&#92;&quot;:28,&#92;&quot;2025-RANK&#92;&quot;:28},{&#92;&quot;County&#92;&quot;:&#92;&quot;Calaveras&#92;&quot;,&#92;&quot;2020-POP&#92;&quot;:45349,&#92;&quot;2021-POP&#92;&quot;:46259,&#92;&quot;2022-POP&#92;&quot;:46545,&#92;&quot;2023-POP&#92;&quot;:46563,&#92;&quot;2024-POP&#92;&quot;:46496,&#92;&quot;2025-POP&#92;&quot;:46605,&#92;&quot;2020-RANK&#92;&quot;:44,&#92;&quot;2021-RANK&#92;&quot;:44,&#92;&quot;2022-RANK&#92;&quot;:44,&#92;&quot;2023-RANK&#92;&quot;:44,&#92;&quot;2024-RANK&#92;&quot;:44,&#92;&quot;2025-RANK&#92;&quot;:44},{&#92;&quot;County&#92;&quot;:&#92;&quot;Colusa&#92;&quot;,&#92;&quot;2020-POP&#92;&quot;:21858,&#92;&quot;2021-POP&#92;&quot;:21949,&#92;&quot;2022-POP&#92;&quot;:21927,&#92;&quot;2023-POP&#92;&quot;:22052,&#92;&quot;2024-POP&#92;&quot;:22016,&#92;&quot;2025-POP&#92;&quot;:21836,&#92;&quot;2020-RANK&#92;&quot;:50,&#92;&quot;2021-RANK&#92;&quot;:50,&#92;&quot;2022-RANK&#92;&quot;:50,&#92;&quot;2023-RANK&#92;&quot;:50,&#92;&quot;2024-RANK&#92;&quot;:50,&#92;&quot;2025-RANK&#92;&quot;:50},{&#92;&quot;County&#92;&quot;:&#92;&quot;Contra Costa&#92;&quot;,&#92;&quot;2020-POP&#92;&quot;:1166249,&#92;&quot;2021-POP&#92;&quot;:1164370,&#92;&quot;2022-POP&#92;&quot;:1160163,&#92;&quot;2023-POP&#92;&quot;:1161953,&#92;&quot;2024-POP&#92;&quot;:1169534,&#92;&quot;2025-POP&#92;&quot;:1170070,&#92;&quot;2020-RANK&#92;&quot;:9,&#92;&quot;2021-RANK&#92;&quot;:9,&#92;&quot;2022-RANK&#92;&quot;:9,&#92;&quot;2023-RANK&#92;&quot;:9,&#92;&quot;2024-RANK&#92;&quot;:9,&#92;&quot;2025-RANK&#92;&quot;:9},{&#92;&quot;County&#92;&quot;:&#92;&quot;Del Norte&#92;&quot;,&#92;&quot;2020-POP&#92;&quot;:27619,&#92;&quot;2021-POP&#92;&quot;:27549,&#92;&quot;2022-POP&#92;&quot;:26694,&#92;&quot;2023-POP&#92;&quot;:26520,&#92;&quot;2024-POP&#92;&quot;:26959,&#92;&quot;2025-POP&#92;&quot;:26410,&#92;&quot;2020-RANK&#92;&quot;:49,&#92;&quot;2021-RANK&#92;&quot;:49,&#92;&quot;2022-RANK&#92;&quot;:49,&#92;&quot;2023-RANK&#92;&quot;:49,&#92;&quot;2024-RANK&#92;&quot;:49,&#92;&quot;2025-RANK&#92;&quot;:49},{&#92;&quot;County&#92;&quot;:&#92;&quot;El Dorado&#92;&quot;,&#92;&quot;2020-POP&#92;&quot;:191237,&#92;&quot;2021-POP&#92;&quot;:193631,&#92;&quot;2022-POP&#92;&quot;:192914,&#92;&quot;2023-POP&#92;&quot;:192090,&#92;&quot;2024-POP&#92;&quot;:192371,&#92;&quot;2025-POP&#92;&quot;:192323,&#92;&quot;2020-RANK&#92;&quot;:29,&#92;&quot;2021-RANK&#92;&quot;:29,&#92;&quot;2022-RANK&#92;&quot;:29,&#92;&quot;2023-RANK&#92;&quot;:29,&#92;&quot;2024-RANK&#92;&quot;:29,&#92;&quot;2025-RANK&#92;&quot;:29},{&#92;&quot;County&#92;&quot;:&#92;&quot;Fresno&#92;&quot;,&#92;&quot;2020-POP&#92;&quot;:1009563,&#92;&quot;2021-POP&#92;&quot;:1012952,&#92;&quot;2022-POP&#92;&quot;:1017870,&#92;&quot;2023-POP&#92;&quot;:1025304,&#92;&quot;2024-POP&#92;&quot;:1033698,&#92;&quot;2025-POP&#92;&quot;:1035456,&#92;&quot;2020-RANK&#92;&quot;:10,&#92;&quot;2021-RANK&#92;&quot;:10,&#92;&quot;2022-RANK&#92;&quot;:10,&#92;&quot;2023-RANK&#92;&quot;:10,&#92;&quot;2024-RANK&#92;&quot;:10,&#92;&quot;2025-RANK&#92;&quot;:10}]&quot;' data-total-rows='58' data-total-columns='13' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;County&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;2020-POP&quot;,[&quot;integer&quot;,&quot;u32&quot;]],[&quot;2021-POP&quot;,[&quot;integer&quot;,&quot;u32&quot;]],[&quot;2022-POP&quot;,[&quot;integer&quot;,&quot;u32&quot;]],[&quot;2023-POP&quot;,[&quot;integer&quot;,&quot;u32&quot;]],[&quot;2024-POP&quot;,[&quot;integer&quot;,&quot;u32&quot;]],[&quot;2025-POP&quot;,[&quot;integer&quot;,&quot;u32&quot;]],[&quot;2020-RANK&quot;,[&quot;integer&quot;,&quot;u8&quot;]],[&quot;2021-RANK&quot;,[&quot;integer&quot;,&quot;u8&quot;]],[&quot;2022-RANK&quot;,[&quot;integer&quot;,&quot;u8&quot;]],[&quot;2023-RANK&quot;,[&quot;integer&quot;,&quot;u8&quot;]],[&quot;2024-RANK&quot;,[&quot;integer&quot;,&quot;u8&quot;]],[&quot;2025-RANK&quot;,[&quot;integer&quot;,&quot;u8&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='true' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
           }
         }
       ],
@@ -66,12 +66,12 @@
     },
     {
       "id": "lEQa",
-      "code_hash": "dd393ea2d1a8d57c5f41d6aa56c62844",
+      "code_hash": "6fa53492270bc41e9c207ee4ea6a34bb",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"hello-world-of-dataframes\">Hello World of dataframes</h3>\n<span class=\"paragraph\">Multiplication tables are often the first structured table people learn</span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"select-a-county\">Select a County</h3>\n<span class=\"paragraph\">California has 58 Counties. Least populous is Alpine County, most populous is Los Angeles County. See for your self by sorting on any dataframe column using Marimo dataframe interface.</span></span>"
           }
         }
       ],
@@ -79,12 +79,78 @@
     },
     {
       "id": "PKri",
-      "code_hash": "62aa7c60f87de2e1555f52e8c2c1f750",
-      "outputs": [],
+      "code_hash": "e39760e574f7273e0201b5182992b290",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "Xref",
+      "code_hash": "3bd3f6453c4528ba97b83dbcef224969",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: center;flex-wrap: nowrap;gap: 0rem'><div><marimo-ui-element object-id='PKri-0' random-id='b624918d-1edf-50fa-06ef-698fcd688de1'><marimo-multiselect data-initial-value='[]' data-label='null' data-options='[&quot;Alameda&quot;,&quot;Alpine&quot;,&quot;Amador&quot;,&quot;Butte&quot;,&quot;Calaveras&quot;,&quot;Colusa&quot;,&quot;Contra Costa&quot;,&quot;Del Norte&quot;,&quot;El Dorado&quot;,&quot;Fresno&quot;,&quot;Glenn&quot;,&quot;Humboldt&quot;,&quot;Imperial&quot;,&quot;Inyo&quot;,&quot;Kern&quot;,&quot;Kings&quot;,&quot;Lake&quot;,&quot;Lassen&quot;,&quot;Los Angeles&quot;,&quot;Madera&quot;,&quot;Marin&quot;,&quot;Mariposa&quot;,&quot;Mendocino&quot;,&quot;Merced&quot;,&quot;Modoc&quot;,&quot;Mono&quot;,&quot;Monterey&quot;,&quot;Napa&quot;,&quot;Nevada&quot;,&quot;Orange&quot;,&quot;Placer&quot;,&quot;Plumas&quot;,&quot;Riverside&quot;,&quot;Sacramento&quot;,&quot;San Benito&quot;,&quot;San Bernardino&quot;,&quot;San Diego&quot;,&quot;San Francisco&quot;,&quot;San Joaquin&quot;,&quot;San Luis Obispo&quot;,&quot;San Mateo&quot;,&quot;Santa Barbara&quot;,&quot;Santa Clara&quot;,&quot;Santa Cruz&quot;,&quot;Shasta&quot;,&quot;Sierra&quot;,&quot;Siskiyou&quot;,&quot;Solano&quot;,&quot;Sonoma&quot;,&quot;Stanislaus&quot;,&quot;Sutter&quot;,&quot;Tehama&quot;,&quot;Trinity&quot;,&quot;Tulare&quot;,&quot;Tuolumne&quot;,&quot;Ventura&quot;,&quot;Yolo&quot;,&quot;Yuba&quot;]' data-full-width='true' data-max-selections='1' data-disabled='false'></marimo-multiselect></marimo-ui-element></div></div>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "SFPL",
+      "code_hash": "10a67247fc9be89e23b6b039fa5feccb",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "BYtC",
+      "code_hash": "e7a8a67be07de07a76190599db2db78c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "C:\\Users\\mpurt\\AppData\\Local\\Temp\\marimo_11540\\__marimo__cell_BYtC_.py:13: DeprecationWarning: the argument `columns` for `DataFrame.pivot` is deprecated. It was renamed to `on` in version 1.0.0.\n  .pivot(columns='Stat_Name', values='Stat_Value')\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "RGSE",
+      "code_hash": "9ed62f38acc4fcba5a09cf44a610a434",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='RGSE-0' random-id='08d9bfcc-4b69-3589-7c1c-8270228cf5bc'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;Year&#92;&quot;:2020,&#92;&quot;POP&#92;&quot;:210204,&#92;&quot;RANK&#92;&quot;:28},{&#92;&quot;Year&#92;&quot;:2021,&#92;&quot;POP&#92;&quot;:206353,&#92;&quot;RANK&#92;&quot;:28},{&#92;&quot;Year&#92;&quot;:2022,&#92;&quot;POP&#92;&quot;:207312,&#92;&quot;RANK&#92;&quot;:28},{&#92;&quot;Year&#92;&quot;:2023,&#92;&quot;POP&#92;&quot;:207286,&#92;&quot;RANK&#92;&quot;:28},{&#92;&quot;Year&#92;&quot;:2024,&#92;&quot;POP&#92;&quot;:208586,&#92;&quot;RANK&#92;&quot;:28},{&#92;&quot;Year&#92;&quot;:2025,&#92;&quot;POP&#92;&quot;:209211,&#92;&quot;RANK&#92;&quot;:28}]&quot;' data-total-rows='6' data-total-columns='3' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;Year&quot;,[&quot;integer&quot;,&quot;u16&quot;]],[&quot;POP&quot;,[&quot;integer&quot;,&quot;u32&quot;]],[&quot;RANK&quot;,[&quot;integer&quot;,&quot;u8&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "nWHF",
       "code_hash": "c4ddac54c6a7c1d92890c6ad8df43d57",
       "outputs": [
         {
@@ -94,24 +160,6 @@
           }
         }
       ],
-      "console": []
-    },
-    {
-      "id": "SFPL",
-      "code_hash": "582df229b6d98c885d387f40178d4b83",
-      "outputs": [],
-      "console": []
-    },
-    {
-      "id": "BYtC",
-      "code_hash": "dd437d73e53de0f4291a94aed65c8111",
-      "outputs": [],
-      "console": []
-    },
-    {
-      "id": "RGSE",
-      "code_hash": "905db6e5b4d1b4c2dc114d215e658858",
-      "outputs": [],
       "console": []
     }
   ]
