@@ -27,39 +27,55 @@ def _():
     print(f'Polars version {pl.__version__}')
     import plotly.express as px
 
-    return cs, pl
+    return (pl,)
 
 
 @app.cell
-def _(cs, pl):
-    target_columns = [
-        'County',
-        'A', '2020-POP', '2021-POP', '2022-POP', '2023-POP', '2024-POP', '2025-POP',
-        'B', '2020-RANK', '2021-RANK', '2022-RANK', '2023-RANK', '2024-RANK', '2025-RANK',
-    ]
-
-    df_statewide = (
-        pl.read_excel(
-            'co-est2025-chg-06.xlsx',
-            read_options={"skip_rows": 4, "n_rows": 59}
-        )
-        .pipe(
-            lambda d: d.select(d.columns[:15]).rename(
-                dict(zip(d.columns[:15], target_columns, strict=False))
-            )
-        )
-        .drop(['A', 'B'])
-        .filter(pl.col('County') != 'California')  # skip statewide tallies
+def _(pl):
+    df_cal = (
+        pl.read_excel('assets/california_counties_wikipedia.xlsx')
+        .lazy()
         .with_columns(
-            pl.col('County')
-                .str.replace(' County, California','')
-                .str.slice(1, None),
-            cs.contains('RANK').cast(pl.UInt8), # Rank out of 589 counties
-            cs.contains('POP').cast(pl.UInt32), # LA County 10M+ residents
+            pl.col('FIPS').cast(pl.UInt8),
+            pl.col('Established').cast(pl.UInt16),
+            pl.col('Pop').cast(pl.UInt32),
+            pl.col('Area_Sq_Mile').cast(pl.UInt16), 
+            pl.col('Area_Sq_KM').cast(pl.UInt16),
+            pl.col('County').str.strip_chars()
         )
+        .with_columns(
+            Pop_Density_Sq_Mile = 
+                (pl.col('Pop')/pl.col('Area_Sq_Mile'))
+                .round(1),
+            Pop_Density_Sq_KM = (pl.col('Pop')/pl.col('Area_Sq_KM')).round(1)
+        )
+        .sort('Pop', descending=True)
+        .with_row_index(name='Pop_Rank', offset=1)
+        .sort('Pop_Density_Sq_Mile', descending=True)
+        .with_row_index(name='Pop_Density_Rank', offset=1)
+        .sort('Area_Sq_Mile', descending=True)
+        .with_row_index(name='Area_Rank', offset=1)
+        .sort('County', descending=False)
+        .select([
+            'County', 'FIPS', 'Seat', 'Established', 
+            'Pop',  'Pop_Rank', 
+            'Area_Sq_Mile', 'Area_Sq_KM', 'Area_Rank',
+            'Pop_Density_Sq_Mile', 'Pop_Density_Sq_KM', 'Pop_Density_Rank',   
+            'Formation', 'Etymology'
+        ])
+        .collect()
     )
-    df_statewide
-    return (df_statewide,)
+    print(list(df_cal.columns))
+    df_cal
+    return (df_cal,)
+
+
+@app.cell
+def _(df_cal):
+    print(f'{df_cal.get_column('Pop').sum() = :,}')
+
+
+    return
 
 
 @app.cell(hide_code=True)
@@ -72,13 +88,12 @@ def _(mo):
 
 
 @app.cell
-def _(df_statewide, mo, pl):
+def _(df_cal, mo, pl):
     county_select = mo.ui.multiselect(
-        df_statewide.select(pl.col('County')).to_series().to_list(),
+        df_cal.select(pl.col('County')).to_series().to_list(),
         max_selections=1,
         full_width=True,
     )
-
 
     return (county_select,)
 
@@ -96,39 +111,8 @@ def _(county_select):
 
 
 @app.cell
-def _(county, df_statewide, pl):
-    df_county = (
-        df_statewide.filter(pl.col('County') == county)
-        .transpose(
-            header_name='Year-Stat',
-            include_header=True
-        )
-        .filter(pl.col('Year-Stat') != 'County')
-        .select(
-            Year = pl.col('Year-Stat').str.split('-').list.first().cast(pl.UInt16),
-            Stat_Name = pl.col('Year-Stat').str.split('-').list.last(),
-            Stat_Value = pl.col('column_0')
-        )
-        .pivot(columns='Stat_Name', values='Stat_Value')
-        .with_columns(
-            pl.col('POP').cast(pl.UInt32),
-            pl.col('RANK').cast(pl.UInt8)
-        )
-        
-
-        #df.pivot(index="foo", columns="bar", values="baz", aggregate_function="sum")
-    
-        # .unstack(
-        #     columns('Stat_Name')
-        # )
-        # .group_by('Stat_Name').agg(pl.len())
-    )
-    return (df_county,)
-
-
-@app.cell
-def _(df_county):
-    df_county
+def _(county):
+    county
     return
 
 
