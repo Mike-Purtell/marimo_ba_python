@@ -23,11 +23,12 @@ def _(mo):
 @app.cell
 def _():
     import polars as pl
+    import polars.selectors as cs
     import pandas as pd
 
     print(f'Polars version {pl.__version__}')
     print(f'Pandas version {pd.__version__}')
-    return pd, pl
+    return cs, pl
 
 
 @app.cell(hide_code=True)
@@ -40,21 +41,15 @@ def _(mo):
 
 
 @app.cell
-def _(df_pandas):
-    print(df_pandas)
-    return
-
-
-@app.cell
-def _(pd):
-    df_pandas = (
-        pd.DataFrame(
+def _(cs, pl):
+    df_polars = (
+        pl.DataFrame(
             {str(i): [j * i for j in range(11)] for i in range(11)}, 
-            dtype='uint8'
         )
+        .with_columns(cs.all().cast(pl.UInt8))
     )
-    df_pandas # displays columns, index. No data types or dataframe shape
-    return (df_pandas,)
+    df_polars # displays columns, index. No data types or dataframe shape
+    return (df_polars,)
 
 
 @app.cell(hide_code=True)
@@ -68,15 +63,9 @@ def _(mo):
 
 @app.cell
 def _(df_polars):
-    print(df_polars)
+    df_pandas =  df_polars.to_pandas()
+    df_pandas 
     return
-
-
-@app.cell
-def _(df_pandas, pl):
-    df_polars =  pl.from_pandas(df_pandas)
-    df_polars 
-    return (df_polars,)
 
 
 @app.cell

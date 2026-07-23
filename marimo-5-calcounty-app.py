@@ -25,12 +25,11 @@ def _():
     import polars as pl
     import polars.selectors as cs
     print(f'Polars version {pl.__version__}')
+    import matplotlib.pyplot as plt
     import plotly.express as px
-    # For choropleth map
-    import json
-    from urllib.request import urlopen
+    import plotly.graph_objects as go
 
-    return json, pl, px, urlopen
+    return go, pl, px
 
 
 @app.cell
@@ -86,37 +85,37 @@ def _(df_cal):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    ### Select a County
-    California has 58 Counties. Least populous is Alpine County, most populous is Los Angeles County. See for your self by sorting on any dataframe column using Marimo dataframe interface.
+    ### Select a Data Viz parameter
+    California has 58 Counties. Pick one of 3 demographics to be displayed in top 10 and bottom 10 horizontal bar charts
     """)
     return
 
 
 @app.cell
-def _(df_cal, mo, pl):
-    county_select = mo.ui.multiselect(
-        df_cal.select(pl.col('County')).to_series().to_list(),
+def _(mo):
+    demo = mo.ui.multiselect(
+        ['Population', 'Population Density', 'Area'],
         max_selections=1,
         full_width=True,
     )
-    return (county_select,)
+    return (demo,)
 
 
 @app.cell
-def _(county_select, mo):
-    mo.center(county_select)
+def _(demo, mo):
+    mo.center(demo)
     return
 
 
 @app.cell
-def _(county_select):
-    county = county_select.value[0] if county_select.value else None
-    return (county,)
+def _(demo):
+    demo_view = demo.value[0] if demo.value else None
+    return (demo_view,)
 
 
 @app.cell
-def _(county):
-    county
+def _(demo_view):
+    demo_view
     return
 
 
@@ -127,97 +126,68 @@ def _():
 
 
 @app.cell
-def _(df_cal, json, pl, px, urlopen):
-    # Load US counties GeoJSON (includes FIPS codes)
-    with urlopen("https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json") as response:
-        counties = json.load(response)
+def _(demo_view, df_cal, go, mo, px):
+    print(f'display top 10 and bottom 10 charts by county {demo_view}')
+    fig1 = fig2 = go.Figure()
 
-    # Filter GeoJSON to only CA counties (STATE FIPS = "06")
-    ca_features = [f for f in counties["features"] if f["properties"]["STATE"] == "06"]
-    df_ca = pl.DataFrame({
-        'County': [f['properties']['NAME'] for f in ca_features],
-        'FIPS': [f['id'] for f in ca_features]
-    })
-    matched_fips = set(df_cal.get_column('FIPS').to_list()) & set(df_ca.get_column('FIPS').to_list())
-    print(f'FIPS matched for map: {len(matched_fips)} / {len(ca_features)} CA counties')
+    if demo_view == 'Population':
+        fig1 = px.bar(
+            df_cal.sort('Pop_Rank', descending=True).tail(10),
+            x='Pop',
+            y='County', 
+            title = f'Top 10',subtitle = demo_view,
+        )
+        fig2 = px.bar(
+            df_cal.sort('Pop_Rank', descending=True).head(10),
+            x='Pop',
+            y='County',
+            title = f'Bottom 10', subtitle = demo_view,
+        )
 
-    # Choropleth payload can be very heavy in marimo app mode; plot county centroids
-    # instead so the map reliably renders in all browsers.
-    def _extract_lon_lat(geometry):
-        geom_type = geometry['type']
-        coords = geometry['coordinates']
-        if geom_type == 'Polygon':
-            ring = coords[0]
-        else:
-            ring = coords[0][0]
-        lon = sum(pt[0] for pt in ring) / len(ring)
-        lat = sum(pt[1] for pt in ring) / len(ring)
-        return lon, lat
+    if demo_view == 'Population Density':
+        fig1 = px.bar(
+            df_cal.sort('Pop_Density_Sq_Mile', descending=False).tail(10),
+            x='Pop_Density_Sq_Mile',
+            y='County', 
+            title = f'Top 10',subtitle = demo_view,
+        )
+        fig2 = px.bar(
+            df_cal.sort('Pop_Density_Sq_Mile', descending=False).head(10),
+            x='Pop_Density_Sq_Mile',
+            y='County',
+            title = f'Bottom 10', subtitle = demo_view,
+        )
 
-    centroids = [_extract_lon_lat(f['geometry']) for f in ca_features]
-    df_centroids = pl.DataFrame({
-        'FIPS': [f['id'] for f in ca_features],
-        'lon': [c[0] for c in centroids],
-        'lat': [c[1] for c in centroids],
-    })
-    df_map = df_cal.join(df_centroids, on='FIPS', how='left')
+    if demo_view == 'Area':
+        fig1 = px.bar(
+            df_cal.sort('Area_Sq_Mile', descending=False).tail(10),
+            x='Area_Sq_Mile',
+            y='County', 
+            title = f'Top 10',subtitle = demo_view,
+        )
+        fig2 = px.bar(
+            df_cal.sort('Area_Sq_Mile', descending=False).head(10),
+            x='Area_Sq_Mile',
+            y='County',
+            title = f'Bottom 10', subtitle = demo_view,
+        )
+    # Update layout to set custom height and width, offset y-labels from bars
+    w = 400
+    h = 400
+    fig1.update_layout(width=w, height=h, yaxis=dict(ticklabelstandoff=10))
+    fig2.update_layout(width=w, height=h, yaxis=dict(ticklabelstandoff=10))
 
-    fig = px.scatter(
-        df_map.to_pandas(),
-        x='lon',
-        y='lat',
-        color='Pop',
-        size='Pop',
-        hover_name='County',
-        hover_data={'FIPS': True, 'lat': ':.3f', 'lon': ':.3f'},
-        size_max=30,
-        title='CA County Map',
-        color_continuous_scale='Blues',
+    # Wrap figures in mo.ui.plotly for reactive support
+    fig1_ui = mo.ui.plotly(fig1)
+    fig2_ui = mo.ui.plotly(fig2)
+    # Arrange them side‑by‑side in an HStack
+    layout = mo.hstack(
+        [fig1_ui, fig2_ui],
+        widths="equal"  # Equal width for both
     )
-    fig.update_traces(marker_line_color='white', marker_line_width=0.6, opacity=0.9)
-    fig.update_layout(
-        template='plotly_white',
-        coloraxis_showscale=False,
-        title_font_size=24,
-        title_font_color='gray',
-        height=600,
-        margin={"r":50,"t":50,"l":0,"b":0},
-        paper_bgcolor='white',
-        plot_bgcolor='white',
-    )
-    fig.update_xaxes(title='Longitude', showgrid=True, gridcolor='lightgray')
-    fig.update_yaxes(
-        title='Latitude',
-        showgrid=True,
-        gridcolor='lightgray',
-        scaleanchor='x',
-        scaleratio=1,
-    )
-    # fig.update_traces(
-    #     hovertemplate= (
-    #     '<b>County: %{customdata[0]}</b><br>' +
-    #     'Total: %{customdata[1]:,}<br>' +
-    #     'Active: %{customdata[2]:,}<br>' +
-    #     '% Active: %{customdata[3]:.2f}%' +
-    #     '<extra></extra>'
-    #     )
-    # )
-    fig
-    return (fig,)
 
-
-@app.cell
-def _(fig, mo):
-    plot = mo.ui.plotly(fig)
-    plot
-    return (plot,)
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(r"""
-    ### Marimo with Plotly
-    """)
+    # Display the layout
+    layout
     return
 
 

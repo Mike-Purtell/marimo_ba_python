@@ -144,7 +144,7 @@
         {
           "type": "data",
           "data": {
-            "text/html": "<marimo-ui-element object-id='BYtC-0' random-id='6c2b6d96-5ee9-b8ec-d460-6b233ba57e60'><marimo-slider data-initial-value='1' data-label='null' data-start='1' data-stop='10' data-step='1' data-steps='[]' data-debounce='false' data-disabled='false' data-orientation='&quot;horizontal&quot;' data-show-value='false' data-include-input='false' data-full-width='false'></marimo-slider></marimo-ui-element>"
+            "text/html": "<marimo-ui-element object-id='BYtC-0' random-id='f269fcdc-4f76-ef44-9cfa-33067b98bcea'><marimo-slider data-initial-value='1' data-label='null' data-start='1' data-stop='10' data-step='1' data-steps='[]' data-debounce='false' data-disabled='false' data-orientation='&quot;horizontal&quot;' data-show-value='false' data-include-input='false' data-full-width='false'></marimo-slider></marimo-ui-element>"
           }
         }
       ],
@@ -157,7 +157,7 @@
         {
           "type": "data",
           "data": {
-            "text/html": "<marimo-ui-element object-id='RGSE-0' random-id='69f7d242-e92d-4261-5275-f2d4ec3b96fd'><marimo-slider data-initial-value='1' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003ebetter slider&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-start='1' data-stop='10' data-step='1' data-steps='[]' data-debounce='false' data-disabled='false' data-orientation='&quot;horizontal&quot;' data-show-value='false' data-include-input='false' data-full-width='false'></marimo-slider></marimo-ui-element>"
+            "text/html": "<marimo-ui-element object-id='RGSE-0' random-id='d04d2597-99e4-354d-39f5-2ed989d8aa6f'><marimo-slider data-initial-value='1' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003ebetter slider&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-start='1' data-stop='10' data-step='1' data-steps='[]' data-debounce='false' data-disabled='false' data-orientation='&quot;horizontal&quot;' data-show-value='false' data-include-input='false' data-full-width='false'></marimo-slider></marimo-ui-element>"
           }
         }
       ],
@@ -183,7 +183,7 @@
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><marimo-ui-element object-id='Kclp-0' random-id='2b646c6f-bb68-a9eb-6edc-373b5ec9376a'><marimo-slider data-initial-value='25' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003ebest slider&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-start='1' data-stop='100' data-step='1' data-steps='[]' data-debounce='false' data-disabled='false' data-orientation='&quot;horizontal&quot;' data-show-value='false' data-include-input='false' data-full-width='false'></marimo-slider></marimo-ui-element> value: 14</span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><marimo-ui-element object-id='Kclp-0' random-id='acb1ff21-4b13-5baa-31d3-df2fadcd8e74'><marimo-slider data-initial-value='25' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003ebest slider&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-start='1' data-stop='100' data-step='1' data-steps='[]' data-debounce='false' data-disabled='false' data-orientation='&quot;horizontal&quot;' data-show-value='false' data-include-input='false' data-full-width='false'></marimo-slider></marimo-ui-element> value: 8</span></span>"
           }
         }
       ],
@@ -196,7 +196,7 @@
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">\ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  </span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">\ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  </span></span>"
           }
         }
       ],

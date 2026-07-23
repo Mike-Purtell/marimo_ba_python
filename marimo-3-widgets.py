@@ -128,7 +128,7 @@ def _(checkbox):
 @app.cell
 def _(mo):
     multiselect = mo.ui.multiselect(
-        options=['Chicago', 'New York', 'Detroit', 'Springfield'], 
+        options=['Springfield', 'Chicago', 'New York', 'Los Angeles'], 
         label='pick your favorite town',
         max_selections=2 # Optional, None for no limit, integer for specific limit'
     )

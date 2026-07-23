@@ -52,7 +52,7 @@
       ]
     },
     {
-      "id": "Xref",
+      "id": "bkHC",
       "code_hash": "e3e61458b05ced8f97ed3b4c90e2c73a",
       "outputs": [
         {
@@ -65,7 +65,7 @@
       "console": []
     },
     {
-      "id": "Kclp",
+      "id": "lEQa",
       "code_hash": "4e3905b4e433b61c7e244466cbe07429",
       "outputs": [
         {
@@ -78,33 +78,33 @@
       "console": []
     },
     {
-      "id": "emfo",
+      "id": "PKri",
       "code_hash": "af3deb49f3e976e47e306835909835bb",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><marimo-ui-element object-id='Kclp-0' random-id='23b9af63-a03f-2cef-cf6b-139e8e1dfb5e'><marimo-slider data-initial-value='25' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003ebest slider&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-start='1' data-stop='100' data-step='1' data-steps='[]' data-debounce='false' data-disabled='false' data-orientation='&quot;horizontal&quot;' data-show-value='false' data-include-input='false' data-full-width='false'></marimo-slider></marimo-ui-element> value: 23</span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><marimo-ui-element object-id='lEQa-0' random-id='b6d4fa46-090a-5959-448b-444b8e39cc92'><marimo-slider data-initial-value='25' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003ebest slider&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-start='1' data-stop='100' data-step='1' data-steps='[]' data-debounce='false' data-disabled='false' data-orientation='&quot;horizontal&quot;' data-show-value='false' data-include-input='false' data-full-width='false'></marimo-slider></marimo-ui-element> value: 51</span></span>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "Hstk",
+      "id": "Xref",
       "code_hash": "1ee4adaaf231aeb8f39e68d5dbecc972",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">\ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  </span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">\ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  </span></span>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "nWHF",
+      "id": "SFPL",
       "code_hash": "f7319abc2af236309f2333e5439f99cb",
       "outputs": [
         {
@@ -117,7 +117,7 @@
       "console": []
     },
     {
-      "id": "iLit",
+      "id": "BYtC",
       "code_hash": "ed953fb256b559661bf84638f76afe07",
       "outputs": [
         {
@@ -130,33 +130,33 @@
       "console": []
     },
     {
-      "id": "ZHCJ",
+      "id": "RGSE",
       "code_hash": "3fcdb73d36d54f2cc22d0f68e6b6e182",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<marimo-ui-element object-id='iLit-8' random-id='e34419f4-3acd-537a-acbd-87088d472cee'><marimo-form data-initial-value='null' data-label='null' data-element-id='&quot;iLit-7&quot;' data-loading='false' data-bordered='true' data-submit-button-label='&quot;Submit&quot;' data-submit-button-disabled='false' data-clear-on-submit='false' data-show-clear-button='false' data-clear-button-label='&quot;Clear&quot;' data-should-validate='false'><marimo-ui-element object-id='iLit-7' random-id='7f4b5600-8625-ba27-9049-963189e6cb22'><marimo-dict data-initial-value='{&quot;prompt&quot;:&quot;&quot;,&quot;seed&quot;:null}' data-label='null' data-element-ids='{&quot;iLit-5&quot;:&quot;prompt&quot;,&quot;iLit-6&quot;:&quot;seed&quot;}'><span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Enter your prompt.</strong></span>\n<span class=\"paragraph\"><marimo-ui-element object-id='iLit-5' random-id='7ada368b-d757-543e-f098-e5f1381d7282'><marimo-text-area data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;&quot;' data-disabled='false' data-debounce='true' data-full-width='false'></marimo-text-area></marimo-ui-element></span>\n<span class=\"paragraph\"><strong>Choose a random seed.</strong></span>\n<span class=\"paragraph\"><marimo-ui-element object-id='iLit-6' random-id='3f977f63-9a92-3786-7a1f-67b9b49dc384'><marimo-number data-initial-value='null' data-label='null' data-debounce='false' data-full-width='false' data-disabled='false'></marimo-number></marimo-ui-element></span></span></marimo-dict></marimo-ui-element></marimo-form></marimo-ui-element>"
+            "text/html": "<marimo-ui-element object-id='BYtC-8' random-id='8054f057-1f74-8855-989b-e18d1b3ae436'><marimo-form data-initial-value='null' data-label='null' data-element-id='&quot;BYtC-7&quot;' data-loading='false' data-bordered='true' data-submit-button-label='&quot;Submit&quot;' data-submit-button-disabled='false' data-clear-on-submit='false' data-show-clear-button='false' data-clear-button-label='&quot;Clear&quot;' data-should-validate='false'><marimo-ui-element object-id='BYtC-7' random-id='31485aa8-1aac-d9ca-d592-a4ea5a8f812c'><marimo-dict data-initial-value='{&quot;prompt&quot;:&quot;&quot;,&quot;seed&quot;:null}' data-label='null' data-element-ids='{&quot;BYtC-5&quot;:&quot;prompt&quot;,&quot;BYtC-6&quot;:&quot;seed&quot;}'><span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Enter your prompt.</strong></span>\n<span class=\"paragraph\"><marimo-ui-element object-id='BYtC-5' random-id='824fc9a9-b9aa-2065-4544-9ae26685fd69'><marimo-text-area data-initial-value='&quot;&quot;' data-label='null' data-placeholder='&quot;&quot;' data-disabled='false' data-debounce='true' data-full-width='false'></marimo-text-area></marimo-ui-element></span>\n<span class=\"paragraph\"><strong>Choose a random seed.</strong></span>\n<span class=\"paragraph\"><marimo-ui-element object-id='BYtC-6' random-id='86b9fd0a-5a42-0b40-766c-e39f0f30255f'><marimo-number data-initial-value='null' data-label='null' data-debounce='false' data-full-width='false' data-disabled='false'></marimo-number></marimo-ui-element></span></span></marimo-dict></marimo-ui-element></marimo-form></marimo-ui-element>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "ROlb",
+      "id": "Kclp",
       "code_hash": "f55d4cb2148d19f98621ec1d2971406b",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/plain": ""
+            "application/json": "{\"prompt\": \"das\", \"seed\": 4}"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "qnkX",
+      "id": "emfo",
       "code_hash": "5cc7a912c7b1ef617d95fcf9e59d1881",
       "outputs": [
         {
@@ -169,7 +169,7 @@
       "console": []
     },
     {
-      "id": "TqIu",
+      "id": "Hstk",
       "code_hash": "28b7ced8f0c82df201526d70a24ea1c0",
       "outputs": [
         {
@@ -182,21 +182,21 @@
       "console": []
     },
     {
-      "id": "Vxnm",
+      "id": "nWHF",
       "code_hash": "9fced129522f128b2445a41fb0b6ef9f",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<marimo-ui-element object-id='qnkX-0' random-id='617ebe64-36f4-7e7a-b0aa-52637cc786ed'><marimo-checkbox data-initial-value='false' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003eyes I read the T&#x27;s and C&#x27;s&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-disabled='false'></marimo-checkbox></marimo-ui-element>"
+            "text/html": "<marimo-ui-element object-id='emfo-0' random-id='91a0c87f-0587-0399-a030-88003b0b1bee'><marimo-checkbox data-initial-value='false' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003eyes I read the T&#x27;s and C&#x27;s&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-disabled='false'></marimo-checkbox></marimo-ui-element>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "DnEU",
-      "code_hash": "810ee48fc0fbee1113b87bbe8ac8bc7d",
+      "id": "iLit",
+      "code_hash": "a0fcc4b93c3d8e31598895d6c687c817",
       "outputs": [
         {
           "type": "data",
@@ -208,33 +208,33 @@
       "console": []
     },
     {
-      "id": "ulZA",
+      "id": "ZHCJ",
       "code_hash": "3a7891c723c1f61d041f293f9ab1c086",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "application/json": "[\"New York\", \"Detroit\"]"
+            "application/json": "[\"Los Angeles\", \"Springfield\"]"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "ecfG",
+      "id": "ROlb",
       "code_hash": "b66abfe0e0c2ef7c545895c12a0a8837",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<marimo-ui-element object-id='DnEU-0' random-id='3d516c8b-5386-d97e-fcb8-997929c1dc60'><marimo-multiselect data-initial-value='[]' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003epick your favorite town&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-options='[&quot;Chicago&quot;,&quot;New York&quot;,&quot;Detroit&quot;,&quot;Springfield&quot;]' data-full-width='false' data-max-selections='2' data-disabled='false'></marimo-multiselect></marimo-ui-element>"
+            "text/html": "<marimo-ui-element object-id='iLit-0' random-id='e0408ebe-48ab-6196-0580-d673e4b7f189'><marimo-multiselect data-initial-value='[]' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003epick your favorite town&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-options='[&quot;Springfield&quot;,&quot;Chicago&quot;,&quot;New York&quot;,&quot;Los Angeles&quot;]' data-full-width='false' data-max-selections='2' data-disabled='false'></marimo-multiselect></marimo-ui-element>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "Pvdt",
+      "id": "qnkX",
       "code_hash": "330835444c8f26c4077ca927eacb3dae",
       "outputs": [
         {
@@ -247,33 +247,33 @@
       "console": []
     },
     {
-      "id": "ZBYS",
+      "id": "TqIu",
       "code_hash": "a398fb77df76e6153df57cd65fd0a7c5",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<marimo-ui-element object-id='Pvdt-0' random-id='6206cb67-a676-b3b4-f5b9-1c24322968e9'><marimo-radio data-initial-value='null' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003eYour favorite bay area band&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-options='[&quot;Grateful Dead&quot;,&quot;Green Day&quot;,&quot;Jefferson Airplane&quot;,&quot;Journey&quot;,&quot;Metallica&quot;,&quot;Petrichor&quot;,&quot;Santana&quot;]' data-inline='false' data-disabled='false'></marimo-radio></marimo-ui-element>"
+            "text/html": "<marimo-ui-element object-id='qnkX-0' random-id='0df27872-4185-e74c-41e1-fd32c03fc2c3'><marimo-radio data-initial-value='null' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003eYour favorite bay area band&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-options='[&quot;Grateful Dead&quot;,&quot;Green Day&quot;,&quot;Jefferson Airplane&quot;,&quot;Journey&quot;,&quot;Metallica&quot;,&quot;Petrichor&quot;,&quot;Santana&quot;]' data-inline='false' data-disabled='false'></marimo-radio></marimo-ui-element>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "aLJB",
+      "id": "Vxnm",
       "code_hash": "45912ed427e8e8057f46824196cd1d42",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<pre class='text-xs'>&#x27;Santana&#x27;</pre>"
+            "text/html": "<pre class='text-xs'>&#x27;Petrichor&#x27;</pre>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "nHfw",
+      "id": "DnEU",
       "code_hash": "756e1ae725fca1b06bbac876215fa892",
       "outputs": [
         {
@@ -286,20 +286,20 @@
       "console": []
     },
     {
-      "id": "xXTn",
+      "id": "ulZA",
       "code_hash": "f11ee89ca4bfbf0f7d195faefd6b5762",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<marimo-ui-element object-id='nHfw-3' random-id='75319eee-b26d-2df7-16f7-25420de229ef'><marimo-dict data-initial-value='{&quot;checkbox&quot;:false,&quot;multiselect&quot;:[],&quot;radio&quot;:null}' data-label='null' data-element-ids='{&quot;nHfw-0&quot;:&quot;checkbox&quot;,&quot;nHfw-1&quot;:&quot;multiselect&quot;,&quot;nHfw-2&quot;:&quot;radio&quot;}'><marimo-json-output data-json-data='{&quot;checkbox&quot;:&quot;text/html:&#92;u003cmarimo-ui-element object-id=&#x27;nHfw-0&#x27; random-id=&#x27;d8a76035-2549-2d2b-859d-751de63bc484&#x27;&#92;u003e&#92;u003cmarimo-checkbox data-initial-value=&#x27;false&#x27; data-label=&#x27;&amp;quot;&amp;#92;u003cspan class=&amp;#92;&amp;quot;markdown prose dark:prose-invert contents&amp;#92;&amp;quot;&amp;#92;u003e&amp;#92;u003cspan class=&amp;#92;&amp;quot;paragraph&amp;#92;&amp;quot;&amp;#92;u003eyes I read the T&amp;#x27;s and C&amp;#x27;s&amp;#92;u003c/span&amp;#92;u003e&amp;#92;u003c/span&amp;#92;u003e&amp;quot;&#x27; data-disabled=&#x27;false&#x27;&#92;u003e&#92;u003c/marimo-checkbox&#92;u003e&#92;u003c/marimo-ui-element&#92;u003e&quot;,&quot;multiselect&quot;:&quot;text/html:&#92;u003cmarimo-ui-element object-id=&#x27;nHfw-1&#x27; random-id=&#x27;5c79d891-e351-419d-e2ab-81e9991c82f7&#x27;&#92;u003e&#92;u003cmarimo-multiselect data-initial-value=&#x27;[]&#x27; data-label=&#x27;&amp;quot;&amp;#92;u003cspan class=&amp;#92;&amp;quot;markdown prose dark:prose-invert contents&amp;#92;&amp;quot;&amp;#92;u003e&amp;#92;u003cspan class=&amp;#92;&amp;quot;paragraph&amp;#92;&amp;quot;&amp;#92;u003epick your favorite town&amp;#92;u003c/span&amp;#92;u003e&amp;#92;u003c/span&amp;#92;u003e&amp;quot;&#x27; data-options=&#x27;[&amp;quot;Chicago&amp;quot;,&amp;quot;New York&amp;quot;,&amp;quot;Detroit&amp;quot;,&amp;quot;Springfield&amp;quot;]&#x27; data-full-width=&#x27;false&#x27; data-max-selections=&#x27;2&#x27; data-disabled=&#x27;false&#x27;&#92;u003e&#92;u003c/marimo-multiselect&#92;u003e&#92;u003c/marimo-ui-element&#92;u003e&quot;,&quot;radio&quot;:&quot;text/html:&#92;u003cmarimo-ui-element object-id=&#x27;nHfw-2&#x27; random-id=&#x27;c75efc8a-a616-6a56-fa3c-15e7d633b1b3&#x27;&#92;u003e&#92;u003cmarimo-radio data-initial-value=&#x27;null&#x27; data-label=&#x27;&amp;quot;&amp;#92;u003cspan class=&amp;#92;&amp;quot;markdown prose dark:prose-invert contents&amp;#92;&amp;quot;&amp;#92;u003e&amp;#92;u003cspan class=&amp;#92;&amp;quot;paragraph&amp;#92;&amp;quot;&amp;#92;u003eYour favorite bay area band&amp;#92;u003c/span&amp;#92;u003e&amp;#92;u003c/span&amp;#92;u003e&amp;quot;&#x27; data-options=&#x27;[&amp;quot;Grateful Dead&amp;quot;,&amp;quot;Green Day&amp;quot;,&amp;quot;Jefferson Airplane&amp;quot;,&amp;quot;Journey&amp;quot;,&amp;quot;Metallica&amp;quot;,&amp;quot;Petrichor&amp;quot;,&amp;quot;Santana&amp;quot;]&#x27; data-inline=&#x27;false&#x27; data-disabled=&#x27;false&#x27;&#92;u003e&#92;u003c/marimo-radio&#92;u003e&#92;u003c/marimo-ui-element&#92;u003e&quot;}' data-value-types='&quot;python&quot;' data-name='&quot;dictionary&quot;'></marimo-json-output></marimo-dict></marimo-ui-element>"
+            "text/html": "<marimo-ui-element object-id='DnEU-3' random-id='237d206a-01ce-1382-dd14-5e87400b3bdc'><marimo-dict data-initial-value='{&quot;checkbox&quot;:false,&quot;multiselect&quot;:[],&quot;radio&quot;:null}' data-label='null' data-element-ids='{&quot;DnEU-0&quot;:&quot;checkbox&quot;,&quot;DnEU-1&quot;:&quot;multiselect&quot;,&quot;DnEU-2&quot;:&quot;radio&quot;}'><marimo-json-output data-json-data='{&quot;checkbox&quot;:&quot;text/html:&#92;u003cmarimo-ui-element object-id=&#x27;DnEU-0&#x27; random-id=&#x27;cad134e5-e1e5-f061-aaf9-ca467d6a68ec&#x27;&#92;u003e&#92;u003cmarimo-checkbox data-initial-value=&#x27;false&#x27; data-label=&#x27;&amp;quot;&amp;#92;u003cspan class=&amp;#92;&amp;quot;markdown prose dark:prose-invert contents&amp;#92;&amp;quot;&amp;#92;u003e&amp;#92;u003cspan class=&amp;#92;&amp;quot;paragraph&amp;#92;&amp;quot;&amp;#92;u003eyes I read the T&amp;#x27;s and C&amp;#x27;s&amp;#92;u003c/span&amp;#92;u003e&amp;#92;u003c/span&amp;#92;u003e&amp;quot;&#x27; data-disabled=&#x27;false&#x27;&#92;u003e&#92;u003c/marimo-checkbox&#92;u003e&#92;u003c/marimo-ui-element&#92;u003e&quot;,&quot;multiselect&quot;:&quot;text/html:&#92;u003cmarimo-ui-element object-id=&#x27;DnEU-1&#x27; random-id=&#x27;2a037bfd-8d36-0826-8fc4-9423483361e0&#x27;&#92;u003e&#92;u003cmarimo-multiselect data-initial-value=&#x27;[]&#x27; data-label=&#x27;&amp;quot;&amp;#92;u003cspan class=&amp;#92;&amp;quot;markdown prose dark:prose-invert contents&amp;#92;&amp;quot;&amp;#92;u003e&amp;#92;u003cspan class=&amp;#92;&amp;quot;paragraph&amp;#92;&amp;quot;&amp;#92;u003epick your favorite town&amp;#92;u003c/span&amp;#92;u003e&amp;#92;u003c/span&amp;#92;u003e&amp;quot;&#x27; data-options=&#x27;[&amp;quot;Springfield&amp;quot;,&amp;quot;Chicago&amp;quot;,&amp;quot;New York&amp;quot;,&amp;quot;Los Angeles&amp;quot;]&#x27; data-full-width=&#x27;false&#x27; data-max-selections=&#x27;2&#x27; data-disabled=&#x27;false&#x27;&#92;u003e&#92;u003c/marimo-multiselect&#92;u003e&#92;u003c/marimo-ui-element&#92;u003e&quot;,&quot;radio&quot;:&quot;text/html:&#92;u003cmarimo-ui-element object-id=&#x27;DnEU-2&#x27; random-id=&#x27;b9dde4bf-afb1-4e3e-cb88-f04b4a74e47b&#x27;&#92;u003e&#92;u003cmarimo-radio data-initial-value=&#x27;null&#x27; data-label=&#x27;&amp;quot;&amp;#92;u003cspan class=&amp;#92;&amp;quot;markdown prose dark:prose-invert contents&amp;#92;&amp;quot;&amp;#92;u003e&amp;#92;u003cspan class=&amp;#92;&amp;quot;paragraph&amp;#92;&amp;quot;&amp;#92;u003eYour favorite bay area band&amp;#92;u003c/span&amp;#92;u003e&amp;#92;u003c/span&amp;#92;u003e&amp;quot;&#x27; data-options=&#x27;[&amp;quot;Grateful Dead&amp;quot;,&amp;quot;Green Day&amp;quot;,&amp;quot;Jefferson Airplane&amp;quot;,&amp;quot;Journey&amp;quot;,&amp;quot;Metallica&amp;quot;,&amp;quot;Petrichor&amp;quot;,&amp;quot;Santana&amp;quot;]&#x27; data-inline=&#x27;false&#x27; data-disabled=&#x27;false&#x27;&#92;u003e&#92;u003c/marimo-radio&#92;u003e&#92;u003c/marimo-ui-element&#92;u003e&quot;}' data-value-types='&quot;python&quot;' data-name='&quot;dictionary&quot;'></marimo-json-output></marimo-dict></marimo-ui-element>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "AjVT",
+      "id": "ecfG",
       "code_hash": "47a45fc63762425ce08f47a7e95acad4",
       "outputs": [
         {
@@ -312,7 +312,7 @@
       "console": []
     },
     {
-      "id": "pHFh",
+      "id": "Pvdt",
       "code_hash": "7a866ceb01f180b07b39635d248d9392",
       "outputs": [
         {
