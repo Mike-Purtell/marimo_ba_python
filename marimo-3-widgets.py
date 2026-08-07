@@ -154,7 +154,7 @@ def _(mo):
                 'Green Day', 'Jefferson Airplane',  'Metallica', 'Grateful Dead', 
                 'Santana','Journey', 'Petrichor'
         ]),
-        label='Your favorite bay area band'
+        label='Your favorite Bay Area band'
     )
     return (radio,)
 
