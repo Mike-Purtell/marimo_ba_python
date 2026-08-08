@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.23.14"
+__generated_with = "0.23.16"
 app = marimo.App()
 
 
@@ -23,16 +23,6 @@ def _(mo):
 
 @app.cell
 def _():
-    import polars as pl
-    import pandas as pd
-
-    print(f'Polars version {pl.__version__}')
-    print(f'Pandas version {pd.__version__}')
-    return
-
-
-@app.cell
-def _():
     # declare X, assign value of 1
     x = 1
     print(f'{x = }')
@@ -42,14 +32,11 @@ def _():
 @app.cell
 def _():
     # declare x, assign value of 3
+    # x = 3
+    # print(f'x = {x}')
     x_1 = 3
-    print(f'x = {x_1}')
+    print(f'x_1 = {x_1}')
     return (x_1,)
-
-
-@app.cell
-def _():
-    return
 
 
 @app.cell(hide_code=True)
@@ -85,8 +72,11 @@ def _(mo):
 
 @app.cell
 def _(mo):
-    best_slider = mo.ui.slider(1, 100, 1, label = 'best slider', value = 25)
-    return (best_slider,)
+    slider_max = 20
+    best_slider = mo.ui.slider(
+        1, slider_max, 1, label = 'best slider', value = 10
+    )
+    return best_slider, slider_max
 
 
 @app.cell
@@ -99,17 +89,14 @@ def _(best_slider, mo):
 
 @app.cell
 def _(best_slider, mo):
+    mo.md('🐱' * best_slider.value)
 
-    # print(' x'*best_slider.value)
-    mo.md('\U0001F530  '*best_slider.value)
     return
 
 
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(r"""
-    ### More Marimo widgets in notebook marimo-3
-    """)
+@app.cell
+def _(best_slider, mo, slider_max):
+    mo.md('🐶 ' * (1 + slider_max - best_slider.value))
     return
 
 

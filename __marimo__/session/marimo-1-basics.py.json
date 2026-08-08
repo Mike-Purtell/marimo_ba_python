@@ -1,7 +1,7 @@
 {
   "version": "1",
   "metadata": {
-    "marimo_version": "0.23.14",
+    "marimo_version": "0.23.16",
     "script_metadata_hash": null
   },
   "cells": [
@@ -32,26 +32,6 @@
       "console": []
     },
     {
-      "id": "vblA",
-      "code_hash": "d5ccef8ea38e05e142f61338a742b6bd",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
-        }
-      ],
-      "console": [
-        {
-          "type": "stream",
-          "name": "stdout",
-          "text": "Polars version 1.42.1\nPandas version 3.0.3\n",
-          "mimetype": "text/plain"
-        }
-      ]
-    },
-    {
       "id": "bkHC",
       "code_hash": "37a5e744bea6f4d23b13b5223083349a",
       "outputs": [
@@ -73,7 +53,7 @@
     },
     {
       "id": "lEQa",
-      "code_hash": "957417f270fc687aeb69578cc6683e23",
+      "code_hash": "39e03f0aac15f3d02dea5e477f7e03b6",
       "outputs": [
         {
           "type": "data",
@@ -86,26 +66,13 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "x = 3\n",
+          "text": "x_1 = 3\n",
           "mimetype": "text/plain"
         }
       ]
     },
     {
       "id": "PKri",
-      "code_hash": null,
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "Xref",
       "code_hash": "e3e61458b05ced8f97ed3b4c90e2c73a",
       "outputs": [
         {
@@ -118,7 +85,7 @@
       "console": []
     },
     {
-      "id": "SFPL",
+      "id": "Xref",
       "code_hash": "f772a87c2127c412dbee32911f003b59",
       "outputs": [
         {
@@ -138,13 +105,26 @@
       ]
     },
     {
-      "id": "BYtC",
+      "id": "SFPL",
       "code_hash": "43e2cfc592b052cca805aa0db78ce4ff",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<marimo-ui-element object-id='BYtC-0' random-id='f269fcdc-4f76-ef44-9cfa-33067b98bcea'><marimo-slider data-initial-value='1' data-label='null' data-start='1' data-stop='10' data-step='1' data-steps='[]' data-debounce='false' data-disabled='false' data-orientation='&quot;horizontal&quot;' data-show-value='false' data-include-input='false' data-full-width='false'></marimo-slider></marimo-ui-element>"
+            "text/html": "<marimo-ui-element object-id='SFPL-0' random-id='cb4b714e-f422-a506-ae94-12d9706f7ec4'><marimo-slider data-initial-value='1' data-label='null' data-start='1' data-stop='10' data-step='1' data-steps='[]' data-debounce='false' data-disabled='false' data-orientation='&quot;horizontal&quot;' data-show-value='false' data-include-input='false' data-full-width='false'></marimo-slider></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "BYtC",
+      "code_hash": "1bc58ac212dc6d7a224144ca33619491",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='BYtC-0' random-id='6dc270d2-b4ab-4c1f-5819-95d2da464d47'><marimo-slider data-initial-value='1' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003ebetter slider&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-start='1' data-stop='10' data-step='1' data-steps='[]' data-debounce='false' data-disabled='false' data-orientation='&quot;horizontal&quot;' data-show-value='false' data-include-input='false' data-full-width='false'></marimo-slider></marimo-ui-element>"
           }
         }
       ],
@@ -152,20 +132,7 @@
     },
     {
       "id": "RGSE",
-      "code_hash": "1bc58ac212dc6d7a224144ca33619491",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/html": "<marimo-ui-element object-id='RGSE-0' random-id='d04d2597-99e4-354d-39f5-2ed989d8aa6f'><marimo-slider data-initial-value='1' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003ebetter slider&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-start='1' data-stop='10' data-step='1' data-steps='[]' data-debounce='false' data-disabled='false' data-orientation='&quot;horizontal&quot;' data-show-value='false' data-include-input='false' data-full-width='false'></marimo-slider></marimo-ui-element>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "Kclp",
-      "code_hash": "4e3905b4e433b61c7e244466cbe07429",
+      "code_hash": "125a96fc0a11008dc0b65efea70f7501",
       "outputs": [
         {
           "type": "data",
@@ -177,39 +144,39 @@
       "console": []
     },
     {
-      "id": "emfo",
+      "id": "Kclp",
       "code_hash": "af3deb49f3e976e47e306835909835bb",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><marimo-ui-element object-id='Kclp-0' random-id='acb1ff21-4b13-5baa-31d3-df2fadcd8e74'><marimo-slider data-initial-value='25' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003ebest slider&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-start='1' data-stop='100' data-step='1' data-steps='[]' data-debounce='false' data-disabled='false' data-orientation='&quot;horizontal&quot;' data-show-value='false' data-include-input='false' data-full-width='false'></marimo-slider></marimo-ui-element> value: 8</span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><marimo-ui-element object-id='RGSE-0' random-id='2cbce228-1856-f8d5-f62f-dfba0a2029f6'><marimo-slider data-initial-value='10' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003ebest slider&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-start='1' data-stop='20' data-step='1' data-steps='[]' data-debounce='false' data-disabled='false' data-orientation='&quot;horizontal&quot;' data-show-value='false' data-include-input='false' data-full-width='false'></marimo-slider></marimo-ui-element> value: 11</span></span>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "Hstk",
-      "code_hash": "1ee4adaaf231aeb8f39e68d5dbecc972",
+      "id": "emfo",
+      "code_hash": "88d9aa82b1602c3fb530cc4b479b8b60",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">\ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  \ud83d\udd30  </span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">\ud83d\udc31\ud83d\udc31\ud83d\udc31\ud83d\udc31\ud83d\udc31\ud83d\udc31\ud83d\udc31\ud83d\udc31\ud83d\udc31\ud83d\udc31\ud83d\udc31</span></span>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "nWHF",
-      "code_hash": "c002adc1978738fe31943dc5490a47fc",
+      "id": "GLdD",
+      "code_hash": "9a6921b57073bdf40e45d01f46ef0b5e",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"more-marimo-widgets-in-notebook-marimo-3\">More Marimo widgets in notebook marimo-3</h3></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">\ud83d\udc36 \ud83d\udc36 \ud83d\udc36 \ud83d\udc36 \ud83d\udc36 \ud83d\udc36 \ud83d\udc36 \ud83d\udc36 \ud83d\udc36 \ud83d\udc36 </span></span>"
           }
         }
       ],
