@@ -29,6 +29,47 @@ def _():
 
 
 @app.cell
+def _(go):
+    def annotate_point(
+        fig, name, color, size, x=None, y=None, ax=None, ay=None, xanchor=None):
+        my_x = x
+        my_y = y
+        if my_x is None:
+            my_x = 0
+        if my_y is None:
+            my_y = 0
+        if xanchor == None:
+            xanchor ='center'
+        my_text = ''
+        if x is None:
+            my_text = f'{name}: {my_y}'
+        elif y is None:
+            my_text = f'{name}: {my_x}'
+        else:
+            my_text = f'{name} ({my_x}, {my_y})'
+        fig.add_trace(
+            go.Scatter(
+                x=[my_x], y=[my_y],
+                mode='markers', marker=dict(size=size, color=color),
+                name=name,
+                showlegend=False,
+            )
+        )
+        fig.add_annotation(
+            x=my_x, y=my_y,
+            text=f'{my_text}',
+            showarrow=True,
+            arrowhead=2,
+            ax=ax,
+            ay=ay,
+            xanchor=xanchor
+        )
+        return fig
+
+    return (annotate_point,)
+
+
+@app.cell
 def _(mo):
     a_number =  mo.ui.number(value=1.0)
     b_number =  mo.ui.number(value=-4.0)
@@ -238,6 +279,7 @@ def _(a, b, c):
 def _(
     a,
     a_sign,
+    annotate_point,
     b,
     c,
     go,
@@ -270,45 +312,13 @@ def _(
     )
     marker_size = 6
     if show_vertex.value == 'Show':
-        fig.add_trace(
-            go.Scatter(
-                x=[h],
-                y=[k],
-                mode='markers',
-                marker=dict(size=marker_size, color='crimson'),
-                name='Vertex',
-                showlegend=False,
-            )
-        )
-        fig.add_annotation(
-            x=h,
-            y=k,
-            text=f'Vertex ({h:.3f}, {k:.3f})',
-            showarrow=True,
-            arrowhead=2,
-            ax=20,
-            ay=a_sign *30,
-        )
+        fig = annotate_point(
+            fig, 'Vertex', 'crimson', 4, x=h, y=k, ax=20, ay=a_sign*30)
+   
     if show_focus.value == 'Show':
-        fig.add_trace(
-            go.Scatter(
-                x=[h],
-                y=[y_focus],
-                mode='markers',
-                marker=dict(size=marker_size, color='crimson'),
-                name='Focus',
-                showlegend=False,
-            )
-        )
-        fig.add_annotation(
-            x=h,
-            y=y_focus,
-            text=f'Focus ({h:.3f}, {y_focus:.3f})',
-            showarrow=True,
-            arrowhead=2,
-            ax=20,
-            ay=-1*a_sign*30,
-        )
+        fig = annotate_point(
+            fig, 'Focus', 'crimson', 4, x=h, y= y_focus, ax=20, ay=-a_sign*30)
+   
     if show_directrix.value == 'Show':
         fig.add_hline(
             y = y_directrix, # color='green',
@@ -335,36 +345,10 @@ def _(
             pass
         
         if has_two_roots:
-            fig.add_trace(
-                go.Scatter(
-                    x=[root1, root2],
-                    y=[0, 0],
-                    mode='markers',
-                    marker=dict(size=marker_size, color='crimson'),
-                    name='Focus',
-                    showlegend=False,
-                )
-            )
-
-            fig.add_annotation(
-                x=root1,
-                y=0,
-                text=f'({root1:.1f}, {0})',
-                showarrow=True,
-                arrowhead=2,
-                ax=-20,
-                ay=a_sign*30,
-            )
-            fig.add_annotation(
-                x=root2,
-                y=0,
-                text=f'({root2:.1f}, {0})',
-                showarrow=True,
-                arrowhead=2,
-                ax=20,
-                ay=a_sign*30,
-            )
-
+            fig = annotate_point(
+                fig, 'Root 1', 'crimson', 2, x=root1, ax=-50, ay=0, xanchor='right')
+            fig = annotate_point(
+                fig, 'Root 2', 'crimson', 2, x=root2, ax=50, ay=0, xanchor='left')
 
         # if_has_no_roots:
         #     pass   
@@ -406,160 +390,6 @@ def _():
 
 @app.cell
 def _():
-    # df_cal = (
-    #     pl.read_excel('assets/california_counties_wikipedia.xlsx')
-    #     .lazy()
-    #     .with_columns(
-    #         # Normalize to CA county FIPS format (06001, 06013, ...)
-    #         pl.concat_str([
-    #             pl.lit('06'),
-    #             pl.col('FIPS').cast(pl.Int64).cast(pl.String).str.zfill(3)
-    #         ]).alias('FIPS'),
-    #         pl.col('Established').cast(pl.UInt16),
-    #         pl.col('Pop').cast(pl.UInt32),
-    #         pl.col('Area_Sq_Mile').cast(pl.UInt16), 
-    #         pl.col('Area_Sq_KM').cast(pl.UInt16),
-    #         pl.col('County').str.strip_chars()
-    #     )
-    #     .with_columns(
-    #         Pop_Density_Sq_Mile = 
-    #             (pl.col('Pop')/pl.col('Area_Sq_Mile'))
-    #             .round(1),
-    #         Pop_Density_Sq_KM = (pl.col('Pop')/pl.col('Area_Sq_KM')).round(1)
-    #     )
-    #     .with_columns(
-    #         Pop_Rank = pl.col('Pop').rank(method='min', descending=True),
-    #         Pop_Density_Rank = pl.col('Pop_Density_Sq_Mile')
-    #                             .rank(method='min', descending=True),
-    #         Area_Rank = pl.col('Area_Sq_Mile').rank(method='min', descending=True),        
-    #     )
-    #     .sort('County', descending=False)
-    #     .select([
-    #         'County', 'Seat', 'Established', 
-    #         'Pop',  'Pop_Rank', 
-    #         'Area_Sq_Mile', 'Area_Sq_KM', 'Area_Rank',
-    #         'Pop_Density_Sq_Mile', 'Pop_Density_Sq_KM', 'Pop_Density_Rank',   
-    #         'Formation', 'Etymology', 'FIPS',
-    #     ])
-    #     .collect()
-    # )
-    # print(list(df_cal.columns))
-    # df_cal
-    return
-
-
-@app.cell
-def _():
-    # print(f"{df_cal.get_column('Pop').sum() = :,}")
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(r"""
-    ### Select a Data Viz parameter
-    California has 58 Counties. Pick one of 3 demographics to be displayed in top 10 and bottom 10 horizontal bar charts
-    """)
-    return
-
-
-@app.cell
-def _():
-    # demo = mo.ui.multiselect(
-    #     ['Population', 'Population Density', 'Area'],
-    #     max_selections=1,
-    #     full_width=True,
-    # )
-    return
-
-
-@app.cell
-def _():
-    # mo.center(demo)
-    return
-
-
-@app.cell
-def _():
-    # demo_view = demo.value[0] if demo.value else None
-    return
-
-
-@app.cell
-def _():
-    # demo_view
-    return
-
-
-@app.cell
-def _():
-    ### Marimo with Plotly
-    return
-
-
-@app.cell
-def _():
-    # print(f'display top 10 and bottom 10 charts by county {demo_view}')
-    # fig1 = fig2 = go.Figure()
-
-    # if demo_view == 'Population':
-    #     fig1 = px.bar(
-    #         df_cal.sort('Pop_Rank', descending=True).tail(10),
-    #         x='Pop',
-    #         y='County', 
-    #         title = f'Top 10',subtitle = demo_view,
-    #     )
-    #     fig2 = px.bar(
-    #         df_cal.sort('Pop_Rank', descending=True).head(10),
-    #         x='Pop',
-    #         y='County',
-    #         title = f'Bottom 10', subtitle = demo_view,
-    #     )
-
-    # if demo_view == 'Population Density':
-    #     fig1 = px.bar(
-    #         df_cal.sort('Pop_Density_Sq_Mile', descending=False).tail(10),
-    #         x='Pop_Density_Sq_Mile',
-    #         y='County', 
-    #         title = f'Top 10',subtitle = demo_view,
-    #     )
-    #     fig2 = px.bar(
-    #         df_cal.sort('Pop_Density_Sq_Mile', descending=False).head(10),
-    #         x='Pop_Density_Sq_Mile',
-    #         y='County',
-    #         title = f'Bottom 10', subtitle = demo_view,
-    #     )
-
-    # if demo_view == 'Area':
-    #     fig1 = px.bar(
-    #         df_cal.sort('Area_Sq_Mile', descending=False).tail(10),
-    #         x='Area_Sq_Mile',
-    #         y='County', 
-    #         title = f'Top 10',subtitle = demo_view,
-    #     )
-    #     fig2 = px.bar(
-    #         df_cal.sort('Area_Sq_Mile', descending=False).head(10),
-    #         x='Area_Sq_Mile',
-    #         y='County',
-    #         title = f'Bottom 10', subtitle = demo_view,
-    #     )
-    # # Update layout to set custom height and width, offset y-labels from bars
-    # w = 400
-    # h = 400
-    # fig1.update_layout(width=w, height=h, yaxis=dict(ticklabelstandoff=10))
-    # fig2.update_layout(width=w, height=h, yaxis=dict(ticklabelstandoff=10))
-
-    # # Wrap figures in mo.ui.plotly for reactive support
-    # fig1_ui = mo.ui.plotly(fig1)
-    # fig2_ui = mo.ui.plotly(fig2)
-    # # Arrange them side‑by‑side in an HStack
-    # layout = mo.hstack(
-    #     [fig1_ui, fig2_ui],
-    #     widths="equal"  # Equal width for both
-    # )
-
-    # # Display the layout
-    # layout
     return
 
 
