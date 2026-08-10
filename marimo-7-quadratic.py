@@ -42,11 +42,11 @@ def _(go):
             xanchor ='center'
         my_text = ''
         if x is None:
-            my_text = f'{name}: {my_y}'
+            my_text = f'{name}: {my_y:.3f}'
         elif y is None:
-            my_text = f'{name}: {my_x}'
+            my_text = f'{name}: {my_x:.3f}'
         else:
-            my_text = f'{name} ({my_x}, {my_y})'
+            my_text = f'{name} ({my_x:.3f}, {my_y:.3f})'
         fig.add_trace(
             go.Scatter(
                 x=[my_x], y=[my_y],
@@ -73,7 +73,7 @@ def _(go):
 def _(mo):
     a_number =  mo.ui.number(value=1.0)
     b_number =  mo.ui.number(value=-4.0)
-    c_number =  mo.ui.number(value=4.0)
+    c_number =  mo.ui.number(value=3.0)
     return a_number, b_number, c_number
 
 
@@ -92,16 +92,6 @@ def _(a_number, b_number, c_number, mo):
         c_number
     ])
     return a_stack, b_stack, c_stack
-
-
-@app.cell
-def _(a_stack, b_stack, c_stack, mo):
-    mo.hstack([
-         a_stack, 
-         b_stack, 
-         c_stack
-    ])
-    return
 
 
 @app.cell
@@ -164,47 +154,22 @@ def _(a, a_sign, b, c):
 
 @app.cell
 def _(mo):
-    show_grid = mo.ui.radio(label = 'Gridlines',options=['Show','Hide'], value='Hide')
-    show_tick_labels  = mo.ui.radio(label = 'Tick Labels',options=['Show','Hide'], value='Hide')
-    show_vertex = mo.ui.radio(label = 'Vertex',options=['Show','Hide'], value='Hide')
-    show_focus = mo.ui.radio(label = 'Focus',options=['Show','Hide'], value='Hide')
-    show_directrix = mo.ui.radio(label = 'Directrix',options=['Show','Hide'], value='Hide')
-    show_roots = mo.ui.radio(label = 'Roots',options=['Show','Hide'], value='Hide')
-    return (
-        show_directrix,
-        show_focus,
-        show_grid,
-        show_roots,
-        show_tick_labels,
-        show_vertex,
-    )
+    show_grid = mo.ui.checkbox(value=False, label = 'Show Grid')
+    show_vertex = mo.ui.checkbox(value=False, label = 'Vertex')
+    show_focus = mo.ui.checkbox(value=False, label = 'Focus')
+    show_directrix = mo.ui.checkbox(value=False,label = 'Directrix')
+    show_roots = mo.ui.checkbox(value=False,label = 'Roots')
+    return show_directrix, show_focus, show_grid, show_roots, show_vertex
 
 
 @app.cell
-def _(
-    mo,
-    show_directrix,
-    show_focus,
-    show_grid,
-    show_roots,
-    show_tick_labels,
-    show_vertex,
-):
-    mo.hstack([
-        show_grid,
-        show_tick_labels,
-        show_vertex,
-        show_focus,
-        show_directrix,
-        show_roots
-    ])
-    return
-
-
-@app.cell
-def _(show_focus, show_vertex):
+def _(show_directrix, show_focus, show_grid, show_roots, show_vertex):
+    print(f'{show_grid.value = }')
     print(f'{show_vertex.value = }')
     print(f'{show_focus.value = }')
+    print(f'{show_directrix.value = }')
+    print(f'{show_roots.value = }')
+
     return
 
 
@@ -247,7 +212,7 @@ def _(a, h, y_focus):
 
 @app.cell
 def _(a, b, c, width, x_focus, x_left, x_right):
-    # create a dataframe, 1000 points before vertex and 1000 points after
+    # create a data with 1000 points before vertex and 1000 points after
     n = 1000
     x_step = (x_right-x_left)/(n/10)
     x_start = x_focus - (5 * width)
@@ -279,21 +244,24 @@ def _(a, b, c):
 def _(
     a,
     a_sign,
+    a_stack,
     annotate_point,
     b,
+    b_stack,
     c,
+    c_stack,
     go,
     h,
     has_one_root,
     has_two_roots,
     k,
+    mo,
     root1,
     root2,
     show_directrix,
     show_focus,
     show_grid,
     show_roots,
-    show_tick_labels,
     show_vertex,
     x_vals,
     y_directrix,
@@ -311,15 +279,15 @@ def _(
         title = f'{a}x<sup>2</sup> + {b}x + {c}'
     )
     marker_size = 6
-    if show_vertex.value == 'Show':
+    if show_vertex.value:
         fig = annotate_point(
             fig, 'Vertex', 'crimson', 4, x=h, y=k, ax=20, ay=a_sign*30)
    
-    if show_focus.value == 'Show':
+    if show_focus.value:
         fig = annotate_point(
             fig, 'Focus', 'crimson', 4, x=h, y= y_focus, ax=20, ay=-a_sign*30)
    
-    if show_directrix.value == 'Show':
+    if show_directrix.value:
         fig.add_hline(
             y = y_directrix, # color='green',
             line_dash="dot",
@@ -331,16 +299,21 @@ def _(
         max_y_val = max(y_vals)
         min_y_val = min(y_vals)
         span_y_vals = abs(max_y_val - min_y_val)
-        if a_sign == 1:
-            y_max = max_y_val + (0.1 * span_y_vals)
-            y_min = min_y_val - 2* abs(y_focus - y_directrix)
-        else:
-            y_max = max_y_val + 2* abs(y_focus -y_directrix)
-            y_min = min_y_val - (0.1 * span_y_vals)
-    
+        y_max = y_directrix + a_sign*(3*abs(y_focus-y_directrix))
+        y_min = y_directrix - abs(k - y_directrix)  
         fig.update_yaxes(range = [y_min, y_max])
+    else:
+        fig.update_yaxes(
+            range = [
+                y_directrix, 
+                y_directrix + (3*(y_focus-y_directrix))
+            ]
+        )
 
-    if show_roots.value == 'Show':
+    print(f'{y_directrix = }')
+    print(f'{y_focus = }')
+
+    if show_roots.value:
         if has_one_root: # if only one root, it is the vertex
             pass
         
@@ -353,33 +326,56 @@ def _(
         # if_has_no_roots:
         #     pass   
 
-    if show_grid.value == 'Hide':
-        fig.update_xaxes(showgrid=False)
-        fig.update_yaxes(showgrid=False)
+    if show_grid.value:
+        fig.update_xaxes(showgrid=True, visible=True)
+        fig.update_yaxes(showgrid=True, visible=True)
     else:
-        fig.update_xaxes(showgrid=True)
-        fig.update_yaxes(showgrid=True)
+        fig.update_xaxes(showgrid=False, visible=False)
+        fig.update_yaxes(showgrid=False, visible=False)
 
+   
+    # fig.update_layout(
+    #     xaxis=dict(scaleanchor="y"),  # Link x-axis scale to y-axis
+    #     yaxis=dict(scaleanchor="x"),  # Optional: ensures bidirectional link
+    # )
 
-    if show_tick_labels.value == 'Hide':
-        fig.update_xaxes(visible=False)
-        fig.update_yaxes(visible=False)
-    else:
-        fig.update_xaxes(visible=True)
-        fig.update_yaxes(visible=True)
-    
+    mo.vstack([
+        mo.hstack([
+             a_stack, 
+             b_stack, 
+             c_stack
+        ]),
 
-
-    return (fig,)
+        mo.hstack([
+            mo.ui.plotly(fig),
+            mo.vstack([
+                show_grid,
+                show_vertex,
+                show_focus,
+                show_directrix,
+                show_roots
+                ],
+            ),
+        ],
+        widths=[3,1])
+    ])
+    return
 
 
 @app.cell
-def _(fig, mo):
-    fig.update_layout(
-        xaxis=dict(scaleanchor="y"),  # Link x-axis scale to y-axis
-        yaxis=dict(scaleanchor="x"),  # Optional: ensures bidirectional link
-    )
-    mo.ui.plotly(fig)
+def _():
+
+
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
     return
 
 
