@@ -23,6 +23,7 @@ def _():
 @app.cell
 def _():
     import plotly.graph_objects as go
+    import polars as pl
     import math
 
     return go, math
@@ -49,9 +50,9 @@ def _(go):
             xanchor ='center'
         my_text = ''
         if x is None:
-            my_text = f'{name}: {my_y:.3f}'
+            my_text = f'{name} {my_y:.3f}'
         elif y is None:
-            my_text = f'{name}: {my_x:.3f}'
+            my_text = f'{name} {my_x:.3f}'
         else:
             my_text = f'{name} ({my_x:.3f}, {my_y:.3f})'
         fig.add_trace(
@@ -83,7 +84,7 @@ def _(go):
         # Ensure the input is a number
         if not isinstance(number, (int, float)):
             raise TypeError("Input must be an integer or float.")
-    
+
         return number > 0
 
     return (annotate_point,)
@@ -95,6 +96,16 @@ def _(mo):
     b_number =  mo.ui.number(value=-4.0)
     c_number =  mo.ui.number(value=3.0)
     return a_number, b_number, c_number
+
+
+@app.cell
+def _(a_number, b_number, c_number):
+    a = a_number.value
+    a_sign = 1 if a > 0 else -1 # 1 of parabola opens upward, -1 if downward
+
+    b = b_number.value
+    c = c_number.value
+    return a, a_sign, b, c
 
 
 @app.cell
@@ -112,16 +123,6 @@ def _(a_number, b_number, c_number, mo):
         c_number
     ])
     return a_stack, b_stack, c_stack
-
-
-@app.cell
-def _(a_number, b_number, c_number):
-    a = a_number.value
-    b = b_number.value
-    c = c_number.value
-    a = 0.001 if abs(a_number.value) < 0.001 else a_number.value
-    a_sign = 1 if a > 0 else -1 # 1 of parabola opens upward, -1 if downward
-    return a, a_sign, b, c
 
 
 @app.cell
@@ -147,6 +148,14 @@ def _(a, b, c, has_no_roots, has_one_root, has_two_roots, math):
     root = None
     root1 = None
     root2 = None
+    if a == 0:
+        if b == 0:
+            print('No root: this is not a quadratic equation and does not intersect y = 0')
+        else:
+            root = -c / b
+            print(f'Linear equation, one root, intersects (0, {root:.3f})')
+    
+
     if has_one_root:
         root = -b/(2*a)
     if has_two_roots:
@@ -243,7 +252,6 @@ def _(a, b, c, width, x_focus, x_left, x_right):
 @app.cell
 def _(a, b, c):
     y_directrix = c - ((b**2)/(4*a)) - (1/(4*a)) #   k - a
-
     return (y_directrix,)
 
 
@@ -293,12 +301,14 @@ def _(
         my_subtitle = f'Two Roots at x = {root1:.1f}, {root2:.1f}'
     else:
         my_subtitle = 'No Real Roots'
-    
+
     a_expression = f'x<sup>2</sup> ' if a == 1 else f'{a}x<sup>2</sup> '
 
     b_expression = '' # intialize
     if b_number.value == 1:
         b_expression = f'+ x '
+    elif b_number.value == 0:
+        b_expression = ''
     else:
         if b_number.value  > 0.0:
             b_expression = f'+ {b}x '
@@ -319,7 +329,7 @@ def _(
     #     my_title = f'x<sup>2</sup> + {b}x + {c}' + a_espression
     # else:
     #     my_title = f'{a}x<sup>2</sup> + {b}x + {c}' + a_espression
-    
+
     fig.update_layout(
         title=dict(
             text=my_title,
@@ -366,9 +376,9 @@ def _(
 
         if has_two_roots:
             fig = annotate_point(
-                fig, 'Root 1', 'crimson', 2, x=root1, ax=-50, ay=0, xanchor='right')
+                fig, 'Root 1<br>', 'crimson', 2, x=root1, ax=-50, ay=0, xanchor='right')
             fig = annotate_point(
-                fig, 'Root 2', 'crimson', 2, x=root2, ax=50, ay=0, xanchor='left')
+                fig, 'Root 2<br>', 'crimson', 2, x=root2, ax=50, ay=0, xanchor='left')
 
         # if_has_no_roots:
         #     pass   
