@@ -34,10 +34,17 @@ def _(go):
         fig, name, color, size, x=None, y=None, ax=None, ay=None, xanchor=None):
         my_x = x
         my_y = y
+        my_ax = ax
+        my_ay = ay
         if my_x is None:
             my_x = 0
         if my_y is None:
             my_y = 0
+        if my_ax is None:
+            my_ax = 0
+        if my_ay is None:
+            my_ay = 0
+
         if xanchor == None:
             xanchor ='center'
         my_text = ''
@@ -60,11 +67,24 @@ def _(go):
             text=f'{my_text}',
             showarrow=True,
             arrowhead=2,
-            ax=ax,
-            ay=ay,
+            arrowwidth=3,
+            arrowcolor='white',
+            ax=my_ax,
+            ay=my_ay,
             xanchor=xanchor
         )
         return fig
+
+    def is_positive(number):
+        """
+        Returns True if the number is positive, False otherwise.
+        Works for integers and floats.
+        """
+        # Ensure the input is a number
+        if not isinstance(number, (int, float)):
+            raise TypeError("Input must be an integer or float.")
+    
+        return number > 0
 
     return (annotate_point,)
 
@@ -99,6 +119,7 @@ def _(a_number, b_number, c_number):
     a = a_number.value
     b = b_number.value
     c = c_number.value
+    a = 0.001 if abs(a_number.value) < 0.001 else a_number.value
     a_sign = 1 if a > 0 else -1 # 1 of parabola opens upward, -1 if downward
     return a, a_sign, b, c
 
@@ -114,11 +135,10 @@ def _(a, b, c):
         has_one_root = True
     else:
         has_two_roots = True
-    
+
     print(f'{has_two_roots = }')
     print(f'{has_one_root = }')
     print(f'{has_no_roots = }')
-    
     return has_no_roots, has_one_root, has_two_roots
 
 
@@ -143,7 +163,7 @@ def _(a, b, c, has_no_roots, has_one_root, has_two_roots, math):
         print(f'One root, intersects (0, {root})')
     if has_two_roots:
         print(f'Two root, intersects (0, {root1:.3f}), (0, {root2:.3f}')
-    return root1, root2
+    return root, root1, root2
 
 
 @app.cell
@@ -159,18 +179,15 @@ def _(mo):
     show_focus = mo.ui.checkbox(value=False, label = 'Focus')
     show_directrix = mo.ui.checkbox(value=False,label = 'Directrix')
     show_roots = mo.ui.checkbox(value=False,label = 'Roots')
-    return show_directrix, show_focus, show_grid, show_roots, show_vertex
-
-
-@app.cell
-def _(show_directrix, show_focus, show_grid, show_roots, show_vertex):
-    print(f'{show_grid.value = }')
-    print(f'{show_vertex.value = }')
-    print(f'{show_focus.value = }')
-    print(f'{show_directrix.value = }')
-    print(f'{show_roots.value = }')
-
-    return
+    scale_xy = mo.ui.checkbox(value=False,label = 'Scale_XY')
+    return (
+        scale_xy,
+        show_directrix,
+        show_focus,
+        show_grid,
+        show_roots,
+        show_vertex,
+    )
 
 
 @app.cell
@@ -220,23 +237,13 @@ def _(a, b, c, width, x_focus, x_left, x_right):
 
     x_vals = [x_start + i * x_step for i in range(n+1)] 
     y_vals = [a*x*x + b*x + c for x in x_vals]
-
-    print(x_vals)
-    print(y_vals)
     return x_vals, y_vals
-
-
-@app.cell
-def _():
-    # horizontal directrix line
-    return
 
 
 @app.cell
 def _(a, b, c):
     y_directrix = c - ((b**2)/(4*a)) - (1/(4*a)) #   k - a
 
-    print(f'{y_directrix = }')
     return (y_directrix,)
 
 
@@ -247,6 +254,7 @@ def _(
     a_stack,
     annotate_point,
     b,
+    b_number,
     b_stack,
     c,
     c_stack,
@@ -256,13 +264,17 @@ def _(
     has_two_roots,
     k,
     mo,
+    root,
     root1,
     root2,
+    scale_xy,
     show_directrix,
     show_focus,
     show_grid,
     show_roots,
     show_vertex,
+    width,
+    x_focus,
     x_vals,
     y_directrix,
     y_focus,
@@ -275,17 +287,59 @@ def _(
                 showlegend=False
         )
     )
+    if has_one_root:
+        my_subtitle = f'One Root at x = {root:.1f}'
+    elif has_two_roots:
+        my_subtitle = f'Two Roots at x = {root1:.1f}, {root2:.1f}'
+    else:
+        my_subtitle = 'No Real Roots'
+    
+    a_expression = f'x<sup>2</sup> ' if a == 1 else f'{a}x<sup>2</sup> '
+
+    b_expression = '' # intialize
+    if b_number.value == 1:
+        b_expression = f'+ x '
+    else:
+        if b_number.value  > 0.0:
+            b_expression = f'+ {b}x '
+        else:
+            b_expression = f'- {abs(b)}x '
+
+    # b# _expression = f'+ {b}x ' if b > 0 else f'- {abs(b)}x '
+
+    c_expression = f'+ {c} ' if c > 0 else f'- {abs(c)} '
+
+    my_title = f'{a_expression} {b_expression} {c_expression}'
+    print(f'{a_expression = }')
+    print(f'{b_expression = }')
+    print(f'{c_expression = }')
+    print(f'{my_title = }')
+
+    # if a == 1:
+    #     my_title = f'x<sup>2</sup> + {b}x + {c}' + a_espression
+    # else:
+    #     my_title = f'{a}x<sup>2</sup> + {b}x + {c}' + a_espression
+    
     fig.update_layout(
-        title = f'{a}x<sup>2</sup> + {b}x + {c}'
+        title=dict(
+            text=my_title,
+            x=0.5,
+            xanchor='center',
+            font=dict(family='Arial, sans-serif', size=26, color='white'),
+            subtitle=dict(
+                text=my_subtitle,
+                font=dict(family='Arial, sans-serif', size=15, color='dimgray'),
+            ),
+        ),
     )
     marker_size = 6
     if show_vertex.value:
         fig = annotate_point(
-            fig, 'Vertex', 'crimson', 4, x=h, y=k, ax=20, ay=a_sign*30)
+            fig, 'Vertex', 'crimson', 4, x=h, y=k, ax=50, ay=a_sign*30)
    
     if show_focus.value:
         fig = annotate_point(
-            fig, 'Focus', 'crimson', 4, x=h, y= y_focus, ax=20, ay=-a_sign*30)
+            fig, 'Focus', 'crimson', 4, x=h, y=y_focus, ax=50, ay=-a_sign*30)
    
     if show_directrix.value:
         fig.add_hline(
@@ -296,27 +350,20 @@ def _(
             annotation_font_size=14,
             annotation_font_color="blue"
         )
-        max_y_val = max(y_vals)
-        min_y_val = min(y_vals)
-        span_y_vals = abs(max_y_val - min_y_val)
-        y_max = y_directrix + a_sign*(3*abs(y_focus-y_directrix))
-        y_min = y_directrix - abs(k - y_directrix)  
-        fig.update_yaxes(range = [y_min, y_max])
-    else:
-        fig.update_yaxes(
-            range = [
-                y_directrix, 
-                y_directrix + (3*(y_focus-y_directrix))
-            ]
-        )
 
+    print(f'{show_grid.value = }')
+    print(f'{show_vertex.value = }')
+    print(f'{show_focus.value = }')
+    print(f'{show_directrix.value = }')
+    print(f'{show_roots.value = }')
     print(f'{y_directrix = }')
     print(f'{y_focus = }')
 
     if show_roots.value:
         if has_one_root: # if only one root, it is the vertex
-            pass
-        
+            fig = annotate_point(
+                fig, 'Root 1', 'crimson', 2, x=root, ax=-50, ay=0, xanchor='right')
+
         if has_two_roots:
             fig = annotate_point(
                 fig, 'Root 1', 'crimson', 2, x=root1, ax=-50, ay=0, xanchor='right')
@@ -333,11 +380,31 @@ def _(
         fig.update_xaxes(showgrid=False, visible=False)
         fig.update_yaxes(showgrid=False, visible=False)
 
-   
-    # fig.update_layout(
-    #     xaxis=dict(scaleanchor="y"),  # Link x-axis scale to y-axis
-    #     yaxis=dict(scaleanchor="x"),  # Optional: ensures bidirectional link
-    # )
+
+
+    max_y_val = max(y_vals)
+    min_y_val = min(y_vals)
+    span_y_vals = abs(max_y_val - min_y_val)
+    y_range_max = y_directrix + a_sign*(3*abs(y_focus-y_directrix))
+    y_range_min = y_directrix - (a_sign*0.1*abs(k - y_directrix))
+    x_range_max = x_focus + (2 * width)
+    x_range_min = x_focus - (2 * width)
+
+    print(f'{y_range_min = }')
+    print(f'{y_range_max = }')
+    print(f'{x_range_min = }')
+    print(f'{x_range_max = }')
+
+
+    if scale_xy.value:
+        fig.update_layout(
+            xaxis=dict(scaleanchor="y"),  # Link x-axis scale to y-axis
+            yaxis=dict(scaleanchor="x"),  # Optional: ensures bidirectional link
+        )
+        fig.update_xaxes(range = [x_range_min, x_range_max])
+    else:  
+        fig.update_yaxes(range = sorted([y_range_min, y_range_max],reverse=False))
+        fig.update_xaxes(range = [x_range_min, x_range_max])
 
     mo.vstack([
         mo.hstack([
@@ -353,7 +420,8 @@ def _(
                 show_vertex,
                 show_focus,
                 show_directrix,
-                show_roots
+                show_roots,
+                scale_xy
                 ],
             ),
         ],
@@ -362,30 +430,13 @@ def _(
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo):
+    _df = mo.sql(
+        f"""
 
-
-    return
-
-
-@app.cell
-def _():
-    return
-
-
-@app.cell
-def _():
-    return
-
-
-@app.cell
-def _():
-    return
-
-
-@app.cell
-def _():
+        """
+    )
     return
 
 
