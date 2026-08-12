@@ -76,16 +76,6 @@ def _(go):
         )
         return fig
 
-    def is_positive(number):
-        """
-        Returns True if the number is positive, False otherwise.
-        Works for integers and floats.
-        """
-        # Ensure the input is a number
-        if not isinstance(number, (int, float)):
-            raise TypeError("Input must be an integer or float.")
-
-        return number > 0
 
     return (annotate_point,)
 
@@ -101,11 +91,14 @@ def _(mo):
 @app.cell
 def _(a_number, b_number, c_number):
     a = a_number.value
+    a_legal = False
+    if abs(a) > 0:
+        a_legal = True
     a_sign = 1 if a > 0 else -1 # 1 of parabola opens upward, -1 if downward
 
     b = b_number.value
     c = c_number.value
-    return a, a_sign, b, c
+    return a, a_legal, a_sign, b, c
 
 
 @app.cell
@@ -154,7 +147,7 @@ def _(a, b, c, has_no_roots, has_one_root, has_two_roots, math):
         else:
             root = -c / b
             print(f'Linear equation, one root, intersects (0, {root:.3f})')
-    
+
 
     if has_one_root:
         root = -b/(2*a)
@@ -200,22 +193,27 @@ def _(mo):
 
 
 @app.cell
-def _(a, b, c):
+def _(a, a_legal, b, c):
     # Conventional vertex coordiates are h, k. For upward facing parabolas, the vertex
     # is the minimum point on the y-axis, or maximum for downward facing parabola
-    h = -b/(2*a)
-    k = c - ((b**2)/(4*a))
-    print(f'vertex at  ({h}, {k})')
-    return h, k
+    print(f'{a_legal = }')
+    if a_legal:
+        h = -b/(2*a)
+        k = c - ((b**2)/(4*a))
+        x_focus = h
+        y_focus = c - ((b**2)/(4*a)) + (1/(4*a))
+        print(f'vertex at  ({h}, {k})')
+    else:
+        print('illeval value of a, cannot be 0')
+    return h, k, x_focus, y_focus
 
 
 @app.cell
-def _(a, b, c, h):
+def _(x_focus, y_focus):
     # focus
-    x_focus = h
-    y_focus = c - ((b**2)/(4*a)) + (1/(4*a)) # k + 1/(4*a)
+
     print(f'focus at  ({x_focus}, {y_focus})')
-    return x_focus, y_focus
+    return
 
 
 @app.cell
@@ -265,6 +263,7 @@ def _(
     b_number,
     b_stack,
     c,
+    c_number,
     c_stack,
     go,
     h,
@@ -288,6 +287,7 @@ def _(
     y_focus,
     y_vals,
 ):
+
     fig = go.Figure(
             data=go.Scatter(
                 x=x_vals,
@@ -302,22 +302,25 @@ def _(
     else:
         my_subtitle = 'No Real Roots'
 
-    a_expression = f'x<sup>2</sup> ' if a == 1 else f'{a}x<sup>2</sup> '
+    a_expression = f'x<sup>2</sup>' if a == 1 else f'{a}x<sup>2</sup>'
 
     b_expression = '' # intialize
     if b_number.value == 1:
-        b_expression = f'+ x '
+        b_expression = f' + x'
     elif b_number.value == 0:
         b_expression = ''
     else:
         if b_number.value  > 0.0:
-            b_expression = f'+ {b}x '
+            b_expression = f' + {b}x'
         else:
-            b_expression = f'- {abs(b)}x '
-
-    # b# _expression = f'+ {b}x ' if b > 0 else f'- {abs(b)}x '
-
-    c_expression = f'+ {c} ' if c > 0 else f'- {abs(c)} '
+            b_expression = f' - {abs(b)}x'
+    c_expression = ''
+    if c_number.value == 0:
+        c_expression = ''
+    elif c_number.value > 0:
+        c_expression = f' + {c}'
+    elif c_number.value < 0:
+        c_expression = f' - {abs(c)}'
 
     my_title = f'{a_expression} {b_expression} {c_expression}'
     print(f'{a_expression = }')
@@ -376,9 +379,11 @@ def _(
 
         if has_two_roots:
             fig = annotate_point(
-                fig, 'Root 1<br>', 'crimson', 2, x=root1, ax=-50, ay=0, xanchor='right')
+                fig, 'Root 1<br>', 'crimson', 2, x=root1, 
+                ax=-50, ay=0, xanchor='right')
             fig = annotate_point(
-                fig, 'Root 2<br>', 'crimson', 2, x=root2, ax=50, ay=0, xanchor='left')
+                fig, 'Root 2<br>', 'crimson', 2, x=root2, 
+                ax=50, ay=0, xanchor='left')
 
         # if_has_no_roots:
         #     pass   
