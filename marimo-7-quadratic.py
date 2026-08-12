@@ -256,6 +256,7 @@ def _(a, b, c):
 @app.cell
 def _(
     a,
+    a_number,
     a_sign,
     a_stack,
     annotate_point,
@@ -304,16 +305,27 @@ def _(
 
     a_expression = f'x<sup>2</sup>' if a == 1 else f'{a}x<sup>2</sup>'
 
+    a_expression = ''
+    if a_number.value == -1:
+        a_expression = f'-x<sup>2</sup>'
+    elif a_number.value == 1:
+        a_expression = f'x<sup>2</sup>'
+    else:
+        a_expression = f'{a}x<sup>2</sup>'
+    
+
     b_expression = '' # intialize
-    if b_number.value == 1:
+    if b_number.value == -1:
+        b_expression = f' - x'
+    elif b_number.value == 1:
         b_expression = f' + x'
     elif b_number.value == 0:
         b_expression = ''
+    elif b_number.value  > 0.0:
+        b_expression = f' + {b}x'
     else:
-        if b_number.value  > 0.0:
-            b_expression = f' + {b}x'
-        else:
-            b_expression = f' - {abs(b)}x'
+        b_expression = f' - {abs(b)}x'
+    
     c_expression = ''
     if c_number.value == 0:
         c_expression = ''
@@ -327,11 +339,6 @@ def _(
     print(f'{b_expression = }')
     print(f'{c_expression = }')
     print(f'{my_title = }')
-
-    # if a == 1:
-    #     my_title = f'x<sup>2</sup> + {b}x + {c}' + a_espression
-    # else:
-    #     my_title = f'{a}x<sup>2</sup> + {b}x + {c}' + a_espression
 
     fig.update_layout(
         title=dict(
