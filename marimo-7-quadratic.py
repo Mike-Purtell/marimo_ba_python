@@ -29,6 +29,19 @@ def _():
     return go, math
 
 
+app._unparsable_cell(
+    r"""
+    TODO:
+    move the Directrix annotation to above (when a is positive) or below (when a is negative) the directrix line. This replaces that annotation built into hline which is not very flexible on the placement
+
+    implement elegand solution to divide by zero errors that happen when value entered for a is 0
+
+    add buttons for 5 directrix dispaly that each add a line from point on the parabola to the focus, and a perpendicular line from same point to the directrix. Calculate the length of each line and place that near the line. Both lines from same point, one to the focus and one to the directrix should have the same length
+    """,
+    column=None, disabled=True, hide_code=False, name="_"
+)
+
+
 @app.cell
 def _(go):
     def annotate_point(
@@ -296,25 +309,26 @@ def _(
                 showlegend=False
         )
     )
+
     if has_one_root:
-        my_subtitle = f'One Root at x = {root:.1f}'
+        root_str =f"{root:.6f}".rstrip('0').rstrip('.')
+        my_subtitle = f'One Root at x = {root_str}'
     elif has_two_roots:
-        my_subtitle = f'Two Roots at x = {root1:.1f}, {root2:.1f}'
+        root1_str =f"{root1:.6f}".rstrip('0').rstrip('.')
+        root2_str =f"{root2:.6f}".rstrip('0').rstrip('.')
+        my_subtitle = f'Two Roots at x = {root1_str}, {root2_str}'
     else:
         my_subtitle = 'No Real Roots'
 
-    a_expression = f'x<sup>2</sup>' if a == 1 else f'{a}x<sup>2</sup>'
-
-    a_expression = ''
+    a_expression = ''  # a in a x-squared + bx +c
     if a_number.value == -1:
         a_expression = f'-x<sup>2</sup>'
     elif a_number.value == 1:
         a_expression = f'x<sup>2</sup>'
     else:
         a_expression = f'{a}x<sup>2</sup>'
-    
 
-    b_expression = '' # intialize
+    b_expression = '' # b in a x-squared + bx +c
     if b_number.value == -1:
         b_expression = f' - x'
     elif b_number.value == 1:
@@ -325,8 +339,8 @@ def _(
         b_expression = f' + {b}x'
     else:
         b_expression = f' - {abs(b)}x'
-    
-    c_expression = ''
+
+    c_expression = ''  # c in a x-squared + bx +c
     if c_number.value == 0:
         c_expression = ''
     elif c_number.value > 0:
@@ -365,10 +379,10 @@ def _(
         fig.add_hline(
             y = y_directrix, # color='green',
             line_dash="dot",
-            annotation_text=f'Directrix, <br>y = {y_directrix:.3f}',
+            annotation_text=f'Directrix: {y_directrix:.3f}',
             annotation_position="right", # Positions text at right end of line
             annotation_font_size=14,
-            annotation_font_color="blue"
+            annotation_font_color="white"
         )
 
     print(f'{show_grid.value = }')
@@ -382,7 +396,7 @@ def _(
     if show_roots.value:
         if has_one_root: # if only one root, it is the vertex
             fig = annotate_point(
-                fig, 'Root 1', 'crimson', 2, x=root, ax=-50, ay=0, xanchor='right')
+                fig, 'Root<br>', 'crimson', 2, x=root, ax=-50, ay=0, xanchor='right')
 
         if has_two_roots:
             fig = annotate_point(
