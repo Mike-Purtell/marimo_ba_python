@@ -1,3 +1,12 @@
+# /// script
+# requires-python = ">=3.13"
+# dependencies = [
+#     "marimo>=0.23.16",
+#     "plotly==6.9.0",
+#     "polars==1.43.2",
+# ]
+# ///
+
 import marimo
 
 __generated_with = "0.23.16"
@@ -29,17 +38,17 @@ def _():
     return go, math
 
 
-app._unparsable_cell(
-    r"""
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
     TODO:
     move the Directrix annotation to above (when a is positive) or below (when a is negative) the directrix line. This replaces that annotation built into hline which is not very flexible on the placement
 
     implement elegand solution to divide by zero errors that happen when value entered for a is 0
 
     add buttons for 5 directrix dispaly that each add a line from point on the parabola to the focus, and a perpendicular line from same point to the directrix. Calculate the length of each line and place that near the line. Both lines from same point, one to the focus and one to the directrix should have the same length
-    """,
-    column=None, disabled=True, hide_code=False, name="_"
-)
+    """)
+    return
 
 
 @app.cell
@@ -366,14 +375,14 @@ def _(
             ),
         ),
     )
-    marker_size = 6
+    marker_size = 6 # all markers of roots, focus, or vertex will be same size
     if show_vertex.value:
         fig = annotate_point(
-            fig, 'Vertex', 'crimson', 4, x=h, y=k, ax=50, ay=a_sign*30)
+            fig, 'Vertex', 'crimson', marker_size, x=h, y=k, ax=50, ay=a_sign*30)
    
     if show_focus.value:
         fig = annotate_point(
-            fig, 'Focus', 'crimson', 4, x=h, y=y_focus, ax=50, ay=-a_sign*30)
+            fig, 'Focus', 'crimson', marker_size, x=h, y=y_focus, ax=50, ay=-a_sign*30)
    
     if show_directrix.value:
         fig.add_hline(
@@ -396,14 +405,14 @@ def _(
     if show_roots.value:
         if has_one_root: # if only one root, it is the vertex
             fig = annotate_point(
-                fig, 'Root<br>', 'crimson', 2, x=root, ax=-50, ay=0, xanchor='right')
+                fig, 'Root<br>', 'crimson', marker_size, x=root, ax=-50, ay=0, xanchor='right')
 
         if has_two_roots:
             fig = annotate_point(
-                fig, 'Root 1<br>', 'crimson', 2, x=root1, 
+                fig, 'Root 1<br>', 'crimson', marker_size, x=root1, 
                 ax=-50, ay=0, xanchor='right')
             fig = annotate_point(
-                fig, 'Root 2<br>', 'crimson', 2, x=root2, 
+                fig, 'Root 2<br>', 'crimson',marker_size , x=root2, 
                 ax=50, ay=0, xanchor='left')
 
         # if_has_no_roots:
@@ -415,8 +424,6 @@ def _(
     else:
         fig.update_xaxes(showgrid=False, visible=False)
         fig.update_yaxes(showgrid=False, visible=False)
-
-
 
     max_y_val = max(y_vals)
     min_y_val = min(y_vals)
@@ -442,6 +449,7 @@ def _(
         fig.update_yaxes(range = sorted([y_range_min, y_range_max],reverse=False))
         fig.update_xaxes(range = [x_range_min, x_range_max])
 
+    fig.update_layout(template='plotly_dark')
     mo.vstack([
         mo.hstack([
              a_stack, 
