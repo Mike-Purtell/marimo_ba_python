@@ -1,3 +1,10 @@
+# /// script
+# requires-python = ">=3.13"
+# dependencies = [
+#     "marimo>=0.23.16",
+# ]
+# ///
+
 import marimo
 
 __generated_with = "0.23.16"
@@ -11,13 +18,45 @@ def _():
     return (mo,)
 
 
-@app.cell(hide_code=True)
+@app.cell
 def _(mo):
-    mo.md(r"""
-    ### Marimo Notebook
-    this notebook was created using Marimo's built into tool that coverts jupyter to
-    marimo to show advantages and limitations of reactivity
-    """)
+    mo.Html(
+        '''
+        <span><p style="font-size: 24px;">Marimo Notebook</p></span><br>
+        This notebook was created with Marimo's tool to convert jupyter to marimo. Will 
+        show advantages and limitations of reactivity. 
+        <br>
+        the syntax for converting jupyter notebook to a marimo notebook is:
+        <br><br>
+        <span><i><p style="text-align: center;">marimo convert your_notebook.ipynb -o your_notebook.py</p></i></span><br>
+        '''
+    )
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _(mo):
+    mo.Html(
+        '''
+        <span><p style="font-size: 24px;">Reactivity has restrictions</p></span><br>
+        </p>The jupyter notebook had two cells that initialized x. This it not 
+        allowed in marimo. If two cells both define the same global variable (in this case 
+        x), marimo cannot guarantee which definition will be used when a third cell reads 
+        it — the output would depend on the order in which the defining cells run. This 
+        could lead to:<br>
+    <h2>My Ordered List</h2>
+    <ol type="1">
+    <li>Hidden state (unknown which value is active)</li>
+    <li>Hidden bugs (unexpected behavior when rerunning)</li>
+    <li>Non-reproducible results (over 96% of Jupyter notebooks on GitHub fail reproducibility tests) docs.marimo.io.</li>
+    </ol>
+    '''
+    )
     return
 
 
@@ -90,7 +129,6 @@ def _(best_slider, mo):
 @app.cell
 def _(best_slider, mo):
     mo.md('🐱' * best_slider.value)
-
     return
 
 
