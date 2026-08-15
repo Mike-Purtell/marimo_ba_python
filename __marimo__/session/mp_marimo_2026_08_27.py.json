@@ -2,17 +2,17 @@
   "version": "1",
   "metadata": {
     "marimo_version": "0.23.16",
-    "script_metadata_hash": "30af9e0b6841ab64b1d59383b3b69ece"
+    "script_metadata_hash": "51d9179cb572b24837556cfbe1452b41"
   },
   "cells": [
     {
       "id": "Hbol",
-      "code_hash": "fd04ba2e94af306e92b176a59533e7a7",
+      "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><h1>Welcome to marimo! \ud83c\udf0a\ud83c\udf43</h1><br><br><h2>Mike Purtell</h2><h3>Bay Area Python Interest Group</h3><h3>August 27,&nbsp; 2026</h3></div>"
+            "text/plain": ""
           }
         }
       ],
@@ -20,7 +20,7 @@
     },
     {
       "id": "MJUe",
-      "code_hash": "88237970a229e61d3763b3e0fb3083e9",
+      "code_hash": "cf4339e5dad26c57bbf32fa9c427d4f6",
       "outputs": [
         {
           "type": "data",
@@ -33,12 +33,12 @@
     },
     {
       "id": "vblA",
-      "code_hash": "0142c419d6418f72dbf7bce774a3c81e",
+      "code_hash": "d1668ba199977f482a4a3516d307114c",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><h1>Marimo Introduction and Overview</h1><br><br><span class=\"markdown prose dark:prose-invert contents\"><div style=\"font-size: 1.25rem; line-height: 1.6;\">\nmarimo resembles jupyter (vertically arranged blocks, code or markup)\n</div></span><div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 1'><marimo-accordion data-labels='[&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cdiv style=&#x27;font-size: 1.25rem; line-height: 1.6;&#x27;&#92;u003ejupyter&#92;u003c/div&#92;u003e&#92;u003c/span&#92;u003e&quot;]' data-multiple='false'><div><span class=\"markdown prose dark:prose-invert contents\"><div style=\"font-size: 1.25rem; line-height: 1.6;\">\n<ul>\n    <li>great for exploration</li>\n    <li>beware of:</li>\n    <ul>\n        <li>hidden state</li>\n        <li>manual reruns</li>\n        <li>hard-to-review file formats, Git Issues</li>\n        <li>top down flow for run-all, arbitrary flow otherwise</li>\n    </ul>\n</ul>\n</div></span></div></marimo-accordion></div><div style='flex: 1'><marimo-accordion data-labels='[&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cdiv style=&#x27;font-size: 1.25rem; line-height: 1.6;&#x27;&#92;u003emarimo&#92;u003c/div&#92;u003e&#92;u003c/span&#92;u003e&quot;]' data-multiple='false'><div><span class=\"markdown prose dark:prose-invert contents\"><div style=\"font-size: 1.25rem; line-height: 1.6;\">\n<ul>\n    <li>reactivity: change value in 1 cell updates the dependent cells</li>\n    <li>think of Excel</li>\n    <li>Natural mechanism for call backs</li>\n    <li>great for dashboards</li>\n    <li>easy to deploy on molab</li>\n\n</ul>\n</div></span></div></marimo-accordion></div></div></div>"
+            "text/plain": ""
           }
         }
       ],
@@ -46,12 +46,12 @@
     },
     {
       "id": "bkHC",
-      "code_hash": "e45f3a9e2fe71d92993c1b49d1dcb940",
+      "code_hash": "3c220304c78ffabc4e4c4e759110e8f7",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'>\n    ## 1. Marimo Introduction and Overview\n\n    marimo notebooks resemble jupyter (vertically arranged blocks, code or markup).\n\n    jupyter flow order is top to bottom. great for exploration, trying things out\n\n    marimo reactivity sets order based on dependencies, keeps outputs and the code in sync.\n\n    I will show many examples of that tonight.\n    \u2022\tjupyter is great for exploration, beware of hidden state, manual re-\n    runs, and hard-to-review file formats\n    \u2022\tmarimo notebooks are stored as Python files.\n    runs, and hard-to-review file formats\n    \u2022  Outputs synchronize with code, and can run as scripts, apps, or slides<br>\n    \u2022\tI will give a quick quick, compare with jupyter comparisonr, go over the marimo basics, show two app demos, two app demos before wrappging up.<br>\n\n    Lets keep this interactive. If you have a question please ask at any time.\n    </div>"
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'>\n    <style>\n        html, body, body * {\n            font-family: Arial, Helvetica, sans-serif !important;\n        }\n\n        button, input, select, textarea {\n            font-family: Arial, Helvetica, sans-serif !important;\n        }\n    </style>\n    <span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"welcome-to-marimo\">Welcome to marimo! \ud83c\udf0a\ud83c\udf43</h1></span><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"mike-purtell\">Mike Purtell</h2></span><span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"bay-area-python-interest-group\">Bay Area Python Interest Group</h3></span><span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"august-27-2026\">August 27, 2026</h3></span></div>"
           }
         }
       ],
@@ -59,12 +59,12 @@
     },
     {
       "id": "lEQa",
-      "code_hash": "11200cc869efc77a4937a89ede3d54a2",
+      "code_hash": "ed71d359297e1762daeb6603b035ccd0",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"11-important-concepts\">1.1 important concepts</h2></span><marimo-accordion data-labels='[&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003ejupyter&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;]' data-multiple='false'><div><span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">jupyter is great for exploration, beware of hidden state, manual \nreruns, and hard-to-review file formats.</span></span></div></marimo-accordion><marimo-accordion data-labels='[&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003emarimo&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;]' data-multiple='false'><div><span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">stored as python files, git friendly, code, markdown, sql, and more. Outputs synchronize with code, and can run as scripts, apps, or slides.</span></span></div></marimo-accordion></div>"
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"introduction-and-overview\">Introduction and Overview</h1></span><span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">marimo resembles jupyter (vertically arranged blocks, code or markup)</span></span><div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 1'><marimo-accordion data-labels='[&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003ejupyter&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;]' data-multiple='false'><div><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>great for exploration</li>\n<li>beware of:<ul>\n<li>hidden state</li>\n<li>manual reruns</li>\n<li>hard-to-review file formats, Git Issues</li>\n<li>top down flow for run-all, arbitrary flow otherwise</li>\n</ul>\n</li>\n</ul></span></div></marimo-accordion></div><div style='flex: 1'><marimo-accordion data-labels='[&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003emarimo&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;]' data-multiple='false'><div><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>reactivity: change value in 1 cell updates the dependent cells</li>\n<li>think of Excel</li>\n<li>natural mechanism for callbacks</li>\n<li>great for dashboards</li>\n<li>easy to deploy on molab</li>\n</ul></span></div></marimo-accordion></div></div></div>"
           }
         }
       ],
@@ -72,12 +72,12 @@
     },
     {
       "id": "PKri",
-      "code_hash": "f0705ad257d05cfc0c0fde7d0fb16282",
+      "code_hash": "88237970a229e61d3763b3e0fb3083e9",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<h1>1. marimo Introduction and Overview</h1>"
+            "text/plain": ""
           }
         }
       ],
@@ -85,25 +85,18 @@
     },
     {
       "id": "Xref",
-      "code_hash": "7f82585befd766b9a1c4815d72e912c2",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><h1>1. marimo Introduction and Overview</h1></div>"
-          }
-        }
-      ],
+      "code_hash": "0b32a6d02c55633127a63597dcf5387d",
+      "outputs": [],
       "console": []
     },
     {
       "id": "SFPL",
-      "code_hash": "83e164f83e60fc84841e2791f997ed79",
+      "code_hash": "e2d07ac4b4f2365430369a9437da856d",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">marimo is a <strong>reactive</strong> Python notebook.</span>\n<span class=\"paragraph\">This means that unlike traditional notebooks, marimo notebooks <strong>run\nautomatically</strong> when you modify them or\ninteract with UI elements, like this slider: <marimo-ui-element object-id='MJUe-0' random-id='3c37bc04-511c-b0c7-dd85-ccb115e53b0f'><marimo-slider data-initial-value='1' data-label='null' data-start='1' data-stop='22' data-steps='[]' data-debounce='false' data-disabled='false' data-orientation='&quot;horizontal&quot;' data-show-value='false' data-include-input='false' data-full-width='false'></marimo-slider></marimo-ui-element></span>\n<h2 id=\"_1\">\ud83c\udf43\ud83c\udf43\ud83c\udf43\ud83c\udf43\ud83c\udf43\ud83c\udf43\ud83c\udf43\ud83c\udf43\ud83c\udf43\ud83c\udf43\ud83c\udf43\ud83c\udf43\ud83c\udf43\ud83c\udf43\ud83c\udf43\ud83c\udf43\ud83c\udf43\ud83c\udf43\ud83c\udf43\ud83c\udf43\ud83c\udf43</h2></span>"
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"1-marimo-introduction-and-overview\">1. Marimo Introduction and Overview</h2>\n<span class=\"paragraph\">marimo notebooks resemble jupyter (vertically arranged blocks, code or markup).</span>\n<span class=\"paragraph\">jupyter flow order is top to bottom. Great for exploration and trying things out.</span>\n<span class=\"paragraph\">marimo reactivity sets order based on dependencies and keeps outputs and code in sync.</span>\n<span class=\"paragraph\">I will show many examples of that tonight.</span>\n<ul>\n<li>jupyter is great for exploration, but beware of hidden state, manual reruns,\n  and hard-to-review file formats</li>\n<li>marimo notebooks are stored as Python files</li>\n<li>outputs synchronize with code, and can run as scripts, apps, or slides</li>\n<li>I will give a quick comparison with jupyter, go over the marimo basics,\n  show two app demos, and wrap up</li>\n</ul>\n<span class=\"paragraph\">Lets keep this interactive. If you have a question please ask at any time.</span></span></div>"
           }
         }
       ],
@@ -241,7 +234,7 @@
     },
     {
       "id": "TqIu",
-      "code_hash": "b7e7bb5d6fc4b1ff8a674393cecdcc5c",
+      "code_hash": "b3ed3fd7fe86785d5bcc9e15f3a53656",
       "outputs": [
         {
           "type": "data",
@@ -254,7 +247,7 @@
     },
     {
       "id": "Vxnm",
-      "code_hash": "45495093a7788c05f32f958234ea3367",
+      "code_hash": "94be717617d22a8aa8d2859ca45ff320",
       "outputs": [
         {
           "type": "data",
@@ -267,12 +260,12 @@
     },
     {
       "id": "DnEU",
-      "code_hash": "db461fb330f48c6023534b4d14e84689",
+      "code_hash": "3a3a6f5e3e169e2bec864359e41015d1",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "application/json": "[\"text/html:<marimo-ui-element object-id='TqIu-0' random-id='a45cdd0a-987e-f15a-fc91-296c579eb78e'><marimo-dropdown data-initial-value='[&quot;\\ud83c\\udf43&quot;]' data-label='null' data-options='[&quot;\\ud83c\\udf43&quot;,&quot;\\ud83c\\udf0a&quot;,&quot;\\u2728&quot;]' data-allow-select-none='false' data-searchable='false' data-full-width='false' data-disabled='false'></marimo-dropdown></marimo-ui-element>\", \"text/html:<marimo-ui-element object-id='Vxnm-0' random-id='0d0891fd-d3e3-f0f9-e412-584091ed5948'><marimo-slider data-initial-value='1' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003enumber of \\ud83c\\udf43: &#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-start='1' data-stop='16' data-steps='[]' data-debounce='false' data-disabled='false' data-orientation='&quot;horizontal&quot;' data-show-value='false' data-include-input='false' data-full-width='false'></marimo-slider></marimo-ui-element>\"]"
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><marimo-ui-element object-id='TqIu-0' random-id='89579f95-ef18-d672-eeb2-faf733d5636d'><marimo-dropdown data-initial-value='[&quot;\ud83d\udc36&quot;]' data-label='null' data-options='[&quot;\ud83d\udc36&quot;,&quot;\ud83d\udc31&quot;]' data-allow-select-none='false' data-searchable='false' data-full-width='false' data-disabled='false'></marimo-dropdown></marimo-ui-element><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: flex-start;flex-wrap: nowrap;gap: 0rem'><div><marimo-ui-element object-id='Vxnm-0' random-id='251b7092-f6b8-7c85-1b8d-c76f2d6d3bd9'><marimo-slider data-initial-value='1' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003enumber of \ud83d\udc36: &#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-start='1' data-stop='16' data-steps='[]' data-debounce='false' data-disabled='false' data-orientation='&quot;horizontal&quot;' data-show-value='false' data-include-input='false' data-full-width='false'></marimo-slider></marimo-ui-element></div></div></div><span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"_1\">\ud83d\udc36</h1></span></div>"
           }
         }
       ],
@@ -280,12 +273,12 @@
     },
     {
       "id": "ulZA",
-      "code_hash": "52dcc30f6c4b59d68075a6545b11b3fc",
+      "code_hash": "4ed2bd3351db9f83941eee8463805c89",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"_1\">\ud83c\udf43</h1></span>"
+            "text/plain": ""
           }
         }
       ],
@@ -293,6 +286,228 @@
     },
     {
       "id": "ecfG",
+      "code_hash": "2712ec4b4be7cc63007b6e312b4088d7",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><marimo-ui-element object-id='ulZA-0' random-id='429a5911-80f9-899a-4e1a-38fa5c31364c'><marimo-slider data-initial-value='3' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003ebest slider&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-start='1' data-stop='6' data-step='1' data-steps='[]' data-debounce='false' data-disabled='false' data-orientation='&quot;horizontal&quot;' data-show-value='false' data-include-input='false' data-full-width='false'></marimo-slider></marimo-ui-element> value: 6</span></span><span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"_1\">\ud83d\udc31\ud83d\udc31\ud83d\udc31\ud83d\udc31\ud83d\udc31\ud83d\udc31</h1></span><span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"_1\">\ud83d\udc36</h1></span></div>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Pvdt",
+      "code_hash": "0357fb27e9439e00125d0211b2ef2b78",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ZBYS",
+      "code_hash": "f11ee89ca4bfbf0f7d195faefd6b5762",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='Pvdt-6' random-id='dadeb1b6-3a6d-2753-421c-528ce5198fbe'><marimo-dict data-initial-value='{&quot;checkbox&quot;:false,&quot;multiselect&quot;:[],&quot;radio&quot;:null}' data-label='null' data-element-ids='{&quot;Pvdt-3&quot;:&quot;checkbox&quot;,&quot;Pvdt-4&quot;:&quot;multiselect&quot;,&quot;Pvdt-5&quot;:&quot;radio&quot;}'><marimo-json-output data-json-data='{&quot;checkbox&quot;:&quot;text/html:&#92;u003cmarimo-ui-element object-id=&#x27;Pvdt-3&#x27; random-id=&#x27;f488e0e3-dd70-c5aa-6bce-9cb691c47abe&#x27;&#92;u003e&#92;u003cmarimo-checkbox data-initial-value=&#x27;false&#x27; data-label=&#x27;&amp;quot;&amp;#92;u003cspan class=&amp;#92;&amp;quot;markdown prose dark:prose-invert contents&amp;#92;&amp;quot;&amp;#92;u003e&amp;#92;u003cspan class=&amp;#92;&amp;quot;paragraph&amp;#92;&amp;quot;&amp;#92;u003eyes I read the T&amp;#x27;s and C&amp;#x27;s&amp;#92;u003c/span&amp;#92;u003e&amp;#92;u003c/span&amp;#92;u003e&amp;quot;&#x27; data-disabled=&#x27;false&#x27;&#92;u003e&#92;u003c/marimo-checkbox&#92;u003e&#92;u003c/marimo-ui-element&#92;u003e&quot;,&quot;multiselect&quot;:&quot;text/html:&#92;u003cmarimo-ui-element object-id=&#x27;Pvdt-4&#x27; random-id=&#x27;e2ff575d-73a1-a763-8962-4b8eab3e62e3&#x27;&#92;u003e&#92;u003cmarimo-multiselect data-initial-value=&#x27;[]&#x27; data-label=&#x27;&amp;quot;&amp;#92;u003cspan class=&amp;#92;&amp;quot;markdown prose dark:prose-invert contents&amp;#92;&amp;quot;&amp;#92;u003e&amp;#92;u003cspan class=&amp;#92;&amp;quot;paragraph&amp;#92;&amp;quot;&amp;#92;u003epick your favorite town&amp;#92;u003c/span&amp;#92;u003e&amp;#92;u003c/span&amp;#92;u003e&amp;quot;&#x27; data-options=&#x27;[&amp;quot;Springfield&amp;quot;,&amp;quot;Chicago&amp;quot;,&amp;quot;New York&amp;quot;,&amp;quot;Los Angeles&amp;quot;]&#x27; data-full-width=&#x27;false&#x27; data-max-selections=&#x27;2&#x27; data-disabled=&#x27;false&#x27;&#92;u003e&#92;u003c/marimo-multiselect&#92;u003e&#92;u003c/marimo-ui-element&#92;u003e&quot;,&quot;radio&quot;:&quot;text/html:&#92;u003cmarimo-ui-element object-id=&#x27;Pvdt-5&#x27; random-id=&#x27;eb57de5f-752a-f243-fb62-d4f0497a9ff5&#x27;&#92;u003e&#92;u003cmarimo-radio data-initial-value=&#x27;null&#x27; data-label=&#x27;&amp;quot;&amp;#92;u003cspan class=&amp;#92;&amp;quot;markdown prose dark:prose-invert contents&amp;#92;&amp;quot;&amp;#92;u003e&amp;#92;u003cspan class=&amp;#92;&amp;quot;paragraph&amp;#92;&amp;quot;&amp;#92;u003eYour favorite Bay Area band (pick 1)&amp;#92;u003c/span&amp;#92;u003e&amp;#92;u003c/span&amp;#92;u003e&amp;quot;&#x27; data-options=&#x27;[&amp;quot;Grateful Dead&amp;quot;,&amp;quot;Green Day&amp;quot;,&amp;quot;Jefferson Airplane&amp;quot;,&amp;quot;Journey&amp;quot;,&amp;quot;Metallica&amp;quot;,&amp;quot;Petrichor&amp;quot;,&amp;quot;Santana&amp;quot;]&#x27; data-inline=&#x27;false&#x27; data-disabled=&#x27;false&#x27;&#92;u003e&#92;u003c/marimo-radio&#92;u003e&#92;u003c/marimo-ui-element&#92;u003e&quot;}' data-value-types='&quot;python&quot;' data-name='&quot;dictionary&quot;'></marimo-json-output></marimo-dict></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "aLJB",
+      "code_hash": null,
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "nHfw",
+      "code_hash": "e8bde868f1b5607be014e996307eac2f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "{\"checkbox\": false, \"multiselect\": [], \"radio\": null}"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "xXTn",
+      "code_hash": "c79e75d4464c26e0ff0d79301f5ee2fd",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='xXTn-0' random-id='73715586-00e7-7d9f-6e16-6c708341e3d0'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;0&#92;&quot;:0,&#92;&quot;1&#92;&quot;:0,&#92;&quot;2&#92;&quot;:0,&#92;&quot;3&#92;&quot;:0,&#92;&quot;4&#92;&quot;:0,&#92;&quot;5&#92;&quot;:0,&#92;&quot;6&#92;&quot;:0,&#92;&quot;7&#92;&quot;:0,&#92;&quot;8&#92;&quot;:0,&#92;&quot;9&#92;&quot;:0,&#92;&quot;10&#92;&quot;:0},{&#92;&quot;0&#92;&quot;:0,&#92;&quot;1&#92;&quot;:1,&#92;&quot;2&#92;&quot;:2,&#92;&quot;3&#92;&quot;:3,&#92;&quot;4&#92;&quot;:4,&#92;&quot;5&#92;&quot;:5,&#92;&quot;6&#92;&quot;:6,&#92;&quot;7&#92;&quot;:7,&#92;&quot;8&#92;&quot;:8,&#92;&quot;9&#92;&quot;:9,&#92;&quot;10&#92;&quot;:10},{&#92;&quot;0&#92;&quot;:0,&#92;&quot;1&#92;&quot;:2,&#92;&quot;2&#92;&quot;:4,&#92;&quot;3&#92;&quot;:6,&#92;&quot;4&#92;&quot;:8,&#92;&quot;5&#92;&quot;:10,&#92;&quot;6&#92;&quot;:12,&#92;&quot;7&#92;&quot;:14,&#92;&quot;8&#92;&quot;:16,&#92;&quot;9&#92;&quot;:18,&#92;&quot;10&#92;&quot;:20},{&#92;&quot;0&#92;&quot;:0,&#92;&quot;1&#92;&quot;:3,&#92;&quot;2&#92;&quot;:6,&#92;&quot;3&#92;&quot;:9,&#92;&quot;4&#92;&quot;:12,&#92;&quot;5&#92;&quot;:15,&#92;&quot;6&#92;&quot;:18,&#92;&quot;7&#92;&quot;:21,&#92;&quot;8&#92;&quot;:24,&#92;&quot;9&#92;&quot;:27,&#92;&quot;10&#92;&quot;:30},{&#92;&quot;0&#92;&quot;:0,&#92;&quot;1&#92;&quot;:4,&#92;&quot;2&#92;&quot;:8,&#92;&quot;3&#92;&quot;:12,&#92;&quot;4&#92;&quot;:16,&#92;&quot;5&#92;&quot;:20,&#92;&quot;6&#92;&quot;:24,&#92;&quot;7&#92;&quot;:28,&#92;&quot;8&#92;&quot;:32,&#92;&quot;9&#92;&quot;:36,&#92;&quot;10&#92;&quot;:40},{&#92;&quot;0&#92;&quot;:0,&#92;&quot;1&#92;&quot;:5,&#92;&quot;2&#92;&quot;:10,&#92;&quot;3&#92;&quot;:15,&#92;&quot;4&#92;&quot;:20,&#92;&quot;5&#92;&quot;:25,&#92;&quot;6&#92;&quot;:30,&#92;&quot;7&#92;&quot;:35,&#92;&quot;8&#92;&quot;:40,&#92;&quot;9&#92;&quot;:45,&#92;&quot;10&#92;&quot;:50},{&#92;&quot;0&#92;&quot;:0,&#92;&quot;1&#92;&quot;:6,&#92;&quot;2&#92;&quot;:12,&#92;&quot;3&#92;&quot;:18,&#92;&quot;4&#92;&quot;:24,&#92;&quot;5&#92;&quot;:30,&#92;&quot;6&#92;&quot;:36,&#92;&quot;7&#92;&quot;:42,&#92;&quot;8&#92;&quot;:48,&#92;&quot;9&#92;&quot;:54,&#92;&quot;10&#92;&quot;:60},{&#92;&quot;0&#92;&quot;:0,&#92;&quot;1&#92;&quot;:7,&#92;&quot;2&#92;&quot;:14,&#92;&quot;3&#92;&quot;:21,&#92;&quot;4&#92;&quot;:28,&#92;&quot;5&#92;&quot;:35,&#92;&quot;6&#92;&quot;:42,&#92;&quot;7&#92;&quot;:49,&#92;&quot;8&#92;&quot;:56,&#92;&quot;9&#92;&quot;:63,&#92;&quot;10&#92;&quot;:70},{&#92;&quot;0&#92;&quot;:0,&#92;&quot;1&#92;&quot;:8,&#92;&quot;2&#92;&quot;:16,&#92;&quot;3&#92;&quot;:24,&#92;&quot;4&#92;&quot;:32,&#92;&quot;5&#92;&quot;:40,&#92;&quot;6&#92;&quot;:48,&#92;&quot;7&#92;&quot;:56,&#92;&quot;8&#92;&quot;:64,&#92;&quot;9&#92;&quot;:72,&#92;&quot;10&#92;&quot;:80},{&#92;&quot;0&#92;&quot;:0,&#92;&quot;1&#92;&quot;:9,&#92;&quot;2&#92;&quot;:18,&#92;&quot;3&#92;&quot;:27,&#92;&quot;4&#92;&quot;:36,&#92;&quot;5&#92;&quot;:45,&#92;&quot;6&#92;&quot;:54,&#92;&quot;7&#92;&quot;:63,&#92;&quot;8&#92;&quot;:72,&#92;&quot;9&#92;&quot;:81,&#92;&quot;10&#92;&quot;:90}]&quot;' data-total-rows='11' data-total-columns='11' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;0&quot;,[&quot;integer&quot;,&quot;u8&quot;]],[&quot;1&quot;,[&quot;integer&quot;,&quot;u8&quot;]],[&quot;2&quot;,[&quot;integer&quot;,&quot;u8&quot;]],[&quot;3&quot;,[&quot;integer&quot;,&quot;u8&quot;]],[&quot;4&quot;,[&quot;integer&quot;,&quot;u8&quot;]],[&quot;5&quot;,[&quot;integer&quot;,&quot;u8&quot;]],[&quot;6&quot;,[&quot;integer&quot;,&quot;u8&quot;]],[&quot;7&quot;,[&quot;integer&quot;,&quot;u8&quot;]],[&quot;8&quot;,[&quot;integer&quot;,&quot;u8&quot;]],[&quot;9&quot;,[&quot;integer&quot;,&quot;u8&quot;]],[&quot;10&quot;,[&quot;integer&quot;,&quot;u8&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='true' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "AjVT",
+      "code_hash": "8af9fc092ff0701580970d0809ea99fb",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "C:\\Users\\mpurt\\AppData\\Local\\Temp\\marimo_25100\\__marimo__cell_AjVT_.py:3: FutureWarning: from_arrow(<ArrowStreamExportable>) will return a Series instead of a DataFrame in 2.0. To avoid this warning, pass the ArrowStreamExportable to either `pl.DataFrame` or `pl.Series` instead based on your desired output type.\n  pl.read_excel('assets/california_counties_wikipedia.xlsx')\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "pHFh",
+      "code_hash": "f4dd0453096120e3fd153606b1096a05",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='pHFh-0' random-id='a3d5f24b-f7c8-2569-5d0b-92395f50a08a'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;County&#92;&quot;:&#92;&quot;Alameda&#92;&quot;,&#92;&quot;Seat&#92;&quot;:&#92;&quot;Oakland&#92;&quot;,&#92;&quot;Established&#92;&quot;:1853,&#92;&quot;Pop&#92;&quot;:1636630,&#92;&quot;Pop_Rank&#92;&quot;:7,&#92;&quot;Area_Sq_Mile&#92;&quot;:738,&#92;&quot;Area_Sq_KM&#92;&quot;:1911,&#92;&quot;Area_Rank&#92;&quot;:50,&#92;&quot;Pop_Density_Sq_Mile&#92;&quot;:2217.7,&#92;&quot;Pop_Density_Sq_KM&#92;&quot;:856.4,&#92;&quot;Pop_Density_Rank&#92;&quot;:4,&#92;&quot;Formation&#92;&quot;:&#92;&quot;Contra Costa and Santa Clara&#92;&quot;,&#92;&quot;Etymology&#92;&quot;:&#92;&quot;The oak and other trees, once abundant in the region; alameda is Spanish for &#92;&#92;&#92;&quot;avenue shaded by trees&#92;&#92;&#92;&quot; or &#92;&#92;&#92;&quot;cottonwood grove&#92;&#92;&#92;&quot;.&#92;&quot;,&#92;&quot;FIPS&#92;&quot;:&#92;&quot;06001&#92;&quot;},{&#92;&quot;County&#92;&quot;:&#92;&quot;Alpine&#92;&quot;,&#92;&quot;Seat&#92;&quot;:&#92;&quot;Markleeville&#92;&quot;,&#92;&quot;Established&#92;&quot;:1864,&#92;&quot;Pop&#92;&quot;:1043,&#92;&quot;Pop_Rank&#92;&quot;:58,&#92;&quot;Area_Sq_Mile&#92;&quot;:739,&#92;&quot;Area_Sq_KM&#92;&quot;:1914,&#92;&quot;Area_Rank&#92;&quot;:49,&#92;&quot;Pop_Density_Sq_Mile&#92;&quot;:1.4,&#92;&quot;Pop_Density_Sq_KM&#92;&quot;:0.5,&#92;&quot;Pop_Density_Rank&#92;&quot;:58,&#92;&quot;Formation&#92;&quot;:&#92;&quot;Amador, El Dorado, Calaveras, Mono and Tuolumne&#92;&quot;,&#92;&quot;Etymology&#92;&quot;:&#92;&quot;Location high in the Sierra Nevada; alpine refers to the Alps or other mountains.&#92;&quot;,&#92;&quot;FIPS&#92;&quot;:&#92;&quot;06003&#92;&quot;},{&#92;&quot;County&#92;&quot;:&#92;&quot;Amador&#92;&quot;,&#92;&quot;Seat&#92;&quot;:&#92;&quot;Jackson&#92;&quot;,&#92;&quot;Established&#92;&quot;:1854,&#92;&quot;Pop&#92;&quot;:41876,&#92;&quot;Pop_Rank&#92;&quot;:46,&#92;&quot;Area_Sq_Mile&#92;&quot;:593,&#92;&quot;Area_Sq_KM&#92;&quot;:1536,&#92;&quot;Area_Rank&#92;&quot;:54,&#92;&quot;Pop_Density_Sq_Mile&#92;&quot;:70.6,&#92;&quot;Pop_Density_Sq_KM&#92;&quot;:27.3,&#92;&quot;Pop_Density_Rank&#92;&quot;:36,&#92;&quot;Formation&#92;&quot;:&#92;&quot;Calaveras&#92;&quot;,&#92;&quot;Etymology&#92;&quot;:&#92;&quot;Jose Maria Amador (1794&#92;&#92;u20131883), a soldier, rancher, and miner who, along with several Native Americans, established a successful gold mining camp near present-day Amador City in 1848&#92;&quot;,&#92;&quot;FIPS&#92;&quot;:&#92;&quot;06005&#92;&quot;},{&#92;&quot;County&#92;&quot;:&#92;&quot;Butte&#92;&quot;,&#92;&quot;Seat&#92;&quot;:&#92;&quot;Oroville&#92;&quot;,&#92;&quot;Established&#92;&quot;:1850,&#92;&quot;Pop&#92;&quot;:209211,&#92;&quot;Pop_Rank&#92;&quot;:28,&#92;&quot;Area_Sq_Mile&#92;&quot;:1640,&#92;&quot;Area_Sq_KM&#92;&quot;:4248,&#92;&quot;Area_Rank&#92;&quot;:28,&#92;&quot;Pop_Density_Sq_Mile&#92;&quot;:127.6,&#92;&quot;Pop_Density_Sq_KM&#92;&quot;:49.2,&#92;&quot;Pop_Density_Rank&#92;&quot;:27,&#92;&quot;Formation&#92;&quot;:&#92;&quot;original&#92;&quot;,&#92;&quot;Etymology&#92;&quot;:&#92;&quot;Sutter Buttes, which were mistakenly thought to be in the county at the time of its establishment&#92;&quot;,&#92;&quot;FIPS&#92;&quot;:&#92;&quot;06007&#92;&quot;},{&#92;&quot;County&#92;&quot;:&#92;&quot;Calaveras&#92;&quot;,&#92;&quot;Seat&#92;&quot;:&#92;&quot;San Andreas&#92;&quot;,&#92;&quot;Established&#92;&quot;:1850,&#92;&quot;Pop&#92;&quot;:46605,&#92;&quot;Pop_Rank&#92;&quot;:44,&#92;&quot;Area_Sq_Mile&#92;&quot;:1020,&#92;&quot;Area_Sq_KM&#92;&quot;:2642,&#92;&quot;Area_Rank&#92;&quot;:40,&#92;&quot;Pop_Density_Sq_Mile&#92;&quot;:45.7,&#92;&quot;Pop_Density_Sq_KM&#92;&quot;:17.6,&#92;&quot;Pop_Density_Rank&#92;&quot;:40,&#92;&quot;Formation&#92;&quot;:&#92;&quot;original&#92;&quot;,&#92;&quot;Etymology&#92;&quot;:&#92;&quot;Calaveras River; calaveras is Spanish for &#92;&#92;&#92;&quot;skulls&#92;&#92;&#92;&quot;.&#92;&quot;,&#92;&quot;FIPS&#92;&quot;:&#92;&quot;06009&#92;&quot;},{&#92;&quot;County&#92;&quot;:&#92;&quot;Colusa&#92;&quot;,&#92;&quot;Seat&#92;&quot;:&#92;&quot;Colusa&#92;&quot;,&#92;&quot;Established&#92;&quot;:1850,&#92;&quot;Pop&#92;&quot;:21836,&#92;&quot;Pop_Rank&#92;&quot;:50,&#92;&quot;Area_Sq_Mile&#92;&quot;:1151,&#92;&quot;Area_Sq_KM&#92;&quot;:2981,&#92;&quot;Area_Rank&#92;&quot;:39,&#92;&quot;Pop_Density_Sq_Mile&#92;&quot;:19.0,&#92;&quot;Pop_Density_Sq_KM&#92;&quot;:7.3,&#92;&quot;Pop_Density_Rank&#92;&quot;:48,&#92;&quot;Formation&#92;&quot;:&#92;&quot;original&#92;&quot;,&#92;&quot;Etymology&#92;&quot;:&#92;&quot;Rancho Colus land grant from Mexico&#92;&quot;,&#92;&quot;FIPS&#92;&quot;:&#92;&quot;06011&#92;&quot;},{&#92;&quot;County&#92;&quot;:&#92;&quot;Contra Costa&#92;&quot;,&#92;&quot;Seat&#92;&quot;:&#92;&quot;Martinez&#92;&quot;,&#92;&quot;Established&#92;&quot;:1850,&#92;&quot;Pop&#92;&quot;:1170070,&#92;&quot;Pop_Rank&#92;&quot;:9,&#92;&quot;Area_Sq_Mile&#92;&quot;:720,&#92;&quot;Area_Sq_KM&#92;&quot;:1865,&#92;&quot;Area_Rank&#92;&quot;:51,&#92;&quot;Pop_Density_Sq_Mile&#92;&quot;:1625.1,&#92;&quot;Pop_Density_Sq_KM&#92;&quot;:627.4,&#92;&quot;Pop_Density_Rank&#92;&quot;:7,&#92;&quot;Formation&#92;&quot;:&#92;&quot;original&#92;&quot;,&#92;&quot;Etymology&#92;&quot;:&#92;&quot;Location across San Francisco Bay from San Francisco; contra costa is Spanish for &#92;&#92;&#92;&quot;opposite coast&#92;&#92;&#92;&quot;.&#92;&quot;,&#92;&quot;FIPS&#92;&quot;:&#92;&quot;06013&#92;&quot;},{&#92;&quot;County&#92;&quot;:&#92;&quot;Del Norte&#92;&quot;,&#92;&quot;Seat&#92;&quot;:&#92;&quot;Crescent City&#92;&quot;,&#92;&quot;Established&#92;&quot;:1857,&#92;&quot;Pop&#92;&quot;:26410,&#92;&quot;Pop_Rank&#92;&quot;:49,&#92;&quot;Area_Sq_Mile&#92;&quot;:1008,&#92;&quot;Area_Sq_KM&#92;&quot;:2611,&#92;&quot;Area_Rank&#92;&quot;:42,&#92;&quot;Pop_Density_Sq_Mile&#92;&quot;:26.2,&#92;&quot;Pop_Density_Sq_KM&#92;&quot;:10.1,&#92;&quot;Pop_Density_Rank&#92;&quot;:43,&#92;&quot;Formation&#92;&quot;:&#92;&quot;Klamath&#92;&quot;,&#92;&quot;Etymology&#92;&quot;:&#92;&quot;Location along California&#x27;s northern border; del norte is Spanish for &#92;&#92;&#92;&quot;northern&#92;&#92;&#92;&quot;.&#92;&quot;,&#92;&quot;FIPS&#92;&quot;:&#92;&quot;06015&#92;&quot;},{&#92;&quot;County&#92;&quot;:&#92;&quot;El Dorado&#92;&quot;,&#92;&quot;Seat&#92;&quot;:&#92;&quot;Placerville&#92;&quot;,&#92;&quot;Established&#92;&quot;:1850,&#92;&quot;Pop&#92;&quot;:192323,&#92;&quot;Pop_Rank&#92;&quot;:29,&#92;&quot;Area_Sq_Mile&#92;&quot;:1712,&#92;&quot;Area_Sq_KM&#92;&quot;:4434,&#92;&quot;Area_Rank&#92;&quot;:27,&#92;&quot;Pop_Density_Sq_Mile&#92;&quot;:112.3,&#92;&quot;Pop_Density_Sq_KM&#92;&quot;:43.4,&#92;&quot;Pop_Density_Rank&#92;&quot;:29,&#92;&quot;Formation&#92;&quot;:&#92;&quot;original&#92;&quot;,&#92;&quot;Etymology&#92;&quot;:&#92;&quot;El Dorado, a mythical city of gold, owing to the area&#x27;s significance in the California Gold Rush&#92;&quot;,&#92;&quot;FIPS&#92;&quot;:&#92;&quot;06017&#92;&quot;},{&#92;&quot;County&#92;&quot;:&#92;&quot;Fresno&#92;&quot;,&#92;&quot;Seat&#92;&quot;:&#92;&quot;Fresno&#92;&quot;,&#92;&quot;Established&#92;&quot;:1856,&#92;&quot;Pop&#92;&quot;:1035456,&#92;&quot;Pop_Rank&#92;&quot;:10,&#92;&quot;Area_Sq_Mile&#92;&quot;:5963,&#92;&quot;Area_Sq_KM&#92;&quot;:15444,&#92;&quot;Area_Rank&#92;&quot;:6,&#92;&quot;Pop_Density_Sq_Mile&#92;&quot;:173.6,&#92;&quot;Pop_Density_Sq_KM&#92;&quot;:67.0,&#92;&quot;Pop_Density_Rank&#92;&quot;:21,&#92;&quot;Formation&#92;&quot;:&#92;&quot;Mariposa, Merced and Tulare&#92;&quot;,&#92;&quot;Etymology&#92;&quot;:&#92;&quot;The city of Fresno; fresno is Spanish for &#92;&#92;&#92;&quot;ash tree&#92;&#92;&#92;&quot;.&#92;&quot;,&#92;&quot;FIPS&#92;&quot;:&#92;&quot;06019&#92;&quot;}]&quot;' data-total-rows='58' data-total-columns='14' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;County&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Seat&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Established&quot;,[&quot;integer&quot;,&quot;u16&quot;]],[&quot;Pop&quot;,[&quot;integer&quot;,&quot;u32&quot;]],[&quot;Pop_Rank&quot;,[&quot;integer&quot;,&quot;u32&quot;]],[&quot;Area_Sq_Mile&quot;,[&quot;integer&quot;,&quot;u16&quot;]],[&quot;Area_Sq_KM&quot;,[&quot;integer&quot;,&quot;u16&quot;]],[&quot;Area_Rank&quot;,[&quot;integer&quot;,&quot;u32&quot;]],[&quot;Pop_Density_Sq_Mile&quot;,[&quot;number&quot;,&quot;f64&quot;]],[&quot;Pop_Density_Sq_KM&quot;,[&quot;number&quot;,&quot;f64&quot;]],[&quot;Pop_Density_Rank&quot;,[&quot;integer&quot;,&quot;u32&quot;]],[&quot;Formation&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;Etymology&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;FIPS&quot;,[&quot;string&quot;,&quot;str&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='true' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "NCOB",
+      "code_hash": "421d94d3ceecad6cfcea2f2ff4814a21",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "aqbW",
+      "code_hash": "aa1d07532e5fda5ef123367f6835d661",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "display top 10 and bottom 10 charts by county Area\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "TRpd",
+      "code_hash": "c61404957758dfda283709e89376ab3e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'>\n    SHOW ME: This polars dataframe is used for all visualizations in this \n    notebook. Use the Transform block to interactively process a dataframe with a GUI, \n    no coding required. When you're done, you can copy the code that the GUI \n    generated for you and paste it into your notebook.\n<marimo-ui-element object-id='aqbW-2' random-id='0c58ef2b-42bd-595a-b665-16197fb5f81f'><marimo-dataframe data-initial-value='{&quot;transforms&quot;:[]}' data-label='null' data-columns='[[&quot;County&quot;,&quot;string&quot;,&quot;str&quot;],[&quot;Seat&quot;,&quot;string&quot;,&quot;str&quot;],[&quot;Established&quot;,&quot;integer&quot;,&quot;u16&quot;],[&quot;Pop&quot;,&quot;integer&quot;,&quot;u32&quot;],[&quot;Pop_Rank&quot;,&quot;integer&quot;,&quot;u32&quot;],[&quot;Area_Sq_Mile&quot;,&quot;integer&quot;,&quot;u16&quot;],[&quot;Area_Sq_KM&quot;,&quot;integer&quot;,&quot;u16&quot;],[&quot;Area_Rank&quot;,&quot;integer&quot;,&quot;u32&quot;],[&quot;Pop_Density_Sq_Mile&quot;,&quot;number&quot;,&quot;f64&quot;],[&quot;Pop_Density_Sq_KM&quot;,&quot;number&quot;,&quot;f64&quot;],[&quot;Pop_Density_Rank&quot;,&quot;integer&quot;,&quot;u32&quot;],[&quot;Formation&quot;,&quot;string&quot;,&quot;str&quot;],[&quot;Etymology&quot;,&quot;string&quot;,&quot;str&quot;],[&quot;FIPS&quot;,&quot;string&quot;,&quot;str&quot;]]' data-dataframe-name='&quot;df_cal&quot;' data-total='58' data-page-size='5' data-show-download='true' data-download-json-ensure-ascii='true' data-lazy='false'></marimo-dataframe></marimo-ui-element><br><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: flex-start;flex-wrap: nowrap;gap: 0rem'><div><marimo-ui-element object-id='AjVT-0' random-id='5b4aaed3-84cf-4f68-8b4d-7b53273e57e5'><marimo-radio data-initial-value='&quot;Population&quot;' data-label='null' data-options='[&quot;Population&quot;,&quot;Population Density&quot;,&quot;Area&quot;]' data-inline='true' data-disabled='false'></marimo-radio></marimo-ui-element></div></div><br><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: flex-start;flex-wrap: nowrap;gap: 0rem'><div> <h1>California County Area</h1></div></div><br>\n        California\u2019s counties span one of the widest area ranges of any state. The\n        largest county in the contiguos United States (San Bernardino) is larger than\n        9 other states, including New Jersey and Massachusetts. The smallest county in\n        California is San Francisco, which also has the largest population density in\n        our state.  California\u2019s county areas reflect our mix of\n        vast deserts, mountain regions, and compact urban cores.\n        \n        <div style='padding: 0.75rem 1rem; border: 1px solid var(--border-color);'>\n            <strong>Riverside</strong><br>\n            Formation: San Bernardino and San Diego<br>\n            Etymology: The city of Riverside, named for its location on the Santa Ana River\n        </div>\n        <div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 1'><marimo-ui-element object-id='aqbW-0' random-id='c6430263-d410-618c-7dcb-54cc1cb57021'><marimo-plotly data-initial-value='{}' data-label='null' data-figure='{&quot;data&quot;:[{&quot;hovertemplate&quot;:&quot;Area (Square Miles)=%{x}&#92;u003cbr&#92;u003eCounty=%{y}&#92;u003cextra&#92;u003e&#92;u003c/extra&#92;u003e&quot;,&quot;legendgroup&quot;:&quot;&quot;,&quot;marker&quot;:{&quot;color&quot;:&quot;#636efa&quot;,&quot;pattern&quot;:{&quot;shape&quot;:&quot;&quot;}},&quot;name&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;h&quot;,&quot;showlegend&quot;:false,&quot;textposition&quot;:&quot;auto&quot;,&quot;x&quot;:{&quot;dtype&quot;:&quot;u2&quot;,&quot;bdata&quot;:&quot;TxBsEM4R2BJLF48YKBzOH9AnXk4=&quot;},&quot;xaxis&quot;:&quot;x&quot;,&quot;y&quot;:[&quot;Imperial&quot;,&quot;San Diego&quot;,&quot;Lassen&quot;,&quot;Tulare&quot;,&quot;Fresno&quot;,&quot;Siskiyou&quot;,&quot;Riverside&quot;,&quot;Kern&quot;,&quot;Inyo&quot;,&quot;San Bernardino&quot;],&quot;yaxis&quot;:&quot;y&quot;,&quot;type&quot;:&quot;bar&quot;,&quot;selected&quot;:{&quot;marker&quot;:{&quot;color&quot;:&quot;green&quot;}},&quot;unselected&quot;:{&quot;marker&quot;:{&quot;color&quot;:&quot;lightgray&quot;,&quot;opacity&quot;:0.65}},&quot;selectedpoints&quot;:[6]}],&quot;layout&quot;:{&quot;template&quot;:{&quot;data&quot;:{&quot;histogram2dcontour&quot;:[{&quot;type&quot;:&quot;histogram2dcontour&quot;,&quot;colorbar&quot;:{&quot;outlinewidth&quot;:0,&quot;ticks&quot;:&quot;&quot;},&quot;colorscale&quot;:[[0.0,&quot;#0d0887&quot;],[0.1111111111111111,&quot;#46039f&quot;],[0.2222222222222222,&quot;#7201a8&quot;],[0.3333333333333333,&quot;#9c179e&quot;],[0.4444444444444444,&quot;#bd3786&quot;],[0.5555555555555556,&quot;#d8576b&quot;],[0.6666666666666666,&quot;#ed7953&quot;],[0.7777777777777778,&quot;#fb9f3a&quot;],[0.8888888888888888,&quot;#fdca26&quot;],[1.0,&quot;#f0f921&quot;]]}],&quot;choropleth&quot;:[{&quot;type&quot;:&quot;choropleth&quot;,&quot;colorbar&quot;:{&quot;outlinewidth&quot;:0,&quot;ticks&quot;:&quot;&quot;}}],&quot;histogram2d&quot;:[{&quot;type&quot;:&quot;histogram2d&quot;,&quot;colorbar&quot;:{&quot;outlinewidth&quot;:0,&quot;ticks&quot;:&quot;&quot;},&quot;colorscale&quot;:[[0.0,&quot;#0d0887&quot;],[0.1111111111111111,&quot;#46039f&quot;],[0.2222222222222222,&quot;#7201a8&quot;],[0.3333333333333333,&quot;#9c179e&quot;],[0.4444444444444444,&quot;#bd3786&quot;],[0.5555555555555556,&quot;#d8576b&quot;],[0.6666666666666666,&quot;#ed7953&quot;],[0.7777777777777778,&quot;#fb9f3a&quot;],[0.8888888888888888,&quot;#fdca26&quot;],[1.0,&quot;#f0f921&quot;]]}],&quot;heatmap&quot;:[{&quot;type&quot;:&quot;heatmap&quot;,&quot;colorbar&quot;:{&quot;outlinewidth&quot;:0,&quot;ticks&quot;:&quot;&quot;},&quot;colorscale&quot;:[[0.0,&quot;#0d0887&quot;],[0.1111111111111111,&quot;#46039f&quot;],[0.2222222222222222,&quot;#7201a8&quot;],[0.3333333333333333,&quot;#9c179e&quot;],[0.4444444444444444,&quot;#bd3786&quot;],[0.5555555555555556,&quot;#d8576b&quot;],[0.6666666666666666,&quot;#ed7953&quot;],[0.7777777777777778,&quot;#fb9f3a&quot;],[0.8888888888888888,&quot;#fdca26&quot;],[1.0,&quot;#f0f921&quot;]]}],&quot;contourcarpet&quot;:[{&quot;type&quot;:&quot;contourcarpet&quot;,&quot;colorbar&quot;:{&quot;outlinewidth&quot;:0,&quot;ticks&quot;:&quot;&quot;}}],&quot;contour&quot;:[{&quot;type&quot;:&quot;contour&quot;,&quot;colorbar&quot;:{&quot;outlinewidth&quot;:0,&quot;ticks&quot;:&quot;&quot;},&quot;colorscale&quot;:[[0.0,&quot;#0d0887&quot;],[0.1111111111111111,&quot;#46039f&quot;],[0.2222222222222222,&quot;#7201a8&quot;],[0.3333333333333333,&quot;#9c179e&quot;],[0.4444444444444444,&quot;#bd3786&quot;],[0.5555555555555556,&quot;#d8576b&quot;],[0.6666666666666666,&quot;#ed7953&quot;],[0.7777777777777778,&quot;#fb9f3a&quot;],[0.8888888888888888,&quot;#fdca26&quot;],[1.0,&quot;#f0f921&quot;]]}],&quot;surface&quot;:[{&quot;type&quot;:&quot;surface&quot;,&quot;colorbar&quot;:{&quot;outlinewidth&quot;:0,&quot;ticks&quot;:&quot;&quot;},&quot;colorscale&quot;:[[0.0,&quot;#0d0887&quot;],[0.1111111111111111,&quot;#46039f&quot;],[0.2222222222222222,&quot;#7201a8&quot;],[0.3333333333333333,&quot;#9c179e&quot;],[0.4444444444444444,&quot;#bd3786&quot;],[0.5555555555555556,&quot;#d8576b&quot;],[0.6666666666666666,&quot;#ed7953&quot;],[0.7777777777777778,&quot;#fb9f3a&quot;],[0.8888888888888888,&quot;#fdca26&quot;],[1.0,&quot;#f0f921&quot;]]}],&quot;mesh3d&quot;:[{&quot;type&quot;:&quot;mesh3d&quot;,&quot;colorbar&quot;:{&quot;outlinewidth&quot;:0,&quot;ticks&quot;:&quot;&quot;}}],&quot;scatter&quot;:[{&quot;marker&quot;:{&quot;line&quot;:{&quot;color&quot;:&quot;#283442&quot;}},&quot;type&quot;:&quot;scatter&quot;}],&quot;parcoords&quot;:[{&quot;type&quot;:&quot;parcoords&quot;,&quot;line&quot;:{&quot;colorbar&quot;:{&quot;outlinewidth&quot;:0,&quot;ticks&quot;:&quot;&quot;}}}],&quot;scatterpolargl&quot;:[{&quot;type&quot;:&quot;scatterpolargl&quot;,&quot;marker&quot;:{&quot;colorbar&quot;:{&quot;outlinewidth&quot;:0,&quot;ticks&quot;:&quot;&quot;}}}],&quot;bar&quot;:[{&quot;error_x&quot;:{&quot;color&quot;:&quot;#f2f5fa&quot;},&quot;error_y&quot;:{&quot;color&quot;:&quot;#f2f5fa&quot;},&quot;marker&quot;:{&quot;line&quot;:{&quot;color&quot;:&quot;rgb(17,17,17)&quot;,&quot;width&quot;:0.5},&quot;pattern&quot;:{&quot;fillmode&quot;:&quot;overlay&quot;,&quot;size&quot;:10,&quot;solidity&quot;:0.2}},&quot;type&quot;:&quot;bar&quot;}],&quot;scattergeo&quot;:[{&quot;type&quot;:&quot;scattergeo&quot;,&quot;marker&quot;:{&quot;colorbar&quot;:{&quot;outlinewidth&quot;:0,&quot;ticks&quot;:&quot;&quot;}}}],&quot;scatterpolar&quot;:[{&quot;type&quot;:&quot;scatterpolar&quot;,&quot;marker&quot;:{&quot;colorbar&quot;:{&quot;outlinewidth&quot;:0,&quot;ticks&quot;:&quot;&quot;}}}],&quot;histogram&quot;:[{&quot;marker&quot;:{&quot;pattern&quot;:{&quot;fillmode&quot;:&quot;overlay&quot;,&quot;size&quot;:10,&quot;solidity&quot;:0.2}},&quot;type&quot;:&quot;histogram&quot;}],&quot;scattergl&quot;:[{&quot;marker&quot;:{&quot;line&quot;:{&quot;color&quot;:&quot;#283442&quot;}},&quot;type&quot;:&quot;scattergl&quot;}],&quot;scatter3d&quot;:[{&quot;type&quot;:&quot;scatter3d&quot;,&quot;line&quot;:{&quot;colorbar&quot;:{&quot;outlinewidth&quot;:0,&quot;ticks&quot;:&quot;&quot;}},&quot;marker&quot;:{&quot;colorbar&quot;:{&quot;outlinewidth&quot;:0,&quot;ticks&quot;:&quot;&quot;}}}],&quot;scattermap&quot;:[{&quot;type&quot;:&quot;scattermap&quot;,&quot;marker&quot;:{&quot;colorbar&quot;:{&quot;outlinewidth&quot;:0,&quot;ticks&quot;:&quot;&quot;}}}],&quot;scattermapbox&quot;:[{&quot;type&quot;:&quot;scattermapbox&quot;,&quot;marker&quot;:{&quot;colorbar&quot;:{&quot;outlinewidth&quot;:0,&quot;ticks&quot;:&quot;&quot;}}}],&quot;scatterternary&quot;:[{&quot;type&quot;:&quot;scatterternary&quot;,&quot;marker&quot;:{&quot;colorbar&quot;:{&quot;outlinewidth&quot;:0,&quot;ticks&quot;:&quot;&quot;}}}],&quot;scattercarpet&quot;:[{&quot;type&quot;:&quot;scattercarpet&quot;,&quot;marker&quot;:{&quot;colorbar&quot;:{&quot;outlinewidth&quot;:0,&quot;ticks&quot;:&quot;&quot;}}}],&quot;carpet&quot;:[{&quot;aaxis&quot;:{&quot;endlinecolor&quot;:&quot;#A2B1C6&quot;,&quot;gridcolor&quot;:&quot;#506784&quot;,&quot;linecolor&quot;:&quot;#506784&quot;,&quot;minorgridcolor&quot;:&quot;#506784&quot;,&quot;startlinecolor&quot;:&quot;#A2B1C6&quot;},&quot;baxis&quot;:{&quot;endlinecolor&quot;:&quot;#A2B1C6&quot;,&quot;gridcolor&quot;:&quot;#506784&quot;,&quot;linecolor&quot;:&quot;#506784&quot;,&quot;minorgridcolor&quot;:&quot;#506784&quot;,&quot;startlinecolor&quot;:&quot;#A2B1C6&quot;},&quot;type&quot;:&quot;carpet&quot;}],&quot;table&quot;:[{&quot;cells&quot;:{&quot;fill&quot;:{&quot;color&quot;:&quot;#506784&quot;},&quot;line&quot;:{&quot;color&quot;:&quot;rgb(17,17,17)&quot;}},&quot;header&quot;:{&quot;fill&quot;:{&quot;color&quot;:&quot;#2a3f5f&quot;},&quot;line&quot;:{&quot;color&quot;:&quot;rgb(17,17,17)&quot;}},&quot;type&quot;:&quot;table&quot;}],&quot;barpolar&quot;:[{&quot;marker&quot;:{&quot;line&quot;:{&quot;color&quot;:&quot;rgb(17,17,17)&quot;,&quot;width&quot;:0.5},&quot;pattern&quot;:{&quot;fillmode&quot;:&quot;overlay&quot;,&quot;size&quot;:10,&quot;solidity&quot;:0.2}},&quot;type&quot;:&quot;barpolar&quot;}],&quot;pie&quot;:[{&quot;automargin&quot;:true,&quot;type&quot;:&quot;pie&quot;}]},&quot;layout&quot;:{&quot;autotypenumbers&quot;:&quot;strict&quot;,&quot;colorway&quot;:[&quot;#636efa&quot;,&quot;#EF553B&quot;,&quot;#00cc96&quot;,&quot;#ab63fa&quot;,&quot;#FFA15A&quot;,&quot;#19d3f3&quot;,&quot;#FF6692&quot;,&quot;#B6E880&quot;,&quot;#FF97FF&quot;,&quot;#FECB52&quot;],&quot;font&quot;:{&quot;color&quot;:&quot;#f2f5fa&quot;},&quot;hovermode&quot;:&quot;closest&quot;,&quot;hoverlabel&quot;:{&quot;align&quot;:&quot;left&quot;},&quot;paper_bgcolor&quot;:&quot;rgb(17,17,17)&quot;,&quot;plot_bgcolor&quot;:&quot;rgb(17,17,17)&quot;,&quot;polar&quot;:{&quot;bgcolor&quot;:&quot;rgb(17,17,17)&quot;,&quot;angularaxis&quot;:{&quot;gridcolor&quot;:&quot;#506784&quot;,&quot;linecolor&quot;:&quot;#506784&quot;,&quot;ticks&quot;:&quot;&quot;},&quot;radialaxis&quot;:{&quot;gridcolor&quot;:&quot;#506784&quot;,&quot;linecolor&quot;:&quot;#506784&quot;,&quot;ticks&quot;:&quot;&quot;}},&quot;ternary&quot;:{&quot;bgcolor&quot;:&quot;rgb(17,17,17)&quot;,&quot;aaxis&quot;:{&quot;gridcolor&quot;:&quot;#506784&quot;,&quot;linecolor&quot;:&quot;#506784&quot;,&quot;ticks&quot;:&quot;&quot;},&quot;baxis&quot;:{&quot;gridcolor&quot;:&quot;#506784&quot;,&quot;linecolor&quot;:&quot;#506784&quot;,&quot;ticks&quot;:&quot;&quot;},&quot;caxis&quot;:{&quot;gridcolor&quot;:&quot;#506784&quot;,&quot;linecolor&quot;:&quot;#506784&quot;,&quot;ticks&quot;:&quot;&quot;}},&quot;coloraxis&quot;:{&quot;colorbar&quot;:{&quot;outlinewidth&quot;:0,&quot;ticks&quot;:&quot;&quot;}},&quot;colorscale&quot;:{&quot;sequential&quot;:[[0.0,&quot;#0d0887&quot;],[0.1111111111111111,&quot;#46039f&quot;],[0.2222222222222222,&quot;#7201a8&quot;],[0.3333333333333333,&quot;#9c179e&quot;],[0.4444444444444444,&quot;#bd3786&quot;],[0.5555555555555556,&quot;#d8576b&quot;],[0.6666666666666666,&quot;#ed7953&quot;],[0.7777777777777778,&quot;#fb9f3a&quot;],[0.8888888888888888,&quot;#fdca26&quot;],[1.0,&quot;#f0f921&quot;]],&quot;sequentialminus&quot;:[[0.0,&quot;#0d0887&quot;],[0.1111111111111111,&quot;#46039f&quot;],[0.2222222222222222,&quot;#7201a8&quot;],[0.3333333333333333,&quot;#9c179e&quot;],[0.4444444444444444,&quot;#bd3786&quot;],[0.5555555555555556,&quot;#d8576b&quot;],[0.6666666666666666,&quot;#ed7953&quot;],[0.7777777777777778,&quot;#fb9f3a&quot;],[0.8888888888888888,&quot;#fdca26&quot;],[1.0,&quot;#f0f921&quot;]],&quot;diverging&quot;:[[0,&quot;#8e0152&quot;],[0.1,&quot;#c51b7d&quot;],[0.2,&quot;#de77ae&quot;],[0.3,&quot;#f1b6da&quot;],[0.4,&quot;#fde0ef&quot;],[0.5,&quot;#f7f7f7&quot;],[0.6,&quot;#e6f5d0&quot;],[0.7,&quot;#b8e186&quot;],[0.8,&quot;#7fbc41&quot;],[0.9,&quot;#4d9221&quot;],[1,&quot;#276419&quot;]]},&quot;xaxis&quot;:{&quot;gridcolor&quot;:&quot;#283442&quot;,&quot;linecolor&quot;:&quot;#506784&quot;,&quot;ticks&quot;:&quot;&quot;,&quot;title&quot;:{&quot;standoff&quot;:15},&quot;zerolinecolor&quot;:&quot;#283442&quot;,&quot;automargin&quot;:true,&quot;zerolinewidth&quot;:2},&quot;yaxis&quot;:{&quot;gridcolor&quot;:&quot;#283442&quot;,&quot;linecolor&quot;:&quot;#506784&quot;,&quot;ticks&quot;:&quot;&quot;,&quot;title&quot;:{&quot;standoff&quot;:15},&quot;zerolinecolor&quot;:&quot;#283442&quot;,&quot;automargin&quot;:true,&quot;zerolinewidth&quot;:2},&quot;scene&quot;:{&quot;xaxis&quot;:{&quot;backgroundcolor&quot;:&quot;rgb(17,17,17)&quot;,&quot;gridcolor&quot;:&quot;#506784&quot;,&quot;linecolor&quot;:&quot;#506784&quot;,&quot;showbackground&quot;:true,&quot;ticks&quot;:&quot;&quot;,&quot;zerolinecolor&quot;:&quot;#C8D4E3&quot;,&quot;gridwidth&quot;:2},&quot;yaxis&quot;:{&quot;backgroundcolor&quot;:&quot;rgb(17,17,17)&quot;,&quot;gridcolor&quot;:&quot;#506784&quot;,&quot;linecolor&quot;:&quot;#506784&quot;,&quot;showbackground&quot;:true,&quot;ticks&quot;:&quot;&quot;,&quot;zerolinecolor&quot;:&quot;#C8D4E3&quot;,&quot;gridwidth&quot;:2},&quot;zaxis&quot;:{&quot;backgroundcolor&quot;:&quot;rgb(17,17,17)&quot;,&quot;gridcolor&quot;:&quot;#506784&quot;,&quot;linecolor&quot;:&quot;#506784&quot;,&quot;showbackground&quot;:true,&quot;ticks&quot;:&quot;&quot;,&quot;zerolinecolor&quot;:&quot;#C8D4E3&quot;,&quot;gridwidth&quot;:2}},&quot;shapedefaults&quot;:{&quot;line&quot;:{&quot;color&quot;:&quot;#f2f5fa&quot;}},&quot;annotationdefaults&quot;:{&quot;arrowcolor&quot;:&quot;#f2f5fa&quot;,&quot;arrowhead&quot;:0,&quot;arrowwidth&quot;:1},&quot;geo&quot;:{&quot;bgcolor&quot;:&quot;rgb(17,17,17)&quot;,&quot;landcolor&quot;:&quot;rgb(17,17,17)&quot;,&quot;subunitcolor&quot;:&quot;#506784&quot;,&quot;showland&quot;:true,&quot;showlakes&quot;:true,&quot;lakecolor&quot;:&quot;rgb(17,17,17)&quot;},&quot;title&quot;:{&quot;x&quot;:0.05},&quot;updatemenudefaults&quot;:{&quot;bgcolor&quot;:&quot;#506784&quot;,&quot;borderwidth&quot;:0},&quot;sliderdefaults&quot;:{&quot;bgcolor&quot;:&quot;#C8D4E3&quot;,&quot;borderwidth&quot;:1,&quot;bordercolor&quot;:&quot;rgb(17,17,17)&quot;,&quot;tickwidth&quot;:0},&quot;mapbox&quot;:{&quot;style&quot;:&quot;dark&quot;}}},&quot;xaxis&quot;:{&quot;anchor&quot;:&quot;y&quot;,&quot;domain&quot;:[0.0,1.0],&quot;title&quot;:{&quot;text&quot;:&quot;Area (Square Miles)&quot;}},&quot;yaxis&quot;:{&quot;anchor&quot;:&quot;x&quot;,&quot;domain&quot;:[0.0,1.0],&quot;title&quot;:{&quot;text&quot;:&quot;County&quot;},&quot;ticklabelstandoff&quot;:10},&quot;legend&quot;:{&quot;tracegroupgap&quot;:0},&quot;title&quot;:{&quot;subtitle&quot;:{&quot;text&quot;:&quot;Area&quot;},&quot;text&quot;:&quot;Top 10&quot;},&quot;barmode&quot;:&quot;relative&quot;,&quot;width&quot;:400,&quot;height&quot;:400,&quot;clickmode&quot;:&quot;event+select&quot;}}' data-config='{}'></marimo-plotly></marimo-ui-element></div><div style='flex: 1'><marimo-ui-element object-id='aqbW-1' random-id='53011c11-5c68-cbfd-e78f-beec9585c3bc'><marimo-plotly data-initial-value='{}' data-label='null' data-figure='{&quot;data&quot;:[{&quot;hovertemplate&quot;:&quot;Area (Square Miles)=%{x}&#92;u003cbr&#92;u003eCounty=%{y}&#92;u003cextra&#92;u003e&#92;u003c/extra&#92;u003e&quot;,&quot;legendgroup&quot;:&quot;&quot;,&quot;marker&quot;:{&quot;color&quot;:&quot;#636efa&quot;,&quot;pattern&quot;:{&quot;shape&quot;:&quot;&quot;}},&quot;name&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;h&quot;,&quot;showlegend&quot;:false,&quot;textposition&quot;:&quot;auto&quot;,&quot;x&quot;:{&quot;dtype&quot;:&quot;u2&quot;,&quot;bdata&quot;:&quot;LwC+AcEBCAJRAlsCdgLQAuIC4wI=&quot;},&quot;xaxis&quot;:&quot;x&quot;,&quot;y&quot;:[&quot;San Francisco&quot;,&quot;Santa Cruz&quot;,&quot;San Mateo&quot;,&quot;Marin&quot;,&quot;Amador&quot;,&quot;Sutter&quot;,&quot;Yuba&quot;,&quot;Contra Costa&quot;,&quot;Alameda&quot;,&quot;Alpine&quot;],&quot;yaxis&quot;:&quot;y&quot;,&quot;type&quot;:&quot;bar&quot;,&quot;selected&quot;:{&quot;marker&quot;:{&quot;color&quot;:&quot;green&quot;}},&quot;unselected&quot;:{&quot;marker&quot;:{&quot;color&quot;:&quot;lightgray&quot;,&quot;opacity&quot;:0.65}},&quot;selectedpoints&quot;:[]}],&quot;layout&quot;:{&quot;template&quot;:{&quot;data&quot;:{&quot;histogram2dcontour&quot;:[{&quot;type&quot;:&quot;histogram2dcontour&quot;,&quot;colorbar&quot;:{&quot;outlinewidth&quot;:0,&quot;ticks&quot;:&quot;&quot;},&quot;colorscale&quot;:[[0.0,&quot;#0d0887&quot;],[0.1111111111111111,&quot;#46039f&quot;],[0.2222222222222222,&quot;#7201a8&quot;],[0.3333333333333333,&quot;#9c179e&quot;],[0.4444444444444444,&quot;#bd3786&quot;],[0.5555555555555556,&quot;#d8576b&quot;],[0.6666666666666666,&quot;#ed7953&quot;],[0.7777777777777778,&quot;#fb9f3a&quot;],[0.8888888888888888,&quot;#fdca26&quot;],[1.0,&quot;#f0f921&quot;]]}],&quot;choropleth&quot;:[{&quot;type&quot;:&quot;choropleth&quot;,&quot;colorbar&quot;:{&quot;outlinewidth&quot;:0,&quot;ticks&quot;:&quot;&quot;}}],&quot;histogram2d&quot;:[{&quot;type&quot;:&quot;histogram2d&quot;,&quot;colorbar&quot;:{&quot;outlinewidth&quot;:0,&quot;ticks&quot;:&quot;&quot;},&quot;colorscale&quot;:[[0.0,&quot;#0d0887&quot;],[0.1111111111111111,&quot;#46039f&quot;],[0.2222222222222222,&quot;#7201a8&quot;],[0.3333333333333333,&quot;#9c179e&quot;],[0.4444444444444444,&quot;#bd3786&quot;],[0.5555555555555556,&quot;#d8576b&quot;],[0.6666666666666666,&quot;#ed7953&quot;],[0.7777777777777778,&quot;#fb9f3a&quot;],[0.8888888888888888,&quot;#fdca26&quot;],[1.0,&quot;#f0f921&quot;]]}],&quot;heatmap&quot;:[{&quot;type&quot;:&quot;heatmap&quot;,&quot;colorbar&quot;:{&quot;outlinewidth&quot;:0,&quot;ticks&quot;:&quot;&quot;},&quot;colorscale&quot;:[[0.0,&quot;#0d0887&quot;],[0.1111111111111111,&quot;#46039f&quot;],[0.2222222222222222,&quot;#7201a8&quot;],[0.3333333333333333,&quot;#9c179e&quot;],[0.4444444444444444,&quot;#bd3786&quot;],[0.5555555555555556,&quot;#d8576b&quot;],[0.6666666666666666,&quot;#ed7953&quot;],[0.7777777777777778,&quot;#fb9f3a&quot;],[0.8888888888888888,&quot;#fdca26&quot;],[1.0,&quot;#f0f921&quot;]]}],&quot;contourcarpet&quot;:[{&quot;type&quot;:&quot;contourcarpet&quot;,&quot;colorbar&quot;:{&quot;outlinewidth&quot;:0,&quot;ticks&quot;:&quot;&quot;}}],&quot;contour&quot;:[{&quot;type&quot;:&quot;contour&quot;,&quot;colorbar&quot;:{&quot;outlinewidth&quot;:0,&quot;ticks&quot;:&quot;&quot;},&quot;colorscale&quot;:[[0.0,&quot;#0d0887&quot;],[0.1111111111111111,&quot;#46039f&quot;],[0.2222222222222222,&quot;#7201a8&quot;],[0.3333333333333333,&quot;#9c179e&quot;],[0.4444444444444444,&quot;#bd3786&quot;],[0.5555555555555556,&quot;#d8576b&quot;],[0.6666666666666666,&quot;#ed7953&quot;],[0.7777777777777778,&quot;#fb9f3a&quot;],[0.8888888888888888,&quot;#fdca26&quot;],[1.0,&quot;#f0f921&quot;]]}],&quot;surface&quot;:[{&quot;type&quot;:&quot;surface&quot;,&quot;colorbar&quot;:{&quot;outlinewidth&quot;:0,&quot;ticks&quot;:&quot;&quot;},&quot;colorscale&quot;:[[0.0,&quot;#0d0887&quot;],[0.1111111111111111,&quot;#46039f&quot;],[0.2222222222222222,&quot;#7201a8&quot;],[0.3333333333333333,&quot;#9c179e&quot;],[0.4444444444444444,&quot;#bd3786&quot;],[0.5555555555555556,&quot;#d8576b&quot;],[0.6666666666666666,&quot;#ed7953&quot;],[0.7777777777777778,&quot;#fb9f3a&quot;],[0.8888888888888888,&quot;#fdca26&quot;],[1.0,&quot;#f0f921&quot;]]}],&quot;mesh3d&quot;:[{&quot;type&quot;:&quot;mesh3d&quot;,&quot;colorbar&quot;:{&quot;outlinewidth&quot;:0,&quot;ticks&quot;:&quot;&quot;}}],&quot;scatter&quot;:[{&quot;marker&quot;:{&quot;line&quot;:{&quot;color&quot;:&quot;#283442&quot;}},&quot;type&quot;:&quot;scatter&quot;}],&quot;parcoords&quot;:[{&quot;type&quot;:&quot;parcoords&quot;,&quot;line&quot;:{&quot;colorbar&quot;:{&quot;outlinewidth&quot;:0,&quot;ticks&quot;:&quot;&quot;}}}],&quot;scatterpolargl&quot;:[{&quot;type&quot;:&quot;scatterpolargl&quot;,&quot;marker&quot;:{&quot;colorbar&quot;:{&quot;outlinewidth&quot;:0,&quot;ticks&quot;:&quot;&quot;}}}],&quot;bar&quot;:[{&quot;error_x&quot;:{&quot;color&quot;:&quot;#f2f5fa&quot;},&quot;error_y&quot;:{&quot;color&quot;:&quot;#f2f5fa&quot;},&quot;marker&quot;:{&quot;line&quot;:{&quot;color&quot;:&quot;rgb(17,17,17)&quot;,&quot;width&quot;:0.5},&quot;pattern&quot;:{&quot;fillmode&quot;:&quot;overlay&quot;,&quot;size&quot;:10,&quot;solidity&quot;:0.2}},&quot;type&quot;:&quot;bar&quot;}],&quot;scattergeo&quot;:[{&quot;type&quot;:&quot;scattergeo&quot;,&quot;marker&quot;:{&quot;colorbar&quot;:{&quot;outlinewidth&quot;:0,&quot;ticks&quot;:&quot;&quot;}}}],&quot;scatterpolar&quot;:[{&quot;type&quot;:&quot;scatterpolar&quot;,&quot;marker&quot;:{&quot;colorbar&quot;:{&quot;outlinewidth&quot;:0,&quot;ticks&quot;:&quot;&quot;}}}],&quot;histogram&quot;:[{&quot;marker&quot;:{&quot;pattern&quot;:{&quot;fillmode&quot;:&quot;overlay&quot;,&quot;size&quot;:10,&quot;solidity&quot;:0.2}},&quot;type&quot;:&quot;histogram&quot;}],&quot;scattergl&quot;:[{&quot;marker&quot;:{&quot;line&quot;:{&quot;color&quot;:&quot;#283442&quot;}},&quot;type&quot;:&quot;scattergl&quot;}],&quot;scatter3d&quot;:[{&quot;type&quot;:&quot;scatter3d&quot;,&quot;line&quot;:{&quot;colorbar&quot;:{&quot;outlinewidth&quot;:0,&quot;ticks&quot;:&quot;&quot;}},&quot;marker&quot;:{&quot;colorbar&quot;:{&quot;outlinewidth&quot;:0,&quot;ticks&quot;:&quot;&quot;}}}],&quot;scattermap&quot;:[{&quot;type&quot;:&quot;scattermap&quot;,&quot;marker&quot;:{&quot;colorbar&quot;:{&quot;outlinewidth&quot;:0,&quot;ticks&quot;:&quot;&quot;}}}],&quot;scattermapbox&quot;:[{&quot;type&quot;:&quot;scattermapbox&quot;,&quot;marker&quot;:{&quot;colorbar&quot;:{&quot;outlinewidth&quot;:0,&quot;ticks&quot;:&quot;&quot;}}}],&quot;scatterternary&quot;:[{&quot;type&quot;:&quot;scatterternary&quot;,&quot;marker&quot;:{&quot;colorbar&quot;:{&quot;outlinewidth&quot;:0,&quot;ticks&quot;:&quot;&quot;}}}],&quot;scattercarpet&quot;:[{&quot;type&quot;:&quot;scattercarpet&quot;,&quot;marker&quot;:{&quot;colorbar&quot;:{&quot;outlinewidth&quot;:0,&quot;ticks&quot;:&quot;&quot;}}}],&quot;carpet&quot;:[{&quot;aaxis&quot;:{&quot;endlinecolor&quot;:&quot;#A2B1C6&quot;,&quot;gridcolor&quot;:&quot;#506784&quot;,&quot;linecolor&quot;:&quot;#506784&quot;,&quot;minorgridcolor&quot;:&quot;#506784&quot;,&quot;startlinecolor&quot;:&quot;#A2B1C6&quot;},&quot;baxis&quot;:{&quot;endlinecolor&quot;:&quot;#A2B1C6&quot;,&quot;gridcolor&quot;:&quot;#506784&quot;,&quot;linecolor&quot;:&quot;#506784&quot;,&quot;minorgridcolor&quot;:&quot;#506784&quot;,&quot;startlinecolor&quot;:&quot;#A2B1C6&quot;},&quot;type&quot;:&quot;carpet&quot;}],&quot;table&quot;:[{&quot;cells&quot;:{&quot;fill&quot;:{&quot;color&quot;:&quot;#506784&quot;},&quot;line&quot;:{&quot;color&quot;:&quot;rgb(17,17,17)&quot;}},&quot;header&quot;:{&quot;fill&quot;:{&quot;color&quot;:&quot;#2a3f5f&quot;},&quot;line&quot;:{&quot;color&quot;:&quot;rgb(17,17,17)&quot;}},&quot;type&quot;:&quot;table&quot;}],&quot;barpolar&quot;:[{&quot;marker&quot;:{&quot;line&quot;:{&quot;color&quot;:&quot;rgb(17,17,17)&quot;,&quot;width&quot;:0.5},&quot;pattern&quot;:{&quot;fillmode&quot;:&quot;overlay&quot;,&quot;size&quot;:10,&quot;solidity&quot;:0.2}},&quot;type&quot;:&quot;barpolar&quot;}],&quot;pie&quot;:[{&quot;automargin&quot;:true,&quot;type&quot;:&quot;pie&quot;}]},&quot;layout&quot;:{&quot;autotypenumbers&quot;:&quot;strict&quot;,&quot;colorway&quot;:[&quot;#636efa&quot;,&quot;#EF553B&quot;,&quot;#00cc96&quot;,&quot;#ab63fa&quot;,&quot;#FFA15A&quot;,&quot;#19d3f3&quot;,&quot;#FF6692&quot;,&quot;#B6E880&quot;,&quot;#FF97FF&quot;,&quot;#FECB52&quot;],&quot;font&quot;:{&quot;color&quot;:&quot;#f2f5fa&quot;},&quot;hovermode&quot;:&quot;closest&quot;,&quot;hoverlabel&quot;:{&quot;align&quot;:&quot;left&quot;},&quot;paper_bgcolor&quot;:&quot;rgb(17,17,17)&quot;,&quot;plot_bgcolor&quot;:&quot;rgb(17,17,17)&quot;,&quot;polar&quot;:{&quot;bgcolor&quot;:&quot;rgb(17,17,17)&quot;,&quot;angularaxis&quot;:{&quot;gridcolor&quot;:&quot;#506784&quot;,&quot;linecolor&quot;:&quot;#506784&quot;,&quot;ticks&quot;:&quot;&quot;},&quot;radialaxis&quot;:{&quot;gridcolor&quot;:&quot;#506784&quot;,&quot;linecolor&quot;:&quot;#506784&quot;,&quot;ticks&quot;:&quot;&quot;}},&quot;ternary&quot;:{&quot;bgcolor&quot;:&quot;rgb(17,17,17)&quot;,&quot;aaxis&quot;:{&quot;gridcolor&quot;:&quot;#506784&quot;,&quot;linecolor&quot;:&quot;#506784&quot;,&quot;ticks&quot;:&quot;&quot;},&quot;baxis&quot;:{&quot;gridcolor&quot;:&quot;#506784&quot;,&quot;linecolor&quot;:&quot;#506784&quot;,&quot;ticks&quot;:&quot;&quot;},&quot;caxis&quot;:{&quot;gridcolor&quot;:&quot;#506784&quot;,&quot;linecolor&quot;:&quot;#506784&quot;,&quot;ticks&quot;:&quot;&quot;}},&quot;coloraxis&quot;:{&quot;colorbar&quot;:{&quot;outlinewidth&quot;:0,&quot;ticks&quot;:&quot;&quot;}},&quot;colorscale&quot;:{&quot;sequential&quot;:[[0.0,&quot;#0d0887&quot;],[0.1111111111111111,&quot;#46039f&quot;],[0.2222222222222222,&quot;#7201a8&quot;],[0.3333333333333333,&quot;#9c179e&quot;],[0.4444444444444444,&quot;#bd3786&quot;],[0.5555555555555556,&quot;#d8576b&quot;],[0.6666666666666666,&quot;#ed7953&quot;],[0.7777777777777778,&quot;#fb9f3a&quot;],[0.8888888888888888,&quot;#fdca26&quot;],[1.0,&quot;#f0f921&quot;]],&quot;sequentialminus&quot;:[[0.0,&quot;#0d0887&quot;],[0.1111111111111111,&quot;#46039f&quot;],[0.2222222222222222,&quot;#7201a8&quot;],[0.3333333333333333,&quot;#9c179e&quot;],[0.4444444444444444,&quot;#bd3786&quot;],[0.5555555555555556,&quot;#d8576b&quot;],[0.6666666666666666,&quot;#ed7953&quot;],[0.7777777777777778,&quot;#fb9f3a&quot;],[0.8888888888888888,&quot;#fdca26&quot;],[1.0,&quot;#f0f921&quot;]],&quot;diverging&quot;:[[0,&quot;#8e0152&quot;],[0.1,&quot;#c51b7d&quot;],[0.2,&quot;#de77ae&quot;],[0.3,&quot;#f1b6da&quot;],[0.4,&quot;#fde0ef&quot;],[0.5,&quot;#f7f7f7&quot;],[0.6,&quot;#e6f5d0&quot;],[0.7,&quot;#b8e186&quot;],[0.8,&quot;#7fbc41&quot;],[0.9,&quot;#4d9221&quot;],[1,&quot;#276419&quot;]]},&quot;xaxis&quot;:{&quot;gridcolor&quot;:&quot;#283442&quot;,&quot;linecolor&quot;:&quot;#506784&quot;,&quot;ticks&quot;:&quot;&quot;,&quot;title&quot;:{&quot;standoff&quot;:15},&quot;zerolinecolor&quot;:&quot;#283442&quot;,&quot;automargin&quot;:true,&quot;zerolinewidth&quot;:2},&quot;yaxis&quot;:{&quot;gridcolor&quot;:&quot;#283442&quot;,&quot;linecolor&quot;:&quot;#506784&quot;,&quot;ticks&quot;:&quot;&quot;,&quot;title&quot;:{&quot;standoff&quot;:15},&quot;zerolinecolor&quot;:&quot;#283442&quot;,&quot;automargin&quot;:true,&quot;zerolinewidth&quot;:2},&quot;scene&quot;:{&quot;xaxis&quot;:{&quot;backgroundcolor&quot;:&quot;rgb(17,17,17)&quot;,&quot;gridcolor&quot;:&quot;#506784&quot;,&quot;linecolor&quot;:&quot;#506784&quot;,&quot;showbackground&quot;:true,&quot;ticks&quot;:&quot;&quot;,&quot;zerolinecolor&quot;:&quot;#C8D4E3&quot;,&quot;gridwidth&quot;:2},&quot;yaxis&quot;:{&quot;backgroundcolor&quot;:&quot;rgb(17,17,17)&quot;,&quot;gridcolor&quot;:&quot;#506784&quot;,&quot;linecolor&quot;:&quot;#506784&quot;,&quot;showbackground&quot;:true,&quot;ticks&quot;:&quot;&quot;,&quot;zerolinecolor&quot;:&quot;#C8D4E3&quot;,&quot;gridwidth&quot;:2},&quot;zaxis&quot;:{&quot;backgroundcolor&quot;:&quot;rgb(17,17,17)&quot;,&quot;gridcolor&quot;:&quot;#506784&quot;,&quot;linecolor&quot;:&quot;#506784&quot;,&quot;showbackground&quot;:true,&quot;ticks&quot;:&quot;&quot;,&quot;zerolinecolor&quot;:&quot;#C8D4E3&quot;,&quot;gridwidth&quot;:2}},&quot;shapedefaults&quot;:{&quot;line&quot;:{&quot;color&quot;:&quot;#f2f5fa&quot;}},&quot;annotationdefaults&quot;:{&quot;arrowcolor&quot;:&quot;#f2f5fa&quot;,&quot;arrowhead&quot;:0,&quot;arrowwidth&quot;:1},&quot;geo&quot;:{&quot;bgcolor&quot;:&quot;rgb(17,17,17)&quot;,&quot;landcolor&quot;:&quot;rgb(17,17,17)&quot;,&quot;subunitcolor&quot;:&quot;#506784&quot;,&quot;showland&quot;:true,&quot;showlakes&quot;:true,&quot;lakecolor&quot;:&quot;rgb(17,17,17)&quot;},&quot;title&quot;:{&quot;x&quot;:0.05},&quot;updatemenudefaults&quot;:{&quot;bgcolor&quot;:&quot;#506784&quot;,&quot;borderwidth&quot;:0},&quot;sliderdefaults&quot;:{&quot;bgcolor&quot;:&quot;#C8D4E3&quot;,&quot;borderwidth&quot;:1,&quot;bordercolor&quot;:&quot;rgb(17,17,17)&quot;,&quot;tickwidth&quot;:0},&quot;mapbox&quot;:{&quot;style&quot;:&quot;dark&quot;}}},&quot;xaxis&quot;:{&quot;anchor&quot;:&quot;y&quot;,&quot;domain&quot;:[0.0,1.0],&quot;title&quot;:{&quot;text&quot;:&quot;Area (Square Miles)&quot;}},&quot;yaxis&quot;:{&quot;anchor&quot;:&quot;x&quot;,&quot;domain&quot;:[0.0,1.0],&quot;title&quot;:{&quot;text&quot;:&quot;County&quot;},&quot;ticklabelstandoff&quot;:10},&quot;legend&quot;:{&quot;tracegroupgap&quot;:0},&quot;title&quot;:{&quot;subtitle&quot;:{&quot;text&quot;:&quot;Area&quot;},&quot;text&quot;:&quot;Bottom 10&quot;},&quot;barmode&quot;:&quot;relative&quot;,&quot;width&quot;:400,&quot;height&quot;:400,&quot;clickmode&quot;:&quot;event+select&quot;}}' data-config='{}'></marimo-plotly></marimo-ui-element></div></div></div>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "TXez",
+      "code_hash": "ca413928da7a9052f6d7946eb2c78757",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "dNNg",
+      "code_hash": null,
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "yCnT",
+      "code_hash": null,
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "wlCL",
+      "code_hash": null,
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "kqZH",
+      "code_hash": null,
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "wAgl",
       "code_hash": "0cd7c48085ad16e3ccfe54c8a94d55fd",
       "outputs": [
         {
@@ -305,7 +520,7 @@
       "console": []
     },
     {
-      "id": "Pvdt",
+      "id": "rEll",
       "code_hash": "54394c7901321bf03c89ed8b62c66d8e",
       "outputs": [
         {
@@ -318,7 +533,7 @@
       "console": []
     },
     {
-      "id": "ZBYS",
+      "id": "dGlV",
       "code_hash": "a189711a9ca9af13a5fc9bec0b988367",
       "outputs": [
         {
@@ -331,7 +546,7 @@
       "console": []
     },
     {
-      "id": "aLJB",
+      "id": "SdmI",
       "code_hash": "848895ed4096b64b391532c4471cc915",
       "outputs": [
         {
@@ -344,7 +559,7 @@
       "console": []
     },
     {
-      "id": "nHfw",
+      "id": "lgWD",
       "code_hash": "197597d72a7c40f336108c8591e99aa7",
       "outputs": [
         {
@@ -357,7 +572,7 @@
       "console": []
     },
     {
-      "id": "xXTn",
+      "id": "yOPj",
       "code_hash": "d5fedb7d44b0c4c33c915acd16f57bac",
       "outputs": [
         {
@@ -370,7 +585,7 @@
       "console": []
     },
     {
-      "id": "AjVT",
+      "id": "fwwy",
       "code_hash": "7f020f4bf86f4e81e671c5e42ad920be",
       "outputs": [
         {
@@ -383,7 +598,7 @@
       "console": []
     },
     {
-      "id": "pHFh",
+      "id": "LJZf",
       "code_hash": "cbdf12cdb20d715d942190b38e6e97d7",
       "outputs": [
         {
