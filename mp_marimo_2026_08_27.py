@@ -122,7 +122,7 @@ def _(mo, slider):
 
 
     def _attribution_card(name, image_name, description):
-        image_path = _Path("images") / image_name
+        image_path = _Path('assets') / image_name
         image = mo.image(str(image_path)) if image_path.exists() else mo.md(
             f"_Image not found: `{image_path}`_"
         )
