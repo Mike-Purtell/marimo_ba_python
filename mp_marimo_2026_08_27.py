@@ -30,7 +30,6 @@ def _():
     import polars as pl
     import plotly.express as px
     import plotly.graph_objects as go
-
     import math
 
 
@@ -54,7 +53,7 @@ def _(mo):
         mo.md("# Welcome to marimo! 🌊🍃"),
         mo.md("## Mike Purtell"),
         mo.md("### Bay Area Python Interest Group"),
-        mo.md("### August 27, 2026")
+        mo.md("### August 27, 2026") 
     ])
     return
 
@@ -62,7 +61,29 @@ def _(mo):
 @app.cell
 def _(mo):
     mo.vstack([
-        mo.md("# Introduction and Overview"),
+        mo.md(
+            """
+            ## Agenda
+
+            Features and limitations of marimo
+
+            Reactivity
+
+            Marimo Flow
+
+            App exampls
+
+            Lets keep this interactive. If you have a question please ask at any time.
+            """
+        ),
+    ])
+    return
+
+
+@app.cell
+def _(mo):
+    mo.vstack([
+        mo.md("##Overview"),
         mo.md("marimo resembles jupyter (vertically arranged blocks, code or markup)"),
         mo.hstack([
             mo.accordion(
@@ -97,91 +118,6 @@ def _(mo):
     return
 
 
-@app.cell
-def _(mo):
-    slider = mo.ui.slider(1, 22)
-    return (slider,)
-
-
-@app.cell
-def _(mo, slider):
-    mo.md(f"""
-    marimo is a **reactive** Python notebook.
-
-    This means that unlike traditional notebooks, marimo notebooks **run
-    automatically** when you modify them or
-    interact with UI elements, like this slider: {slider}
-
-    {"##" + "🍃" * slider.value}
-    """)
-
-    from pathlib import Path as _Path
-
-
-    def _attribution_card(name, image_name, description):
-        image_path = _Path('assets') / image_name
-        image = mo.image(str(image_path)) if image_path.exists() else mo.md(
-            f"_Image not found: `{image_path}`_"
-        )
-        return mo.vstack([
-            image,
-            mo.accordion({name: mo.md(description)}),
-        ])
-
-
-    mo.vstack([
-        mo.md("## Attribution"),
-        mo.hstack([
-            _attribution_card(
-                "Vincent Warmerdam",
-                "Vincent.png",
-                """
-                - Works for Marimo
-                - Has at least 100 youtube videos 
-                """,
-            ),
-            _attribution_card(
-                "Akshay Agrawal",
-                "Akshay.png",
-                """
-                - Founder, CEO, and inventor of Marimo
-                - Stanford Ph.D., worked at Google on Tensorflow
-                """,
-            ),
-        ], widths="equal"),
-    ])
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.vstack([
-        mo.md(
-            """
-            ## 1. Marimo Introduction and Overview
-
-            marimo notebooks resemble jupyter (vertically arranged blocks, code or markup).
-
-            jupyter flow order is top to bottom. Great for exploration and trying things out.
-
-            marimo reactivity sets order based on dependencies and keeps outputs and code in sync.
-
-            I will show many examples of that tonight.
-
-            - jupyter is great for exploration, but beware of hidden state, manual reruns,
-              and hard-to-review file formats
-            - marimo notebooks are stored as Python files
-            - outputs synchronize with code, and can run as scripts, apps, or slides
-            - I will give a quick comparison with jupyter, go over the marimo basics,
-              show two app demos, and wrap up
-
-            Lets keep this interactive. If you have a question please ask at any time.
-            """
-        ),
-    ])
-    return
-
-
 @app.cell(hide_code=True)
 def _(mo):
     mo.accordion(
@@ -202,48 +138,18 @@ def _(mo):
     return
 
 
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(
-        """
-        Tip: This is a tutorial notebook. You can create your own notebooks
-        by entering `marimo edit` at the command line.
-        """
-    ).callout()
-    return
-
-
-@app.cell(hide_code=True)
-def _(changed, mo):
-    (
-        mo.md(
-            f"""
-            **✨ Nice!** The value of `changed` is now {changed}.
-
-            When you updated the value of the variable `changed`, marimo
-            **reacted** by running this cell automatically, because this cell
-            references the global variable `changed`.
-
-            Reactivity ensures that your notebook state is always
-            consistent, which is crucial for doing good science; it's also what
-            enables marimo notebooks to double as tools and  apps.
-            """
-        )
-        if changed
-        else mo.md(
-            """
-            **🌊 See it in action.** In the next cell, change the value of the
-            variable  `changed` to `True`, then click the run button.
-            """
-        )
-    )
-    return
-
-
 @app.cell
-def _():
-    changed = False
-    return (changed,)
+def _(mo):
+    mo.vstack([
+        mo.md(
+            """
+            ## Jupyter review/demo
+            """
+        ),
+        mo.image(src='assets/Jupyter.png', width=500)
+       #mo.image('images/jupyter.png')
+    ])
+    return
 
 
 @app.cell(hide_code=True)
@@ -278,21 +184,6 @@ def _(mo):
 def _(mo):
     mo.accordion(
         {
-            "Tip: encapsulation": (
-                """
-                By encapsulating logic in functions, classes, or Python modules,
-                you can minimize the number of global variables in your notebook.
-                """
-            )
-        }
-    )
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.accordion(
-        {
             "Tip: private variables": (
                 """
                 Variables prefixed with an underscore are "private" to a cell, so
@@ -307,7 +198,19 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md("""
-    ## 2. UI elements
+    ## Fun Fact
+    The name "marimo" is a reference to a type of algae that, under
+    the right conditions, clumps together to form a small sphere
+    called a "marimo moss ball". Made of just strands of algae, these
+    beloved assemblages are greater than the sum of their parts.
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md("""
+    ## UI elements
 
     Cells can output interactive UI elements. Interacting with a UI
     element **automatically triggers notebook execution**: when
@@ -317,6 +220,21 @@ def _(mo):
     marimo provides a library of UI elements to choose from under
     `marimo.ui`.
     """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.accordion(
+        {
+            "Tip: encapsulation": (
+                """
+                By encapsulating logic in functions, classes, or Python modules,
+                you can minimize the number of global variables in your notebook.
+                """
+            )
+        }
+    )
     return
 
 
@@ -330,38 +248,19 @@ def _(mo):
 
 @app.cell
 def _(mo):
-    icons = mo.ui.dropdown(["🐶", "🐱"], value="🐶")
-    return (icons,)
-
-
-@app.cell
-def _(icons, mo):
-    repetitions = mo.ui.slider(1, 16, label=f"number of {icons.value}: ")
-    return (repetitions,)
-
-
-@app.cell
-def _(icons, mo, repetitions):
-    mo.vstack([
-        mo.vstack([icons, mo.left(repetitions)]),
-        mo.md("# " + icons.value * repetitions.value)
-    ])
-    return
-
-
-@app.cell
-def _(mo):
-    slider_max = 6
+    slider_max = 9
     best_slider = mo.ui.slider(
-        1, slider_max, 1, label = 'best slider', value = 3
+        1, slider_max, 1, label='Cats or Dogs?', value = 3
     )
     return best_slider, slider_max
 
 
 @app.cell
 def _(best_slider, mo, slider_max):
+
     mo.vstack([
-        mo.md(f"""{best_slider} value: {best_slider.value}"""),
+        mo.md('## Cats or Dogs?'),
+        mo.md(f"""{best_slider} {best_slider.value} Cats, {(1 + slider_max - best_slider.value)} Dogs """),
         mo.md('#' + '🐱' *  best_slider.value),
         mo.md('#' +'🐶 ' * (1 + slider_max - best_slider.value))
     ])
@@ -380,43 +279,90 @@ def _(mo):
     multiselect = mo.ui.multiselect(
             options=['Springfield', 'Chicago', 'New York', 'Los Angeles'], 
             label='pick your favorite town',
-            max_selections=2 # Optional, None for no limit, integer for specific limit'
+            max_selections=2 
     )
-    checkbox = mo.ui.checkbox(label="yes I read the T's and C's")
-    marimo_ui_dictionary = mo.ui.dictionary(
-           {
-                'checkbox': checkbox,
-                'multiselect': multiselect,
-                'radio': radio,
-            }
-        )
-    return (marimo_ui_dictionary,)
+    checkbox = mo.ui.checkbox(label="yes I read the T's and C's", value=False)
+    return checkbox, multiselect, radio
 
 
 @app.cell
-def _(marimo_ui_dictionary):
-    marimo_ui_dictionary
+def _(checkbox, mo, multiselect, radio):
+    mo.vstack([
+        mo.md('<h1>Interactive widgets</h1>'),
+        mo.hstack([
+            radio,
+            mo.left(mo.Html(radio.value if radio.value != None else 'no selection yet'))
+            ],
+        widths='equal'),
+        mo.Html('<br>'),
+        mo.hstack([
+            multiselect,
+            mo.left(mo.Html(', '.join(multiselect.value) if multiselect.value != None else 'no selection yet')),
+        ],
+        widths='equal'),
+        mo.Html('<br>'),
+        mo.hstack([
+            checkbox,
+            mo.left(mo.Html('Have read the Ts and Cs' if checkbox.value else 'Have NOT read the Ts and Cs'))
+        ],
+        widths='equal'),
+    ])
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md("""
+    ## 3. marimo is just Python
+
+    marimo cells parse Python (and only Python), and marimo notebooks are
+    stored as pure Python files — outputs are _not_ included. There's no
+    magical syntax.
+
+    The Python files generated by marimo are:
+
+    - easily versioned with git, yielding minimal diffs
+    - legible for both humans and machines
+    - formattable using your tool of choice,
+    - usable as Python  scripts, with UI  elements taking their default
+    values, and
+    - importable by other modules (more on that in the future).
+    """)
     return
 
 
 @app.cell
-def _():
+def _(mo):
+    mo.vstack([
+        mo.md(
+            """
+            ## Dataframes
+
+            polars, pandas comparison
+
+            Pagination
+
+            Interactive column select, row filters and other transforms
+
+            Save csv, partquet or other formats
+
+            Interactive built-in data viz, save code to python
+            """
+        ),
+    ])
     return
 
 
 @app.cell
-def _(marimo_ui_dictionary):
-    marimo_ui_dictionary.value
-    return
-
-
-@app.cell
-def _(pl):
+def _(mo, pl):
     df_polars = (
-        pl.DataFrame({str(i): [j * i for j in range(11)] for i in range(11)})
+        pl.DataFrame({str(i): [j * i for j in range(1,11)] for i in range(1,11)})
         .with_columns(pl.all().cast(pl.UInt8))
     )
-    df_polars
+    mo.vstack([
+        mo.md('Single digit <b>Times Table</b><br><sup>mo.ui.table(dataframe)</sup>'),
+        mo.ui.table(df_polars)
+    ])
     return
 
 
@@ -468,12 +414,6 @@ def _(mo, pl):
             inline =  True   # Make them appear side-by-side
         )
     return demo, df_cal
-
-
-@app.cell
-def _(df_cal):
-    df_cal
-    return
 
 
 @app.cell
@@ -566,33 +506,32 @@ def _(demo, df_cal, get_selected_county, go, mo, pl, px):
 
     description = ''
     if demo_view == 'Population':
-        description = (
+        description = mo.Html(
             '''
-            California’s 58 counties span the widest population extremes of any 
-            state in the country. Los Angeles County dominates the high end, while 
-            Alpine County anchors the low end, and the spread between them is 
-            nearly 10 million people.
+            <div style='padding: 0.75rem 1rem; border: 1px solid var(--border-color);'>
+            Los Angeles County with nearly 10 million has a larger population than 
+            40 other US States.  Alpine County at the bottom has  slightly more than 1,000 people.
+            </div>
             '''
             )
     elif demo_view == 'Population Density':
-        description = (
+        description = mo.Html(
             '''
-            California’s county population density ranges from hyper‑urban to 
-            frontier‑level sparse, with a spread of nearly 18,000 people per square mile 
-            between the top and bottom. The single most important fact: San Francisco 
-            County is by far the densest, while Inyo, Alpine, and Modoc anchor the lowest 
-            end at ~2 people per square mile.
+            <div style='padding: 0.75rem 1rem; border: 1px solid var(--border-color);'>
+            San Francisco dominates the
+            population density metric with 18K per square mile, 4x more than the second highest Orange County. 
+            Inyo, Alpine, and Modoc anchor each have about 2 people per square mile.
+            </div>
             '''
             )
     elif demo_view == 'Area':
-        description = (
+        description = mo.Html(
             '''
-            California’s counties span one of the widest area ranges of any state. The
-            largest county in the contiguos United States (San Bernardino) is larger than
-            9 other states, including New Jersey and Massachusetts. The smallest county in
-            California is San Francisco, which also has the largest population density in
-            our state.  California’s county areas reflect our mix of
-            vast deserts, mountain regions, and compact urban cores.
+            <div style='padding: 0.75rem 1rem; border: 1px solid var(--border-color);'>
+            San Bernardino, the largest county in the United States, is larger than
+            9 other states, including New Jersey and Massachusetts.  The Bay Area domates the small county list,
+            with the 4 smallest counties, and 6 of the 10 smallest counties.
+            </div>
             '''
             )
     selected_county_row = (
@@ -619,73 +558,15 @@ def _(demo, df_cal, get_selected_county, go, mo, pl, px):
         no coding required. When you're done, you can copy the code that the GUI 
         generated for you and paste it into your notebook.
     '''
-    layout = mo.vstack([
-        mo.Html(dataframe_info),
-        mo.ui.dataframe(df_cal),
-        mo.Html('<br>'),
-        mo.left(demo),
-        mo.Html('<br>'),
-        mo.left(mo.Html(f' <h1>California County {demo_view}</h1>')),
-        mo.Html('<br>'),
-        mo.Html(description),
-        county_info,
-        mo.hstack([fig1_ui, fig2_ui], widths='equal'),
+    return county_info, demo_view, description, fig1_ui, fig2_ui
+
+
+@app.cell
+def _(df_cal, mo):
+    mo.vstack([
+        mo.md("California Counties - population statistics"),
+        df_cal
     ])
-    return fig1_ui, fig2_ui, layout
-
-
-@app.cell
-def _(layout):
-    layout
-    return
-
-
-@app.cell
-def _(fig1_ui, fig2_ui, set_selected_county):
-    selected_points = fig1_ui.points + fig2_ui.points
-    if selected_points:
-        set_selected_county(selected_points[0].get('y'))
-    return
-
-
-@app.cell
-def _():
-    return
-
-
-@app.cell
-def _():
-    return
-
-
-@app.cell
-def _():
-    return
-
-
-@app.cell
-def _():
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md("""
-    ## 3. marimo is just Python
-
-    marimo cells parse Python (and only Python), and marimo notebooks are
-    stored as pure Python files — outputs are _not_ included. There's no
-    magical syntax.
-
-    The Python files generated by marimo are:
-
-    - easily versioned with git, yielding minimal diffs
-    - legible for both humans and machines
-    - formattable using your tool of choice,
-    - usable as Python  scripts, with UI  elements taking their default
-    values, and
-    - importable by other modules (more on that in the future).
-    """)
     return
 
 
@@ -701,6 +582,35 @@ def _(mo):
     Of course, you can use marimo just to level-up your
     notebooking, without ever making apps.
     """)
+    return
+
+
+@app.cell
+def _(county_info, demo, demo_view, description, fig1_ui, fig2_ui, mo):
+    layout = mo.vstack([
+        mo.Html('<br>'),
+        mo.left(mo.md(f' <h2>California County {demo_view}</h2>')),
+        mo.hstack([
+            description,
+            county_info,
+        ]),
+        mo.left(demo),
+        mo.hstack([fig1_ui, fig2_ui], widths='equal'),
+    ])
+    return (layout,)
+
+
+@app.cell
+def _(layout):
+    layout
+    return
+
+
+@app.cell
+def _(fig1_ui, fig2_ui, set_selected_county):
+    selected_points = fig1_ui.points + fig2_ui.points
+    if selected_points:
+        set_selected_county(selected_points[0].get('y'))
     return
 
 
@@ -760,152 +670,6 @@ def _(mo):
     return
 
 
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md("""
-    ## 6. The marimo editor
-
-    Here are some tips to help you get started with the marimo editor.
-    """)
-    return
-
-
-@app.cell
-def _(mo, tips):
-    mo.accordion(tips)
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md("""
-    ## Finally, a fun fact
-    """)
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md("""
-    The name "marimo" is a reference to a type of algae that, under
-    the right conditions, clumps together to form a small sphere
-    called a "marimo moss ball". Made of just strands of algae, these
-    beloved assemblages are greater than the sum of their parts.
-    """)
-    return
-
-
-@app.cell(hide_code=True)
-def _():
-    tips = {
-        "Saving": (
-            """
-            **Saving**
-
-            - _Name_ your app using the box at the top of the screen, or
-              with `Ctrl/Cmd+s`. You can also create a named app at the
-              command line, e.g., `marimo edit app_name.py`.
-
-            - _Save_ by clicking the save icon on the bottom right, or by
-              inputting `Ctrl/Cmd+s`. By default marimo is configured
-              to autosave.
-            """
-        ),
-        "Running": (
-            """
-            1. _Run a cell_ by clicking the play ( ▷ ) button on the top
-            right of a cell, or by inputting `Ctrl/Cmd+Enter`.
-
-            2. _Run a stale cell_  by clicking the yellow run button on the
-            right of the cell, or by inputting `Ctrl/Cmd+Enter`. A cell is
-            stale when its code has been modified but not run.
-
-            3. _Run all stale cells_ by clicking the play ( ▷ ) button on
-            the bottom right of the screen, or input `Ctrl/Cmd+Shift+r`.
-            """
-        ),
-        "Console Output": (
-            """
-            Console output (e.g., `print()` statements) is shown below a
-            cell.
-            """
-        ),
-        "Creating, Moving, and Deleting Cells": (
-            """
-            1. _Create_ a new cell above or below a given one by clicking
-                the plus button to the left of the cell, which appears on
-                mouse hover.
-
-            2. _Move_ a cell up or down by dragging on the handle to the
-                right of the cell, which appears on mouse hover.
-
-            3. _Delete_ a cell by clicking the trash bin icon. Bring it
-                back by clicking the undo button on the bottom right of the
-                screen, or with `Ctrl/Cmd+Shift+z`.
-            """
-        ),
-        "Disabling Automatic Execution": (
-            """
-            Via the notebook settings (gear icon) or footer panel, you
-            can disable automatic execution. This is helpful when
-            working with expensive notebooks or notebooks that have
-            side-effects like database transactions.
-            """
-        ),
-        "Disabling Cells": (
-            """
-            You can disable a cell via the cell context menu.
-            marimo will never run a disabled cell or any cells that depend on it.
-            This can help prevent accidental execution of expensive computations
-            when editing a notebook.
-            """
-        ),
-        "Code Folding": (
-            """
-            You can collapse or fold the code in a cell by clicking the arrow
-            icons in the line number column to the left, or by using keyboard
-            shortcuts.
-
-            Use the command palette (`Ctrl/Cmd+k`) or a keyboard shortcut to
-            quickly fold or unfold all cells.
-            """
-        ),
-        "Code Formatting": (
-            """
-            If you have [ruff](https://github.com/astral-sh/ruff) installed,
-            you can format a cell with the keyboard shortcut `Ctrl/Cmd+b`.
-            """
-        ),
-        "Command Palette": (
-            """
-            Use `Ctrl/Cmd+k` to open the command palette.
-            """
-        ),
-        "Keyboard Shortcuts": (
-            """
-            Open the notebook menu (top-right) or input `Ctrl/Cmd+Shift+h` to
-            view a list of all keyboard shortcuts.
-            """
-        ),
-        "Configuration": (
-            """
-           Configure the editor by clicking the gears icon near the top-right
-           of the screen.
-           """
-        ),
-        "Exit & Shutdown": (
-            """
-           You can leave Marimo & shut down the server by clicking the
-           circled X at the top right of the screen and responding
-           to the prompt.
-
-           :floppy_disk: _Be sure to save your work first!_
-           """
-        ),
-    }
-    return (tips,)
-
-
 @app.cell
 def _(mo):
     mo.md(r"""
@@ -929,29 +693,17 @@ def _(mo):
 @app.cell
 def _(go):
     def q_annotate_point(
-        fig, name, color, size, x=None, y=None, ax=None, ay=None, xanchor=None
+        fig, name, color, size, x=None, y=None, textposition = None
     ):
         point_x = 0 if x is None else x
         point_y = 0 if y is None else y
-        arrow_x = 0 if ax is None else ax
-        arrow_y = 0 if ay is None else ay
-        anchor = "center" if xanchor is None else xanchor
-        if x is None:
-            point_text = f"{name} {point_y:.3f}"
-        elif y is None:
-            point_text = f"{name} {point_x:.3f}"
-        else:
-            point_text = f"{name} ({point_x:.3f}, {point_y:.3f})"
+        textposition = 'below' if textposition is None else textposition
         fig.add_trace(
             go.Scatter(
-                x=[point_x], y=[point_y], mode="markers",
-                marker=dict(size=size, color=color), name=name, showlegend=False,
+                x=[point_x], y=[point_y], mode="markers+text", text=name, textposition=textposition,
+                marker=dict(size=size, color=color), 
+                showlegend=False,
             )
-        )
-        fig.add_annotation(
-            x=point_x, y=point_y, text=point_text, showarrow=True,
-            arrowhead=2, arrowwidth=3, arrowcolor="white",
-            ax=arrow_x, ay=arrow_y, xanchor=anchor,
         )
         return fig
 
@@ -1125,11 +877,14 @@ def _(
         q_subtitle = "No Real Roots" if q_a != 0 else "Linear Equation"
 
     if q_a_number.value == -1:
-        q_a_expression = "-x<sup>2</sup>"
+        q_a_expression = "y = -x<sup>2</sup>"
     elif q_a_number.value == 1:
-        q_a_expression = "x<sup>2</sup>"
+        q_a_expression = "y = x<sup>2</sup>"
+    elif q_a_number.value == 0:
+        q_a_expression = "y = "
     else:
-        q_a_expression = f"{q_a}x<sup>2</sup>"
+        q_a_expression = f"y = {q_a}x<sup>2</sup>"
+
     if q_b_number.value == -1:
         q_b_expression = " - x"
     elif q_b_number.value == 1:
@@ -1151,24 +906,33 @@ def _(
         title=dict(text=q_title, x=0.5, xanchor="center", font=dict(family="Arial, sans-serif", size=26, color="white"), subtitle=dict(text=q_subtitle, font=dict(family="Arial, sans-serif", size=15, color="dimgray"))),
     )
     q_marker_size = 6
+
     if q_show_vertex.value and q_a_legal:
-        q_fig = q_annotate_point(q_fig, "Vertex", "crimson", q_marker_size, x=q_h, y=q_k, ax=50, ay=q_a_sign * 30)
+        textposition ='bottom center' if q_a_sign > 0 else 'top center'
+        q_fig = q_annotate_point(q_fig, "Vertex", "crimson", q_marker_size, x=q_h, y=q_k,  textposition = textposition)
+
     if q_show_focus.value and q_a_legal:
-        q_fig = q_annotate_point(q_fig, "Focus", "crimson", q_marker_size, x=q_h, y=q_y_focus, ax=50, ay=-q_a_sign * 30)
+        textposition='bottom center' if q_a_sign < 0 else 'top center'
+        q_fig = q_annotate_point(q_fig, "Focus", "crimson", q_marker_size, x=q_h, y=q_y_focus, textposition=textposition)
+
     if q_show_directrix.value and q_y_directrix is not None:
-        q_fig.add_hline(y=q_y_directrix, line_dash="dot", annotation_text=f"Directrix: {q_y_directrix:.3f}", annotation_position="right", annotation_font_size=14, annotation_font_color="white")
+        q_fig.add_hline(y=q_y_directrix, line_dash="dot")
+
     if q_show_roots.value:
         if q_has_one_root and q_a != 0:
-            q_fig = q_annotate_point(q_fig, "Root", "crimson", q_marker_size, x=q_root, ax=-50, xanchor="right")
+            textposition = 'bottom center' if q_a_sign < 0 else 'top center'
+            q_fig = q_annotate_point(q_fig, "Root", "crimson", q_marker_size, x=q_root, textposition=textposition)
         elif q_has_two_roots:
-            q_fig = q_annotate_point(q_fig, "Root 1", "crimson", q_marker_size, x=q_root1, ax=-50, xanchor="right")
-            q_fig = q_annotate_point(q_fig, "Root 2", "crimson", q_marker_size, x=q_root2, ax=50, xanchor="left")
+            q_fig = q_annotate_point(q_fig, "Root 1", "crimson", q_marker_size, x=q_root1, textposition = 'middle left')
+            q_fig = q_annotate_point(q_fig, "Root 2", "crimson", q_marker_size, x=q_root2, textposition = 'middle right')
+
     if q_show_grid.value:
         q_fig.update_xaxes(showgrid=True, visible=True)
         q_fig.update_yaxes(showgrid=True, visible=True)
     else:
         q_fig.update_xaxes(showgrid=False, visible=False)
         q_fig.update_yaxes(showgrid=False, visible=False)
+
     if q_a_legal:
         q_y_range_max = q_y_directrix + q_a_sign * (3 * abs(q_y_focus - q_y_directrix))
         q_y_range_min = q_y_directrix - (q_a_sign * 0.1 * abs(q_k - q_y_directrix))
@@ -1199,6 +963,133 @@ def _(
         ),
     ])
     return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md("""
+    ## 6. The marimo editor
+
+    Here are some tips to help you get started with the marimo editor.
+    """)
+    return
+
+
+@app.cell
+def _(mo, tips):
+    mo.accordion(tips)
+    return
+
+
+@app.cell(hide_code=True)
+def _():
+    tips = {
+        "Saving": (
+            """
+            **Saving**
+
+            - _Name_ your app using the box at the top of the screen, or
+              with `Ctrl/Cmd+s`. You can also create a named app at the
+              command line, e.g., `marimo edit app_name.py`.
+
+            - _Save_ by clicking the save icon on the bottom right, or by
+              inputting `Ctrl/Cmd+s`. By default marimo is configured
+              to autosave.
+            """
+        ),
+        "Running": (
+            """
+            1. _Run a cell_ by clicking the play ( ▷ ) button on the top
+            right of a cell, or by inputting `Ctrl/Cmd+Enter`.
+
+            2. _Run a stale cell_  by clicking the yellow run button on the
+            right of the cell, or by inputting `Ctrl/Cmd+Enter`. A cell is
+            stale when its code has been modified but not run.
+
+            3. _Run all stale cells_ by clicking the play ( ▷ ) button on
+            the bottom right of the screen, or input `Ctrl/Cmd+Shift+r`.
+            """
+        ),
+        "Console Output": (
+            """
+            Console output (e.g., `print()` statements) is shown below a
+            cell.
+            """
+        ),
+        "Creating, Moving, and Deleting Cells": (
+            """
+            1. _Create_ a new cell above or below a given one by clicking
+                the plus button to the left of the cell, which appears on
+                mouse hover.
+
+            2. _Move_ a cell up or down by dragging on the handle to the
+                right of the cell, which appears on mouse hover.
+
+            3. _Delete_ a cell by clicking the trash bin icon. Bring it
+                back by clicking the undo button on the bottom right of the
+                screen, or with `Ctrl/Cmd+Shift+z`.
+            """
+        ),
+        "Disabling Automatic Execution": (
+            """
+            Via the notebook settings (gear icon) or footer panel, you
+            can disable automatic execution. This is helpful when
+            working with expensive notebooks or notebooks that have
+            side-effects like database transactions.
+            """
+        ),
+        "Disabling Cells": (
+            """
+            You can disable a cell via the cell context menu.
+            marimo will never run a disabled cell or any cells that depend on it.
+            This can help prevent accidental execution of expensive computations
+            when editing a notebook.
+            """
+        ),
+        "Code Folding": (
+            """
+            You can collapse or fold the code in a cell by clicking the arrow
+            icons in the line number column to the left, or by using keyboard
+            shortcuts.
+
+            Use the command palette (`Ctrl/Cmd+k`) or a keyboard shortcut to
+            quickly fold or unfold all cells.
+            """
+        ),
+        "Code Formatting": (
+            """
+            If you have [ruff](https://github.com/astral-sh/ruff) installed,
+            you can format a cell with the keyboard shortcut `Ctrl/Cmd+b`.
+            """
+        ),
+        "Command Palette": (
+            """
+            Use `Ctrl/Cmd+k` to open the command palette.
+            """
+        ),
+        "Keyboard Shortcuts": (
+            """
+            Open the notebook menu (top-right) or input `Ctrl/Cmd+Shift+h` to
+            view a list of all keyboard shortcuts.
+            """
+        ),
+        "Configuration": (
+            """
+           Configure the editor by clicking the gears icon near the top-right
+           of the screen.
+           """
+        ),
+        "Exit & Shutdown": (
+            """
+           You can leave Marimo & shut down the server by clicking the
+           circled X at the top right of the screen and responding
+           to the prompt.
+
+           :floppy_disk: _Be sure to save your work first!_
+           """
+        ),
+    }
+    return (tips,)
 
 
 if __name__ == "__main__":
