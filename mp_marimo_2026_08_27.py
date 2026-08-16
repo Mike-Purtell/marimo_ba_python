@@ -27,17 +27,14 @@ def _():
 @app.cell
 def _():
     import numpy
-
-    return
-
-
-@app.cell
-def _():
     import polars as pl
     import plotly.express as px
     import plotly.graph_objects as go
 
-    return go, pl, px
+    import math
+
+
+    return go, math, pl, px
 
 
 @app.cell
@@ -544,8 +541,8 @@ def _(demo, df_cal, get_selected_county, go, mo, pl, px):
     # Update layout to set custom height and width, offset y-labels from bars
     h = 400
     w = 400
-    fig1.update_layout(width=w, height=h, yaxis=dict(ticklabelstandoff=10))
-    fig2.update_layout(width=w, height=h, yaxis=dict(ticklabelstandoff=10))
+    fig1.update_layout(width=w, height=h, template='plotly_dark', yaxis=dict(ticklabelstandoff=10))
+    fig2.update_layout(width=w, height=h, template='plotly_dark', yaxis=dict(ticklabelstandoff=10))
     for fig in (fig1, fig2):
         fig.update_layout(clickmode='event+select')
         selected_indices = (
@@ -607,7 +604,7 @@ def _(demo, df_cal, get_selected_county, go, mo, pl, px):
         county_info = mo.Html(
             f"""
             <div style='padding: 0.75rem 1rem; border: 1px solid var(--border-color);'>
-                <strong>{selected_county_row['County']}</strong><br>
+                <strong>{selected_county_row['County']} County</strong><br>
                 Formation: {selected_county_row['Formation']}<br>
                 Etymology: {selected_county_row['Etymology']}
             </div>
@@ -907,6 +904,301 @@ def _():
         ),
     }
     return (tips,)
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
+    ### Quadratic Analyzer
+    This notebook showcases datavisualization with Marimo.
+    """)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
+    TODO:
+    - Move the Directrix annotation above or below the line based on parabola direction.
+    - Handle the `a = 0` linear case throughout the visualization.
+    - Add focus/directrix distance demonstrations.
+    """)
+    return
+
+
+@app.cell
+def _(go):
+    def q_annotate_point(
+        fig, name, color, size, x=None, y=None, ax=None, ay=None, xanchor=None
+    ):
+        point_x = 0 if x is None else x
+        point_y = 0 if y is None else y
+        arrow_x = 0 if ax is None else ax
+        arrow_y = 0 if ay is None else ay
+        anchor = "center" if xanchor is None else xanchor
+        if x is None:
+            point_text = f"{name} {point_y:.3f}"
+        elif y is None:
+            point_text = f"{name} {point_x:.3f}"
+        else:
+            point_text = f"{name} ({point_x:.3f}, {point_y:.3f})"
+        fig.add_trace(
+            go.Scatter(
+                x=[point_x], y=[point_y], mode="markers",
+                marker=dict(size=size, color=color), name=name, showlegend=False,
+            )
+        )
+        fig.add_annotation(
+            x=point_x, y=point_y, text=point_text, showarrow=True,
+            arrowhead=2, arrowwidth=3, arrowcolor="white",
+            ax=arrow_x, ay=arrow_y, xanchor=anchor,
+        )
+        return fig
+
+    return (q_annotate_point,)
+
+
+@app.cell
+def _(mo):
+    q_a_number = mo.ui.number(value=1.0)
+    q_b_number = mo.ui.number(value=-4.0)
+    q_c_number = mo.ui.number(value=3.0)
+    return q_a_number, q_b_number, q_c_number
+
+
+@app.cell
+def _(q_a_number, q_b_number, q_c_number):
+    q_a = q_a_number.value
+    q_a_legal = abs(q_a) > 0
+    q_a_sign = 1 if q_a > 0 else -1
+    q_b = q_b_number.value
+    q_c = q_c_number.value
+    return q_a, q_a_legal, q_a_sign, q_b, q_c
+
+
+@app.cell
+def _(mo, q_a_number, q_b_number, q_c_number):
+    q_a_stack = mo.vstack([mo.md("a: (x<sup>2</sup> term)"), q_a_number])
+    q_b_stack = mo.vstack([mo.md("b: (x) term:"), q_b_number])
+    q_c_stack = mo.vstack([mo.md("c: (constant)"), q_c_number])
+    return q_a_stack, q_b_stack, q_c_stack
+
+
+@app.cell
+def _(q_a, q_b, q_c):
+    q_has_two_roots = False
+    q_has_one_root = False
+    q_has_no_roots = False
+    if q_a != 0:
+        q_discriminant = (q_b ** 2) - (4 * q_a * q_c)
+        q_has_no_roots = q_discriminant < 0
+        q_has_one_root = q_discriminant == 0
+        q_has_two_roots = q_discriminant > 0
+    else:
+        q_has_one_root = q_b != 0
+    return q_has_no_roots, q_has_one_root, q_has_two_roots
+
+
+@app.cell
+def _(math, q_a, q_b, q_c, q_has_no_roots, q_has_one_root, q_has_two_roots):
+    q_root = None
+    q_root1 = None
+    q_root2 = None
+    if q_a == 0:
+        if q_b == 0:
+            print("No root: this is not a quadratic equation and does not intersect y = 0")
+        else:
+            q_root = -q_c / q_b
+            print(f"Linear equation, one root, intersects (0, {q_root:.3f})")
+    elif q_has_one_root:
+        q_root = -q_b / (2 * q_a)
+    elif q_has_two_roots:
+        q_root_discriminant = math.sqrt(q_b ** 2 - (4 * q_a * q_c))
+        q_root1 = ((-q_b) + q_root_discriminant) / (2 * q_a)
+        q_root2 = ((-q_b) - q_root_discriminant) / (2 * q_a)
+        q_root1, q_root2 = sorted((q_root1, q_root2))
+    if q_has_no_roots:
+        print("Has no root, this curve does not intersect y = 0")
+    elif q_has_one_root and q_a != 0:
+        print(f"One root, intersects (0, {q_root:.3f})")
+    elif q_has_two_roots:
+        print(f"Two roots, intersects (0, {q_root1:.3f}), (0, {q_root2:.3f})")
+    return q_root, q_root1, q_root2
+
+
+@app.cell
+def _(mo):
+    q_show_grid = mo.ui.checkbox(value=False, label="Show Grid")
+    q_show_vertex = mo.ui.checkbox(value=False, label="Vertex")
+    q_show_focus = mo.ui.checkbox(value=False, label="Focus")
+    q_show_directrix = mo.ui.checkbox(value=False, label="Directrix")
+    q_show_roots = mo.ui.checkbox(value=False, label="Roots")
+    q_scale_xy = mo.ui.checkbox(value=False, label="Scale XY")
+    return (
+        q_scale_xy,
+        q_show_directrix,
+        q_show_focus,
+        q_show_grid,
+        q_show_roots,
+        q_show_vertex,
+    )
+
+
+@app.cell
+def _(q_a, q_a_legal, q_b, q_c):
+    if q_a_legal:
+        q_h = -q_b / (2 * q_a)
+        q_k = q_c - (q_b ** 2) / (4 * q_a)
+        q_x_focus = q_h
+        q_y_focus = q_k + (1 / (4 * q_a))
+    else:
+        q_h = q_k = q_x_focus = q_y_focus = 0.0
+        print("Invalid value of a: it cannot be 0 for a parabola")
+    return q_h, q_k, q_x_focus, q_y_focus
+
+
+@app.cell
+def _(q_a, q_a_legal, q_b, q_c, q_h, q_x_focus):
+    if q_a_legal:
+        q_x_offset = 1 / (2 * q_a)
+        q_x_left, q_x_right = sorted((q_h - q_x_offset, q_h + q_x_offset))
+        q_width = q_x_right - q_x_left
+        q_x_start = q_x_focus - (5 * q_width)
+        q_x_stop = q_x_focus + (5 * q_width)
+        q_x_vals = [q_x_start + i * (q_x_stop - q_x_start) / 1000 for i in range(1001)]
+        q_y_vals = [q_a * x * x + q_b * x + q_c for x in q_x_vals]
+    else:
+        q_x_left = q_x_right = q_width = 1.0
+        q_x_vals = [-5 + i / 100 for i in range(1001)]
+        q_y_vals = [q_b * x + q_c for x in q_x_vals]
+    return q_width, q_x_vals, q_y_vals
+
+
+@app.cell
+def _(q_a, q_a_legal, q_k):
+    q_y_directrix = q_k - (1 / (4 * q_a)) if q_a_legal else None
+    return (q_y_directrix,)
+
+
+@app.cell
+def _(
+    go,
+    mo,
+    q_a,
+    q_a_legal,
+    q_a_number,
+    q_a_sign,
+    q_a_stack,
+    q_annotate_point,
+    q_b,
+    q_b_number,
+    q_b_stack,
+    q_c,
+    q_c_number,
+    q_c_stack,
+    q_h,
+    q_has_one_root,
+    q_has_two_roots,
+    q_k,
+    q_root,
+    q_root1,
+    q_root2,
+    q_scale_xy,
+    q_show_directrix,
+    q_show_focus,
+    q_show_grid,
+    q_show_roots,
+    q_show_vertex,
+    q_width,
+    q_x_focus,
+    q_x_vals,
+    q_y_directrix,
+    q_y_focus,
+    q_y_vals,
+):
+    q_fig = go.Figure(data=go.Scatter(x=q_x_vals, y=q_y_vals, showlegend=False))
+    if q_has_one_root and q_a != 0:
+        q_subtitle = f"One Root at x = {q_root:.6f}".rstrip("0").rstrip(".")
+    elif q_has_two_roots:
+        q_subtitle = f"Two Roots at x = {q_root1:.6f}, {q_root2:.6f}"
+    else:
+        q_subtitle = "No Real Roots" if q_a != 0 else "Linear Equation"
+
+    if q_a_number.value == -1:
+        q_a_expression = "-x<sup>2</sup>"
+    elif q_a_number.value == 1:
+        q_a_expression = "x<sup>2</sup>"
+    else:
+        q_a_expression = f"{q_a}x<sup>2</sup>"
+    if q_b_number.value == -1:
+        q_b_expression = " - x"
+    elif q_b_number.value == 1:
+        q_b_expression = " + x"
+    elif q_b_number.value == 0:
+        q_b_expression = ""
+    elif q_b_number.value > 0:
+        q_b_expression = f" + {q_b}x"
+    else:
+        q_b_expression = f" - {abs(q_b)}x"
+    if q_c_number.value == 0:
+        q_c_expression = ""
+    elif q_c_number.value > 0:
+        q_c_expression = f" + {q_c}"
+    else:
+        q_c_expression = f" - {abs(q_c)}"
+    q_title = f"{q_a_expression}{q_b_expression}{q_c_expression}"
+    q_fig.update_layout(
+        title=dict(text=q_title, x=0.5, xanchor="center", font=dict(family="Arial, sans-serif", size=26, color="white"), subtitle=dict(text=q_subtitle, font=dict(family="Arial, sans-serif", size=15, color="dimgray"))),
+    )
+    q_marker_size = 6
+    if q_show_vertex.value and q_a_legal:
+        q_fig = q_annotate_point(q_fig, "Vertex", "crimson", q_marker_size, x=q_h, y=q_k, ax=50, ay=q_a_sign * 30)
+    if q_show_focus.value and q_a_legal:
+        q_fig = q_annotate_point(q_fig, "Focus", "crimson", q_marker_size, x=q_h, y=q_y_focus, ax=50, ay=-q_a_sign * 30)
+    if q_show_directrix.value and q_y_directrix is not None:
+        q_fig.add_hline(y=q_y_directrix, line_dash="dot", annotation_text=f"Directrix: {q_y_directrix:.3f}", annotation_position="right", annotation_font_size=14, annotation_font_color="white")
+    if q_show_roots.value:
+        if q_has_one_root and q_a != 0:
+            q_fig = q_annotate_point(q_fig, "Root", "crimson", q_marker_size, x=q_root, ax=-50, xanchor="right")
+        elif q_has_two_roots:
+            q_fig = q_annotate_point(q_fig, "Root 1", "crimson", q_marker_size, x=q_root1, ax=-50, xanchor="right")
+            q_fig = q_annotate_point(q_fig, "Root 2", "crimson", q_marker_size, x=q_root2, ax=50, xanchor="left")
+    if q_show_grid.value:
+        q_fig.update_xaxes(showgrid=True, visible=True)
+        q_fig.update_yaxes(showgrid=True, visible=True)
+    else:
+        q_fig.update_xaxes(showgrid=False, visible=False)
+        q_fig.update_yaxes(showgrid=False, visible=False)
+    if q_a_legal:
+        q_y_range_max = q_y_directrix + q_a_sign * (3 * abs(q_y_focus - q_y_directrix))
+        q_y_range_min = q_y_directrix - (q_a_sign * 0.1 * abs(q_k - q_y_directrix))
+        q_x_range_max = q_x_focus + (2 * q_width)
+        q_x_range_min = q_x_focus - (2 * q_width)
+        q_x_range = [q_x_range_min, q_x_range_max]
+        q_y_range = sorted([q_y_range_min, q_y_range_max])
+        if q_scale_xy.value:
+            q_fig.update_layout(xaxis=dict(scaleanchor="y"), yaxis=dict(scaleanchor="x"))
+        else:
+            q_fig.update_yaxes(range=q_y_range)
+        q_fig.update_xaxes(range=q_x_range)
+    q_fig.update_layout(template="plotly_dark")
+    mo.vstack([
+        mo.md("## Quadratic Analyzer"),
+        mo.hstack([q_a_stack, q_b_stack, q_c_stack]),
+        mo.hstack([
+            mo.ui.plotly(q_fig), 
+            mo.vstack([
+                q_show_grid, 
+                q_show_vertex, 
+                q_show_focus, 
+                q_show_directrix, 
+                q_show_roots, 
+                q_scale_xy
+                ])], 
+                widths=[3, 1]
+        ),
+    ])
+    return
 
 
 if __name__ == "__main__":

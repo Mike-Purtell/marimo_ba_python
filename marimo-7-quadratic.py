@@ -312,7 +312,7 @@ def _(
 ):
 
     fig = go.Figure(
-            data=go.Scatter(
+            data=go.Scatter(b
                 x=x_vals,
                 y=y_vals,
                 showlegend=False
