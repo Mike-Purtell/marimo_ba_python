@@ -49,6 +49,9 @@
       {},
       {}
     ],
-    "deck": {}
+    "deck": {
+      "transition": "fade",
+      "verticalAlign": "top"
+    }
   }
 }

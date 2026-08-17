@@ -11,6 +11,7 @@
 
 # Copyright 2024 Marimo. All rights reserved.
 # Aug 16: this file was copied over from old commit as changes were lost
+
 import marimo
 
 __generated_with = "0.23.16"
@@ -70,7 +71,7 @@ def _(mo):
             - Reactivity
             - Marimo Flow
             - App examples
-    
+
             Keep things interactive, questions or comments always welcome.
             """
         ),
