@@ -14,7 +14,7 @@
 import marimo
 
 __generated_with = "0.23.16"
-app = marimo.App(layout_file="layouts/mp_marimo_2026_08_27.slides.json")
+app = marimo.App()
 
 
 @app.cell
@@ -50,10 +50,12 @@ def _(mo):
             }
         </style>
         """),
-        mo.md("# Welcome to marimo! 🌊🍃"),
-        mo.md("## Mike Purtell"),
-        mo.md("### Bay Area Python Interest Group"),
-        mo.md("### August 27, 2026") 
+        mo.md('''
+            ###Marimo:  Next generation of python notebooks 🌊🍃   
+            Mike Purtell  
+            Bay Area Python Interest Group  
+            August 27, 2026
+        '''),
     ])
     return
 
@@ -64,16 +66,12 @@ def _(mo):
         mo.md(
             """
             ## Agenda
-
-            Features and limitations of marimo
-
-            Reactivity
-
-            Marimo Flow
-
-            App exampls
-
-            Lets keep this interactive. If you have a question please ask at any time.
+            - Features and limitations of marimo
+            - Reactivity
+            - Marimo Flow
+            - App examples
+        
+            Keep things interactive, questions or comments always welcome.
             """
         ),
     ])
@@ -115,26 +113,6 @@ def _(mo):
             ),
         ], widths="equal")
     ])
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.accordion(
-        {
-            "Tip: disabling automatic execution": mo.md(
-                rf"""
-            marimo lets you disable automatic execution: in the notebook
-            footer, change "On Cell Change" to "lazy".
-
-            When the runtime is lazy, after running a cell, marimo marks its
-            descendants as stale instead of automatically running them. The
-            lazy runtime puts you in control over when cells are run, while
-            still giving guarantees about the notebook state.
-            """
-            )
-        }
-    )
     return
 
 
@@ -220,6 +198,26 @@ def _(mo):
     marimo provides a library of UI elements to choose from under
     `marimo.ui`.
     """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.accordion(
+        {
+            "Tip: disabling automatic execution": mo.md(
+                rf"""
+            marimo lets you disable automatic execution: in the notebook
+            footer, change "On Cell Change" to "lazy".
+
+            When the runtime is lazy, after running a cell, marimo marks its
+            descendants as stale instead of automatically running them. The
+            lazy runtime puts you in control over when cells are run, while
+            still giving guarantees about the notebook state.
+            """
+            )
+        }
+    )
     return
 
 
