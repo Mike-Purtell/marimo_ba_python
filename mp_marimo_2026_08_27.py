@@ -61,6 +61,18 @@ def _(mo):
     return
 
 
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md("""
+    ## Fun Fact
+    The name "marimo" is a reference to a type of algae that, under
+    the right conditions, clumps together to form a small sphere
+    called a "marimo moss ball". Made of just strands of algae, these
+    beloved assemblages are greater than the sum of their parts.
+    """)
+    return
+
+
 @app.cell
 def _(mo):
     mo.vstack([
@@ -133,61 +145,6 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.accordion(
-        {
-            "Tip: execution order": (
-                """
-                The order of cells on the page has no bearing on
-                the order in which cells are executed: marimo knows that a cell
-                reading a variable must run after the cell that  defines it. This
-                frees you to organize your code in the way that makes the most
-                sense for you.
-                """
-            )
-        }
-    )
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md("""
-    **Global names must be unique.** To enable reactivity, marimo imposes a
-    constraint on how names appear in cells: no two cells may define the same
-    variable.
-    """)
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.accordion(
-        {
-            "Tip: private variables": (
-                """
-                Variables prefixed with an underscore are "private" to a cell, so
-                they can be defined by multiple cells.
-                """
-            )
-        }
-    )
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md("""
-    ## Fun Fact
-    The name "marimo" is a reference to a type of algae that, under
-    the right conditions, clumps together to form a small sphere
-    called a "marimo moss ball". Made of just strands of algae, these
-    beloved assemblages are greater than the sum of their parts.
-    """)
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
     mo.md("""
     ## UI elements
 
@@ -198,49 +155,6 @@ def _(mo):
 
     marimo provides a library of UI elements to choose from under
     `marimo.ui`.
-    """)
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.accordion(
-        {
-            "Tip: disabling automatic execution": mo.md(
-                rf"""
-            marimo lets you disable automatic execution: in the notebook
-            footer, change "On Cell Change" to "lazy".
-
-            When the runtime is lazy, after running a cell, marimo marks its
-            descendants as stale instead of automatically running them. The
-            lazy runtime puts you in control over when cells are run, while
-            still giving guarantees about the notebook state.
-            """
-            )
-        }
-    )
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.accordion(
-        {
-            "Tip: encapsulation": (
-                """
-                By encapsulating logic in functions, classes, or Python modules,
-                you can minimize the number of global variables in your notebook.
-                """
-            )
-        }
-    )
-    return
-
-
-@app.cell
-def _(mo):
-    mo.md("""
-    **🌊 Some UI elements.** Try interacting with the below elements.
     """)
     return
 
@@ -1089,6 +1003,92 @@ def _():
         ),
     }
     return (tips,)
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.accordion(
+        {
+            "Tip: disabling automatic execution": mo.md(
+                rf"""
+            marimo lets you disable automatic execution: in the notebook
+            footer, change "On Cell Change" to "lazy".
+
+            When the runtime is lazy, after running a cell, marimo marks its
+            descendants as stale instead of automatically running them. The
+            lazy runtime puts you in control over when cells are run, while
+            still giving guarantees about the notebook state.
+            """
+            )
+        }
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.accordion(
+        {
+            "Tip: execution order": (
+                """
+                The order of cells on the page has no bearing on
+                the order in which cells are executed: marimo knows that a cell
+                reading a variable must run after the cell that  defines it. This
+                frees you to organize your code in the way that makes the most
+                sense for you.
+                """
+            )
+        }
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.accordion(
+        {
+            "Tip: encapsulation": (
+                """
+                By encapsulating logic in functions, classes, or Python modules,
+                you can minimize the number of global variables in your notebook.
+                """
+            )
+        }
+    )
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md("""
+    **🌊 Some UI elements.** Try interacting with the below elements.
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.accordion(
+        {
+            "Tip: private variables": (
+                """
+                Variables prefixed with an underscore are "private" to a cell, so
+                they can be defined by multiple cells.
+                """
+            )
+        }
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md("""
+    **Global names must be unique.** To enable reactivity, marimo imposes a
+    constraint on how names appear in cells: no two cells may define the same
+    variable.
+    """)
+    return
 
 
 if __name__ == "__main__":
