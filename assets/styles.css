@@ -3,6 +3,7 @@ html,
 body,
 body * {
     font-family: Arial, Helvetica, sans-serif !important;
+
     line-height: 1.6;
     color: #333;
 }

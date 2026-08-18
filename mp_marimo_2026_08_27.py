@@ -14,7 +14,7 @@
 
 import marimo
 
-__generated_with = "0.23.16"
+__generated_with = "0.24.0"
 app = marimo.App(layout_file="layouts/mp_marimo_2026_08_27.slides.json")
 
 
@@ -44,15 +44,17 @@ def _(mo):
         <style>
             html, body, body * {
                 font-family: Arial, Helvetica, sans-serif !important;
+                font-size: 18px;
+                line-height=1.6;
+                color: '#030303';
             }
-
             button, input, select, textarea {
                 font-family: Arial, Helvetica, sans-serif !important;
             }
         </style>
         """),
         mo.md('''
-            ###Marimo:  Next generation of python notebooks 🌊🍃   
+            ##Marimo:  Next generation of python notebooks 🌊🍃   
             Mike Purtell  
             Bay Area Python Interest Group  
             August 27, 2026
@@ -95,7 +97,6 @@ def _(mo):
 def _(mo):
     mo.vstack([
         mo.md("##Overview"),
-        mo.md("marimo resembles jupyter (vertically arranged blocks, code or markup)"),
         mo.hstack([
             mo.accordion(
                 {
@@ -134,11 +135,68 @@ def _(mo):
     mo.vstack([
         mo.md(
             """
-            ## Jupyter review/demo
+            ## Jupyter Summary/Demo
             """
         ),
-        mo.image(src='assets/Jupyter.png', width=500)
-       #mo.image('images/jupyter.png')
+        mo.hstack([
+            mo.md(
+                """
+                - No reactivity
+                - Notebook file is 10M when saved with outputs and visualizations
+                - Reduced to 8M by changing float types from 64 to 32 bits
+                - Reduces to 12K when outputs are cleared before saving
+                - Marimo notebooks only save python, without the multiple megs of json figure representation, helpful for git
+                - Jupyter support Julia, Python and R. Marimo only support python, focused support.
+
+                #### Marimo only saves code, freeing up considerable amounts of disk space
+                #### Jupyter notebook may exceed git file size limits
+                #### By only saving python code, Marimo is inherently more git friendy
+                """
+            ),
+            mo.image(src="assets/Jupyter.png"),
+        ],
+        widths="[3:1]",
+        )
+    ])
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    from pathlib import Path as _Path
+    def _attribution_card(name, image_name, description):
+        image_path = _Path('assets') / image_name
+        image = (
+            mo.image(str(image_path), rounded=True, width=150) 
+                if image_path.exists() 
+                else mo.md(f"_Image not found: `{image_path}`_")
+        )
+        return mo.hstack([
+            mo.center(image),      
+            mo.left(mo.accordion({name: mo.md(description)})),
+        ],
+        widths='equal'
+        )
+    mo.vstack([
+        mo.md("### Inspiration Move me Brightly"),
+        mo.vstack([
+            _attribution_card(
+                "Vincent Warmerdam",
+                "Vincent.png",
+                """
+                - Works for Marimo
+                - Has at least 100 youtube videos 
+                """,
+            ),
+            _attribution_card(
+                "Akshay Agrawal",
+                "Akshay.png",
+                """
+                - Founder, CEO, and inventor of Marimo
+                - Stanford Ph.D., worked at Google on Tensorflow
+                """,
+            ),
+        ], heights="equal"),
     ])
     return
 
@@ -223,7 +281,7 @@ def _(checkbox, mo, multiselect, radio):
     return
 
 
-@app.cell(hide_code=True)
+@app.cell
 def _(mo):
     mo.md("""
     ## 3. marimo is just Python
