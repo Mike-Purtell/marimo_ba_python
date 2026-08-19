@@ -223,20 +223,28 @@ def _(mo):
 
 @app.cell
 def _(mo):
-    slider_max = 9
-    best_slider = mo.ui.slider(1, slider_max, 1, label="Cats or Dogs?", value=3)
-    return best_slider, slider_max
+    slider_max = 9  # 10 pets are allowed. slider max of 9 forces at least one of each type
+    pet_slider = mo.ui.slider(1, slider_max, 1, label="Cats or Dogs?", value=3)
+
+    return (pet_slider,)
 
 
 @app.cell
-def _(best_slider, mo, slider_max):
+def _(pet_slider):
+    cat_num = pet_slider.value
+    dog_num = 10 - cat_num
+    return cat_num, dog_num
+
+
+@app.cell
+def _(cat_num, dog_num, mo, pet_slider):
     mo.vstack([
-        mo.md("## Cats or Dogs?"),
+        mo.md("# You can have  10 pets. Use the slider to choose how many dogs and cats"),
         mo.md(
-            f"""{best_slider} {best_slider.value} Cats, {(1 + slider_max - best_slider.value)} Dogs """
+            f"""{pet_slider} {cat_num} Cats, {dog_num} Dogs """
         ),
-        mo.md("#" + "🐱" * best_slider.value),
-        mo.md("#" + "🐶 " * (1 + slider_max - best_slider.value)),
+        mo.md("#" + "🐱" * cat_num + f'  {cat_num} Cats'),
+        mo.md("#" + "🐶 " *  dog_num + f' {dog_num} Dogs'),
     ])
     return
 
