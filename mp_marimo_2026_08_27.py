@@ -62,9 +62,7 @@ def _(image_path, mo):
             These beloved assemblages are greater than the sum of their parts.
             Since 1952 the marimo from Lake Akan in Hokkaidō have been designated as 
             special natural treasures of Japan because of their almost perfectly round shape, 
-            large size and velvet-like surface.
-
-
+            large size and velvet-like surface.<br><br>
             '''),
             mo.hstack([
                 mo.center(mo.image(f'{image_path}Marimo_lake_akann.png', rounded=True,width=300)),
@@ -130,29 +128,19 @@ def _(mo):
 
 @app.cell
 def _(mo):
-    mo.vstack([
-        mo.md(
-            """# Jupyter Summary/Demo
-            """
-        ),
-        mo.hstack([
-            mo.md(
-                """
-                - No reactivity
-                - Notebook file is 10M when saved with outputs and visualizations
-                - Reduced to 8M by changing float types from 64 to 32 bits
-                - Reduces to 12K when outputs are cleared before saving
-                - Marimo notebooks only save python, without the multiple megs of json figure representation, helpful for git
-                - Jupyter support Julia, Python and R. Marimo only support python, focused support.
+    mo.md("""
+    #Jupyter Summary/Demo
+    - No reactivity
+    - Notebook file is 10M when saved with outputs and visualizations
+    - Reduced to 8M by changing float types from 64 to 32 bits
+    - Reduces to 12K when outputs are cleared before saving
+    - Marimo notebooks only save python, without the multiple megs of json figure representation, helpful for git
+    - Jupyter support Julia, Python and R. Marimo only support python, focused support.
 
-                #### Marimo only saves code, freeing up considerable amounts of disk space
-                #### Jupyter notebook may exceed git file size limits
-                #### By only saving python code, Marimo is inherently more git friendly
-                """
-            ),
-            mo.image(src="assets/Jupyter.png"),
-        ], widths="[3:1]"),
-    ])
+    #### Marimo only saves code, freeing up considerable amounts of disk space
+    #### Jupyter notebook may exceed git file size limits
+    #### By only saving python code, Marimo is inherently more git friendly
+    """)
     return
 
 
@@ -1040,7 +1028,7 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md("""
-    # The marimo editor
+    # The marimo editor, flow
 
     Here are some tips to help you get started with the marimo editor.
     """)
@@ -1233,6 +1221,37 @@ def _():
            """
         ),
     }
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _(image_path, mo):
+    mo.vstack([
+        mo.md('''#Molab  
+             https://molab.marimo.io/notebooks'''),
+        mo.image(f'{image_path}MoLab.png')
+    ])
+    return
+
+
+@app.cell
+def _(image_path, mo):
+    mo.vstack([
+        mo.md('''#Git Repo for this Presentation
+        https://github.com/Mike-Purtell/marimo_ba_python<br>'''
+        ''),
+        mo.image(f'{image_path}GitHub.png')
+    ])
+    return
+
+
+@app.cell
+def _():
     return
 
 
