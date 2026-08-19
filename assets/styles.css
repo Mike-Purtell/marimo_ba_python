@@ -21,12 +21,11 @@ body * {
     line-height: 1.6;
     color: #f8fbff !important;
     background-color: transparent;
-    font-size: 16px !important;
 }
 
 body {
     background: var(--bg);
-    font-size: 16px !important;
+    font-size: 16px;
 }
 
 button,

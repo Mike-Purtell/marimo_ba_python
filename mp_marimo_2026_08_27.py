@@ -37,12 +37,16 @@ def _():
 def _(mo):
     mo.vstack([
         mo.md(
-            '''
-            ## Marimo: Next generation of python notebooks 🌊🍃
-            Mike Purtell
-            Bay Area Python Interest Group
-            August 27, 2026
-            '''
+            """# Marimo: Next generation of Python notebooks 🌊🍃
+
+    Mike Purtell  
+    Bay Area Python Interest Group  
+    August 27, 2026
+
+    > Quote from the Marimo GitHub project: A reactive notebook for Python -- run
+    > experiments, query with SQL, execute as a script, deploy as an app, and
+    > version with git. Stored as pure Python. All in a modern, AI-native editor.
+    """
         ),
     ])
     return
@@ -51,8 +55,7 @@ def _(mo):
 @app.cell
 def _(image_path, mo):
     mo.vstack([
-        mo.md('''
-            ## Fun Fact
+        mo.md('''# Fun Fact
             Mari (毬 まり) means "ball" and mo (藻 も) means "algae" in Japanese.
             Marimo (毬藻 or まりも) refers to algae that 
             clumps together to form a small sphere called a "marimo moss ball". 
@@ -75,8 +78,7 @@ def _(image_path, mo):
 def _(mo):
     mo.vstack([
         mo.md(
-            """
-            ## Agenda
+            """#Agenda
             - Features and limitations of marimo
             - Reactivity
             - Marimo Flow
@@ -92,7 +94,7 @@ def _(mo):
 @app.cell
 def _(mo):
     mo.vstack([
-        mo.md("##Overview"),
+        mo.md("#Overview"),
         mo.hstack([
             mo.accordion(
                 {
@@ -130,8 +132,7 @@ def _(mo):
 def _(mo):
     mo.vstack([
         mo.md(
-            """
-            ## Jupyter Summary/Demo
+            """# Jupyter Summary/Demo
             """
         ),
         mo.hstack([
@@ -174,7 +175,7 @@ def _(image_path, mo):
         )
 
     mo.vstack([
-        mo.center(mo.md("## Inspiration Move me Brightly")),
+        mo.md("#Inspiration Move me Brightly"),
         mo.vstack([
             _attribution_card(
                 "Vincent Warmerdam (Founding Engineer)",
@@ -208,7 +209,7 @@ def _(image_path, mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md("""
-    ## UI elements
+    # UI elements
 
     Cells can output interactive UI elements. Interacting with a UI
     element **automatically triggers notebook execution**: when
@@ -225,7 +226,6 @@ def _(mo):
 def _(mo):
     slider_max = 9  # 10 pets are allowed. slider max of 9 forces at least one of each type
     pet_slider = mo.ui.slider(1, slider_max, 1, label="Cats or Dogs?", value=3)
-
     return (pet_slider,)
 
 
@@ -239,12 +239,12 @@ def _(pet_slider):
 @app.cell
 def _(cat_num, dog_num, mo, pet_slider):
     mo.vstack([
-        mo.md("# You can have  10 pets. Use the slider to choose how many dogs and cats"),
+        mo.md("#Slider demo, pick dogs and cats, 10 total"),
         mo.md(
             f"""{pet_slider} {cat_num} Cats, {dog_num} Dogs """
         ),
-        mo.md("#" + "🐱" * cat_num + f'  {cat_num} Cats'),
-        mo.md("#" + "🐶 " *  dog_num + f' {dog_num} Dogs'),
+        mo.md("##" + "🐱" * cat_num + f'  {cat_num} Cats'),
+        mo.md("##" + "🐶 " *  dog_num + f' {dog_num} Dogs'),
     ])
     return
 
@@ -318,7 +318,7 @@ def _(checkbox, mo, multiselect, radio):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md("""
-    ## 3. marimo is just Python
+    # marimo is just Python
 
     marimo cells parse Python (and only Python), and marimo notebooks are
     stored as pure Python files — outputs are _not_ included. There's no
@@ -340,8 +340,7 @@ def _(mo):
 def _(mo):
     mo.vstack([
         mo.md(
-            """
-            ## Dataframes
+            """#Dataframes
 
             polars, pandas comparison
 
@@ -365,7 +364,7 @@ def _(mo, pl):
         .with_columns(pl.all().cast(pl.UInt8))
     )
     mo.vstack([
-        mo.md("Single digit <b>Times Table</b><br><sup>mo.ui.table(dataframe)</sup>"),
+        mo.md("#Single Digit Times Table<br><sup>mo.ui.table(dataframe)</sup>"),
         mo.ui.table(df_polars),
     ])
     return
@@ -592,7 +591,7 @@ def _(demo, df_cal, get_selected_county, go, mo, pl, px):
 @app.cell
 def _(df_cal, mo):
     mo.vstack([
-        mo.md("California Counties - population statistics"),
+        mo.md("#California Counties - population statistics"),
         df_cal,
     ])
     return
@@ -601,7 +600,7 @@ def _(df_cal, mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md("""
-    ## 4. Running notebooks as apps
+    # Running notebooks as apps
 
     marimo notebooks can double as apps. Click the app window icon in the
     bottom-right to see this notebook in "app view."
@@ -617,7 +616,9 @@ def _(mo):
 def _(county_info, demo, description, fig1_ui, fig2_ui, mo):
     layout = mo.vstack([
         mo.Html("<br>"),
-        mo.left(mo.md(f" <h2>California County {demo.value}</h2>")),
+        mo.left(mo.md(f"#California County {demo.value}")),
+        mo.left(mo.md('Tip #1: hover over bar to see county statistics')),
+        mo.left(mo.md('Tip #2: click on an bar for more information about that county')),
         mo.hstack([
             description,
             county_info,
@@ -961,7 +962,7 @@ def _(
     q_fig.update_layout(template="plotly_dark")
 
     mo.vstack([
-        mo.md("## Quadratic Analyzer"),
+        mo.md("#Quadratic Analyzer"),
         mo.hstack([q_a_stack, q_b_stack, q_c_stack]),
         mo.hstack(
             [
@@ -984,7 +985,7 @@ def _(
 @app.cell(hide_code=True)
 def _(mo):
     mo.md("""
-    ## 5. The  marimo command-line tool
+    #The  marimo command-line tool
 
     **Creating and editing notebooks.** Use
 
@@ -1039,7 +1040,7 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md("""
-    ## 6. The marimo editor
+    # The marimo editor
 
     Here are some tips to help you get started with the marimo editor.
     """)
