@@ -53,13 +53,19 @@ def _(image_path, mo):
     mo.vstack([
         mo.md('''
             ## Fun Fact
-            The name "marimo" is a reference to a type of algae that, under the right conditions,
-            clumps together to form a small sphere called a "marimo moss ball". Made of just
-            strands of algae, these beloved assemblages are greater than the sum of their parts.
+            Mari (毬 まり) means "ball" and mo (藻 も) means "algae" in Japanese.
+            Marimo (毬藻 or まりも) refers to algae that 
+            clumps together to form a small sphere called a "marimo moss ball". 
+            These beloved assemblages are greater than the sum of their parts.
+            Since 1952 the marimo from Lake Akan in Hokkaidō have been designated as 
+            special natural treasures of Japan because of their almost perfectly round shape, 
+            large size and velvet-like surface.
+
+
             '''),
             mo.hstack([
-                mo.image(f'{image_path}Marimo_lake_akann.png', width=300),
-                mo.image(f'{image_path}/Marimo.png', width=300),
+                mo.center(mo.image(f'{image_path}Marimo_lake_akann.png', rounded=True,width=300)),
+                mo.center(mo.image(f'{image_path}/Marimo.png', rounded=True,width=300)),
             ])
     ])
     return
@@ -171,7 +177,7 @@ def _(image_path, mo):
         mo.center(mo.md("## Inspiration Move me Brightly")),
         mo.vstack([
             _attribution_card(
-                "Vincent Warmerdam",
+                "Vincent Warmerdam (Founding Engineer)",
                 "vincent.png",
                 """
                  Vincent is a senior data professional with many meaningful contributions to the PyData stack, and has
@@ -179,7 +185,7 @@ def _(image_path, mo):
                 """,
             ),
            _attribution_card(
-                "Akshay Agrawal",
+                "Akshay Agrawal(Co-Founder, CEO)",
                 "Akshay.png",
                 """
                 Akshay is a former engineer at Google Brain, where he helped build TensorFlow, and is a NeurIPS-published
@@ -187,7 +193,7 @@ def _(image_path, mo):
                 """,
             ),
             _attribution_card(
-                "Sarah Tsai",
+                "Sarah Tsai (Developer Relations)",
                 "sarah.png",
                 """
                   Sarah is a former data scientist at Genentech, where she built interactive visual analytics dashboards,
@@ -253,7 +259,7 @@ def _(mo):
     )
     multiselect = mo.ui.multiselect(
         options=["Springfield", "Chicago (tentative)", "New York (tentative)", "Los Angeles (tentative)"],
-        label="Simpson reference: Best city to see a Rolling Stones concert?",
+        label="Simpson reference<br>Best city to see a Rolling Stones concert?",
         max_selections=2,
     )
     checkbox = mo.ui.checkbox(label="yes I read the T's and C's", value=False)
@@ -275,7 +281,7 @@ def _(checkbox, mo, multiselect, radio):
         mo.hstack(
             [
                 multiselect,
-                mo.left(
+                mo.center(
                     mo.Html(
                         ", ".join(multiselect.value)
                         if multiselect.value is not None
