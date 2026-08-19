@@ -43,10 +43,28 @@ def _(mo):
     Bay Area Python Interest Group  
     August 27, 2026
 
-    > Quote from the Marimo GitHub project: A reactive notebook for Python -- run
+    > Quote from the Marimo GitHub: A reactive notebook for Python -- run
     > experiments, query with SQL, execute as a script, deploy as an app, and
     > version with git. Stored as pure Python. All in a modern, AI-native editor.
     """
+        ),
+    ])
+    return
+
+
+@app.cell
+def _(mo):
+    mo.vstack([
+        mo.md(
+            """#Agenda
+            - Features
+            - Marimo Reactivity
+            - Flow
+            - App examples
+            - Jupyter comparisons
+
+            Keep things interactive, questions or comments always welcome.
+            """
         ),
     ])
     return
@@ -59,7 +77,6 @@ def _(image_path, mo):
             Mari (毬 まり) means "ball" and mo (藻 も) means "algae" in Japanese.
             Marimo (毬藻 or まりも) refers to algae that 
             clumps together to form a small sphere called a "marimo moss ball". 
-            These beloved assemblages are greater than the sum of their parts.
             Since 1952 the marimo from Lake Akan in Hokkaidō have been designated as 
             special natural treasures of Japan because of their almost perfectly round shape, 
             large size and velvet-like surface.<br><br>
@@ -68,23 +85,6 @@ def _(image_path, mo):
                 mo.center(mo.image(f'{image_path}Marimo_lake_akann.png', rounded=True,width=300)),
                 mo.center(mo.image(f'{image_path}/Marimo.png', rounded=True,width=300)),
             ])
-    ])
-    return
-
-
-@app.cell
-def _(mo):
-    mo.vstack([
-        mo.md(
-            """#Agenda
-            - Features and limitations of marimo
-            - Reactivity
-            - Marimo Flow
-            - App examples
-
-            Keep things interactive, questions or comments always welcome.
-            """
-        ),
     ])
     return
 

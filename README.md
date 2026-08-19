@@ -85,6 +85,19 @@ To serve it as a read-only app:
 marimo run mp_marimo_2026_08_27.py
 ```
 
+Before launching the notebook, validate the slide layout JSON and speaker
+notes coverage:
+
+```powershell
+./validate_slides_layout.ps1
+```
+
+To validate a different layout file:
+
+```powershell
+./validate_slides_layout.ps1 -Path layouts/your_file.slides.json
+```
+
 The declared dependencies include marimo, Polars, NumPy, Plotly, and
 `fastexcel`. The app also expects the presentation images and the county Excel
 data referenced by the cells to be available in the project assets.
