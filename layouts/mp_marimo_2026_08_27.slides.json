@@ -4,6 +4,18 @@
     "cells": [
       {},
       {},
+      {
+        "type": "slide"
+      },
+      {
+        "type": "slide"
+      },
+      {},
+      {},
+      {},
+      {
+        "type": "slide"
+      },
       {},
       {},
       {},
@@ -34,20 +46,21 @@
       {},
       {},
       {},
-      {},
-      {},
-      {},
-      {},
-      {},
-      {},
-      {},
-      {},
-      {},
-      {},
-      {},
-      {},
-      {},
-      {},
+      {
+        "type": "fragment"
+      },
+      {
+        "type": "fragment"
+      },
+      {
+        "type": "fragment"
+      },
+      {
+        "type": "fragment"
+      },
+      {
+        "type": "fragment"
+      },
       {}
     ],
     "deck": {
