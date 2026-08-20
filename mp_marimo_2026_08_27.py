@@ -580,7 +580,18 @@ def _(demo, df_cal, get_selected_county, go, mo, pl, px):
 def _(df_cal, mo):
     mo.vstack([
         mo.md("#California Counties - population statistics"),
-        df_cal,
+        mo.md('df_cal'),
+       df_cal
+    ])
+    return
+
+
+@app.cell
+def _(df_cal, mo):
+    mo.vstack([
+        mo.md("#California Counties - population statistics"),
+        mo.md("mo.ui.dataframe(df_cal)"),
+        mo.ui.dataframe(df_cal)
     ])
     return
 
@@ -628,15 +639,6 @@ def _(fig1_ui, fig2_ui, set_selected_county):
     selected_points = fig1_ui.points + fig2_ui.points
     if selected_points:
         set_selected_county(selected_points[0].get("y"))
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md("""
-    ### Quadratic Analyzer
-    This notebook showcases datavisualization with Marimo.
-    """)
     return
 
 
@@ -1250,8 +1252,23 @@ def _(image_path, mo):
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    # Thank you all.
+
+    Show of hands, anyone interested in having a project night similar to SF Python last year?
+
+    Format like this
+
+    - Form 3 or 4 groups, each with a different data set
+
+    - Each group collaborates with a git repo. Use your favorite python libaries and analyze, visualize and summarize findings.
+
+    - Each group gets 10 minutes to present results at the end
+
+    Winning team each gets a free slice or pizza (pending avia- abiltity)
+    """)
     return
 
 
