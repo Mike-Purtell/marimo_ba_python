@@ -12,7 +12,7 @@
 import marimo
 
 __generated_with = "0.24.0"
-app = marimo.App(layout_file="layouts/mp_marimo_2026_08_27.slides.json")
+app = marimo.App(layout_file="layouts/marimo__slides_2026_08_27.slides.json")
 
 
 @app.cell
@@ -33,114 +33,68 @@ def _():
     return go, image_path, math, pl, px
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(mo):
-    mo.vstack([
-        mo.md(
-            """# Marimo: Next generation of Python notebooks 🌊🍃
+    mo.md(r"""
+    #Marimo: Next Generation of Python Notebooks
 
-    Mike Purtell  
-    Bay Area Python Interest Group  
+    Mike Purtell
+    Bay Area Python Interest Group
     August 27, 2026
+    <br><br><br><br><br>
+    _Quote from the Marimo GitHub_<br><br>
+    A reactive notebook for Python -- run experiments, query with SQL, execute as a script, deploy as an app, and version with git. Stored as pure Python. All in a modern, AI-native editor.
+    """)
+    return
 
-    > Quote from the Marimo GitHub: A reactive notebook for Python -- run
-    > experiments, query with SQL, execute as a script, deploy as an app, and
-    > version with git. Stored as pure Python. All in a modern, AI-native editor.
-    """
-        ),
-    ])
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    #Agenda
+    <br>
+    - Who/What is Marimo?
+    - Reactivity
+    - UI elements/widgets
+    - Data Frames
+    - Apps/ visualizations
+    - Getting started/Getting Help
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    <br>Python notebooks are interactive, this presentation is too. Comments or questions welcome anytime.
+    """)
     return
 
 
 @app.cell
 def _(mo):
-    mo.vstack([
-        mo.md(
-            """#Agenda
-            - Features
-            - Marimo Reactivity
-            - Flow
-            - App examples
-            - Jupyter comparisons
-
-            Keep things interactive, questions or comments always welcome.
-            """
-        ),
-    ])
+    mo.md(r"""
+    <br>This is not a slide deck to accompany the demo. This slide deck is the demo.
+    """)
     return
 
 
 @app.cell
 def _(image_path, mo):
     mo.vstack([
-        mo.md('''# Fun Fact
+        mo.md('''#Fun Fact  
             Mari (毬 まり) means "ball" and mo (藻 も) means "algae" in Japanese.
             Marimo (毬藻 or まりも) refers to algae that 
             clumps together to form a small sphere called a "marimo moss ball". 
             Since 1952 the marimo from Lake Akan in Hokkaidō have been designated as 
             special natural treasures of Japan because of their almost perfectly round shape, 
-            large size and velvet-like surface.<br><br>
+            large size and velvet-like surface.<br><br><br>
             '''),
             mo.hstack([
                 mo.center(mo.image(f'{image_path}Marimo_lake_akann.png', rounded=True,width=300)),
                 mo.center(mo.image(f'{image_path}/Marimo.png', rounded=True,width=300)),
             ])
     ])
-    return
-
-
-@app.cell
-def _(mo):
-    mo.vstack([
-        mo.md("#Overview"),
-        mo.hstack([
-            mo.accordion(
-                {
-                    "jupyter": mo.md(
-                        """
-                        - great for exploration
-                        - beware of:
-                            - hidden state
-                            - manual reruns
-                            - hard-to-review file formats, Git Issues
-                            - top down flow for run-all, arbitrary flow otherwise
-                        """
-                    )
-                }
-            ),
-            mo.accordion(
-                {
-                    "marimo": mo.md(
-                        """
-                        - reactivity: change value in 1 cell updates the dependent cells
-                        - think of Excel
-                        - natural mechanism for callbacks
-                        - great for dashboards
-                        - easy to deploy on molab
-                        """
-                    )
-                }
-            ),
-        ], widths="equal"),
-    ])
-    return
-
-
-@app.cell
-def _(mo):
-    mo.md("""
-    #Jupyter Summary/Demo
-    - No reactivity
-    - Notebook file is 10M when saved with outputs and visualizations
-    - Reduced to 8M by changing float types from 64 to 32 bits
-    - Reduces to 12K when outputs are cleared before saving
-    - Marimo notebooks only save python, without the multiple megs of json figure representation, helpful for git
-    - Jupyter support Julia, Python and R. Marimo only support python, focused support.
-
-    #### Marimo only saves code, freeing up considerable amounts of disk space
-    #### Jupyter notebook may exceed git file size limits
-    #### By only saving python code, Marimo is inherently more git friendly
-    """)
     return
 
 
@@ -169,8 +123,8 @@ def _(image_path, mo):
                 "Vincent Warmerdam (Founding Engineer)",
                 "vincent.png",
                 """
-                 Vincent is a senior data professional with many meaningful contributions to the PyData stack, and has
-                 pubished over 100 YouTube videos about marimo. I have watched most of them, best way to learn Marimo.
+                 Vincent is a senior data professional with many meaningful contributions to the PyData stack. He has 
+                 pubished many videos on the Marimo YouTube channel. I have seen quite a few, and leared a lot.
                 """,
             ),
            _attribution_card(
@@ -194,16 +148,50 @@ def _(image_path, mo):
     return
 
 
+@app.cell
+def _(mo):
+    mo.vstack([
+        mo.md("#Jupyter/Marimo Demo"),
+        mo.md('mo.accordian'),
+            mo.accordion(
+                {
+                    "Jupyter": mo.md(
+                        """
+                        - Classic, linear execution with hidden state
+                        - Stores large .ipynb JSON files (often multiple MB with outputs)
+                        - Multi‑language support: Python, Julia, R
+                        - Outputs and visualizations baked into the notebook, making git diffs heavy
+                        """
+                    )
+                }
+            ).style(max_height="300px", overflow="auto"),
+            mo.md(''),
+            mo.accordion(
+                {
+                    "Marimo": mo.md(
+                        """
+                        - Reactive execution with automatic dependency tracking, natural mechanism for callbacks
+                        - Saves pure .py files—lightweight, git‑friendly, no JSON output blobs
+                        - Python‑only, with focused and streamlined supports
+                        - Interactive widgets and app‑like behavior without hidden state
+                        """
+                    )
+                }
+            ).style(max_height="300px", overflow="auto"),
+    ])
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md("""
     # UI elements
-
+    <br><br>
     Cells can output interactive UI elements. Interacting with a UI
     element **automatically triggers notebook execution**: when
     you interact with a UI element, its value is sent back to Python, and
     every cell that references that element is re-run.
-
+    <br><br>
     marimo provides a library of UI elements to choose from under
     marimo.ui.
     """)
@@ -213,7 +201,7 @@ def _(mo):
 @app.cell
 def _(mo):
     slider_max = 9  # 10 pets are allowed. slider max of 9 forces at least one of each type
-    pet_slider = mo.ui.slider(1, slider_max, 1, label="Cats or Dogs?", value=3)
+    pet_slider = mo.ui.slider(1, slider_max, 1, label="Cats or Dogs?", value=5)
     return (pet_slider,)
 
 
@@ -303,34 +291,11 @@ def _(checkbox, mo, multiselect, radio):
     return
 
 
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md("""
-    # marimo is just Python
-
-    marimo cells parse Python (and only Python), and marimo notebooks are
-    stored as pure Python files — outputs are _not_ included. There's no
-    magical syntax.
-
-    The Python files generated by marimo are:
-
-    - easily versioned with git, yielding minimal diffs
-    - legible for both humans and machines
-    - formattable using your tool of choice,
-    - usable as Python scripts, with UI elements taking their default
-    values, and
-    - importable by other modules (more on that in the future).
-    """)
-    return
-
-
 @app.cell
 def _(mo):
     mo.vstack([
         mo.md(
             """#Dataframes
-
-            polars, pandas comparison
 
             Pagination
 
@@ -587,31 +552,6 @@ def _(df_cal, mo):
 
 
 @app.cell
-def _(df_cal, mo):
-    mo.vstack([
-        mo.md("#California Counties - population statistics"),
-        mo.md("mo.ui.dataframe(df_cal)"),
-        mo.ui.dataframe(df_cal)
-    ])
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md("""
-    # Running notebooks as apps
-
-    marimo notebooks can double as apps. Click the app window icon in the
-    bottom-right to see this notebook in "app view."
-
-    Serve a notebook as an app with `marimo run` at the command-line.
-    Of course, you can use marimo just to level-up your
-    notebooking, without ever making apps.
-    """)
-    return
-
-
-@app.cell
 def _(county_info, demo, description, fig1_ui, fig2_ui, mo):
     layout = mo.vstack([
         mo.Html("<br>"),
@@ -626,6 +566,24 @@ def _(county_info, demo, description, fig1_ui, fig2_ui, mo):
         mo.hstack([fig1_ui, fig2_ui], widths="equal"),
     ])
     return (layout,)
+
+
+@app.cell
+def _(mo):
+    mo.vstack([
+        mo.md(
+            """#Marimo Notebooks as Apps
+
+            Reactivity makes callbacks a breeze
+
+            Run apps on local machine, deploy to Molab, or run from GitHub
+
+            Share with colleagues who don't want to see code
+
+            """
+        ),
+    ])
+    return
 
 
 @app.cell
@@ -972,262 +930,16 @@ def _(
     return
 
 
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md("""
-    #The  marimo command-line tool
-
-    **Creating and editing notebooks.** Use
-
-    ```
-    marimo edit
-    ```
-
-    in a terminal to start the marimo notebook server. From here
-    you can create a new notebook or edit existing ones.
-
-    **Running as apps.** Use
-
-    ```
-    marimo run notebook.py
-    ```
-
-    to start a webserver that serves your notebook as an app in read-only mode,
-    with code cells hidden.
-
-    **Convert a Jupyter notebook.** Convert a Jupyter notebook to a marimo
-    notebook using `marimo convert`:
-
-    ```
-    marimo convert your_notebook.ipynb > your_app.py
-    ```
-
-    **Tutorials.** marimo comes packaged with tutorials:
-
-    - `dataflow`: more on marimo's automatic execution
-    - `ui`: how to use UI elements
-    - `markdown`: how to write markdown, with interpolated values and
-      LaTeX
-    - `plots`: how plotting works in marimo
-    - `sql`: how to use SQL
-    - `layout`: layout elements in marimo
-    - `fileformat`: how marimo's file format works
-    - `markdown-format`: for using `.md` files in marimo
-    - `for-jupyter-users`: if you are coming from Jupyter
-
-    Start a tutorial with `marimo tutorial`; for example,
-
-    ```
-    marimo tutorial dataflow
-    ```
-
-    In addition to tutorials, we have examples in our
-    [our GitHub repo](https://www.github.com/marimo-team/marimo/tree/main/examples).
-    """)
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md("""
-    # The marimo editor, flow
-
-    Here are some tips to help you get started with the marimo editor.
-    """)
-    return
-
-
 @app.cell
 def _(mo):
-    mo.accordion(
-        {
-            "Tip: disabling automatic execution": mo.md(
-                rf"""
-                marimo lets you disable automatic execution: in the notebook
-                footer, change "On Cell Change" to "lazy".
-
-                When the runtime is lazy, after running a cell, marimo marks its
-                descendants as stale instead of automatically running them. The
-                lazy runtime puts you in control over when cells are run, while
-                still giving guarantees about the notebook state.
-                """
-            )
-        }
-    )
-    return
-
-
-@app.cell
-def _(mo):
-    mo.accordion(
-        {
-            "Tip: execution order": (
-                """
-                The order of cells on the page has no bearing on
-                the order in which cells are executed: marimo knows that a cell
-                reading a variable must run after the cell that defines it. This
-                frees you to organize your code in the way that makes the most
-                sense for you.
-                """
-            )
-        }
-    )
-    return
-
-
-@app.cell
-def _(mo):
-    mo.accordion(
-        {
-            "Tip: encapsulation": (
-                """
-                By encapsulating logic in functions, classes, or Python modules,
-                you can minimize the number of global variables in your notebook.
-                """
-            )
-        }
-    )
-    return
-
-
-@app.cell
-def _(mo):
-    mo.accordion(
-        {
-            "Tip: private variables": (
-                """
-                Variables prefixed with an underscore are "private" to a cell, so
-                they can be defined by multiple cells.
-                """
-            )
-        }
-    )
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md("""
-    **Global names must be unique.** To enable reactivity, marimo imposes a
-    constraint on how names appear in cells: no two cells may define the same
-    variable.
-    """)
-    return
-
-
-@app.cell
-def _():
-    tips = {
-        "Saving": (
-            """
-            **Saving**
-
-            - _Name_ your app using the box at the top of the screen, or
-              with `Ctrl/Cmd+s`. You can also create a named app at the
-              command line, e.g., `marimo edit app_name.py`.
-
-            - _Save_ by clicking the save icon on the bottom right, or by
-              inputting `Ctrl/Cmd+s`. By default marimo is configured
-              to autosave.
-            """
-        ),
-        "Running": (
-            """
-            1. _Run a cell_ by clicking the play ( ▷ ) button on the top
-            right of a cell, or by inputting `Ctrl/Cmd+Enter`.
-
-            2. _Run a stale cell_ by clicking the yellow run button on the
-            right of the cell, or by inputting `Ctrl/Cmd+Enter`. A cell is
-            stale when its code has been modified but not run.
-
-            3. _Run all stale cells_ by clicking the play ( ▷ ) button on
-            the bottom right of the screen, or input `Ctrl/Cmd+Shift+r`.
-            """
-        ),
-        "Console Output": (
-            """
-            Console output (e.g., `print()` statements) is shown below a
-            cell.
-            """
-        ),
-        "Creating, Moving, and Deleting Cells": (
-            """
-            1. _Create_ a new cell above or below a given one by clicking
-                the plus button to the left of the cell, which appears on
-                mouse hover.
-
-            2. _Move_ a cell up or down by dragging on the handle to the
-                right of the cell, which appears on mouse hover.
-
-            3. _Delete_ a cell by clicking the trash bin icon. Bring it
-                back by clicking the undo button on the bottom right of the
-                screen, or with `Ctrl/Cmd+Shift+z`.
-            """
-        ),
-        "Disabling Automatic Execution": (
-            """
-            Via the notebook settings (gear icon) or footer panel, you
-            can disable automatic execution. This is helpful when
-            working with expensive notebooks or notebooks that have
-            side-effects like database transactions.
-            """
-        ),
-        "Disabling Cells": (
-            """
-            You can disable a cell via the cell context menu.
-            marimo will never run a disabled cell or any cells that depend on it.
-            This can help prevent accidental execution of expensive computations
-            when editing a notebook.
-            """
-        ),
-        "Code Folding": (
-            """
-            You can collapse or fold the code in a cell by clicking the arrow
-            icons in the line number column to the left, or by using keyboard
-            shortcuts.
-
-            Use the command palette (`Ctrl/Cmd+k`) or a keyboard shortcut to
-            quickly fold or unfold all cells.
-            """
-        ),
-        "Code Formatting": (
-            """
-            If you have [ruff](https://github.com/astral-sh/ruff) installed,
-            you can format a cell with the keyboard shortcut `Ctrl/Cmd+b`.
-            """
-        ),
-        "Command Palette": (
-            """
-            Use `Ctrl/Cmd+k` to open the command palette.
-            """
-        ),
-        "Keyboard Shortcuts": (
-            """
-            Open the notebook menu (top-right) or input `Ctrl/Cmd+Shift+h` to
-            view a list of all keyboard shortcuts.
-            """
-        ),
-        "Configuration": (
-            """
-           Configure the editor by clicking the gears icon near the top-right
-           of the screen.
-           """
-        ),
-        "Exit & Shutdown": (
-            """
-           You can leave Marimo & shut down the server by clicking the
-           circled X at the top right of the screen and responding
-           to the prompt.
-
-           :floppy_disk: _Be sure to save your work first!_
-           """
-        ),
-    }
-    return
-
-
-@app.cell
-def _():
+    mo.vstack([
+        mo.md('''#Getting Started, Getting Help'''),
+        mo.md('''##https://docs.marimo.io/getting_started/  '''),
+        mo.md('''##Pair with AI: marimo-pair, marimo-agent.md'''),
+        mo.md('''##Get VS Code Marimo add-on'''),
+        mo.md('''##GitHub: https://www.github.com/marimo-team/marimo/tree/main/examples '''),
+        mo.md('''##Marimo Discord Channel''')
+        ])
     return
 
 
@@ -1259,15 +971,17 @@ def _(mo):
 
     Show of hands, anyone interested in having a project night similar to SF Python last year?
 
-    Format like this
+    Potential Format:
 
     - Form 3 or 4 groups, each with a different data set
 
-    - Each group collaborates with a git repo. Use your favorite python libaries and analyze, visualize and summarize findings.
+    - Each group collaborates with a common git repo.
+
+    - Use any free/open source libraries to analyze, visualize and summarize findings.
 
     - Each group gets 10 minutes to present results at the end
 
-    Winning team each gets a free slice or pizza (pending avia- abiltity)
+    Winning team earns bragging rights
     """)
     return
 
