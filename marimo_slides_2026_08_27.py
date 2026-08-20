@@ -12,7 +12,7 @@
 import marimo
 
 __generated_with = "0.24.0"
-app = marimo.App(layout_file="layouts/marimo__slides_2026_08_27.slides.json")
+app = marimo.App(layout_file="layouts/marimo_slides_2026_08_27.slides.json")
 
 
 @app.cell
@@ -930,8 +930,8 @@ def _(
     return
 
 
-@app.cell
-def _(mo):
+app._unparsable_cell(
+    r"""
     mo.vstack([
         mo.md('''#Getting Started, Getting Help'''),
         mo.md('''##https://docs.marimo.io/getting_started/  '''),
@@ -939,8 +939,11 @@ def _(mo):
         mo.md('''##Get VS Code Marimo add-on'''),
         mo.md('''##GitHub: https://www.github.com/marimo-team/marimo/tree/main/examples '''),
         mo.md('''##Marimo Discord Channel''')
+        mo.md('''##Marimo YouTube Channel''')
         ])
-    return
+    """,
+    name="_"
+)
 
 
 @app.cell

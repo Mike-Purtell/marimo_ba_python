@@ -1,0 +1,130 @@
+{
+  "type": "slides",
+  "data": {
+    "cells": [
+      {
+        "speakerNotes": "Welcome everyone. Introduce yourself, the Bay Area Python Interest Group, and the goal: show how marimo combines ordinary Python, reactive execution, and interactive presentation."
+      },
+      {
+        "speakerNotes": "Preview the route: compare the notebook models, demonstrate reactivity and widgets, explore data and apps, then close with editor workflow and resources. Invite questions throughout."
+      },
+      {
+        "speakerNotes": "Welcome then state experience and motivation for learning Marimo"
+      },
+      {
+        "speakerNotes": "Speak to these bullets, advance to 1st fragment"
+      },
+      {
+        "type": "fragment",
+        "speakerNotes": "Sincerely welcome questions or comments during the presentation, advance to 2nd fragment"
+      },
+      {
+        "type": "fragment",
+        "speakerNotes": "Emphsize why interactive slides are so cool and useful, story telling with data"
+      },
+      {
+        "type": "slide",
+        "speakerNotes": "Comment on cool and unique name , marimo.  Unlike polars, pandas, or python,  marimo won't kill you and is vegetarian friendly"
+      },
+      {
+        "speakerNotes": "If Sarah attends, introduce and thank her for coming to  our event.  Comment on the supportive and engaging nature of the marimo team."
+      },
+      {
+        "speakerNotes": "Break on this slide. Show simple jupyter and marimo notebooks, distinguish non-reactivity of jupyter, and the reactivity of  marimo. Open the accordians and speak to each one."
+      },
+      {
+        "speakerNotes": "Emphasize how reactivity with rich UI elements is well suited for dashboards"
+      },
+      {
+        "speakerNotes": "Explain the core loop: a cell creates a UI element, another cell reads its value, and dependent output updates automatically. This is the smallest useful example of marimo reactivity."
+      },
+      {
+        "speakerNotes": "Many marimo demos begin with a slider, so use this one as the audience's first interaction. Move it through several values and let the dog preference land as a small personal aside without taking over the demo."
+      },
+      {
+        "speakerNotes": "Call attention to the dependency chain behind the slider: the slider value determines the cat and dog counts, and the rendered output depends on those counts."
+      },
+      {
+        "speakerNotes": "Introduce the next three widgets: radio selection, multiselect, and checkbox. Ask the audience to predict how each value will appear in Python before interacting with them."
+      },
+      {
+        "speakerNotes": "More interactive, reactive elements. Explain the Simpsonsjoke"
+      },
+      {
+        "speakerNotes": "Emphasize the utility of marimo dataframe displays and show how to interact with them "
+      },
+      {
+        "speakerNotes": "show how to use columns, visualize, explore and export"
+      },
+      {
+        "speakerNotes": "Show the multiplication table as a compact example of mo.ui.table. Point out sorting and inspection, then connect the table to the larger California counties example."
+      },
+      {
+        "speakerNotes": "Introduce the California county dataset and explain the preparation: clean types, construct zero-padded FIPS identifiers, and calculate population, density, and area ranks before collecting the Polars dataframe."
+      },
+      {},
+      {
+        "speakerNotes": "Demonstrate search"
+      },
+      {},
+      {
+        "speakerNotes": "Speak to marimo for app development"
+      },
+      {
+        "speakerNotes": "Demonstrate county attributes, by triple option ratio button. Show SF as the smallest county by area, largest by population density"
+      },
+      {
+        "speakerNotes": "Point out the event-handling cell: selected Plotly points update mo.state. This is a useful example of reactive state crossing a visualization boundary without a custom callback framework."
+      },
+      {
+        "speakerNotes": "Introduce the quadratic analyzer as a larger example. It separates inputs, calculations, derived geometry, and rendering while keeping the whole display interactive."
+      },
+      {
+        "speakerNotes": "Explain the small q_annotate_point helper. Encapsulating repeated Plotly annotation logic keeps the rendering cell readable and demonstrates that normal Python functions fit naturally in marimo."
+      },
+      {
+        "speakerNotes": "Change a, b, and c one at a time. These number widgets are the model inputs; everything else in the analyzer is derived from them."
+      },
+      {
+        "speakerNotes": "Show the first derived layer: read widget values and determine whether a is legal for a parabola. Keep the distinction clear between the UI objects and their ordinary numeric values."
+      },
+      {
+        "speakerNotes": "Explain that the input controls are composed separately from the calculations. This separation makes the dependency graph easy to inspect and gives the rendering cell clean values to consume."
+      },
+      {
+        "speakerNotes": "Use the discriminant to classify the equation as having zero, one, or two real roots. Change inputs to cross those cases and let the audience see downstream cells react."
+      },
+      {
+        "speakerNotes": "Show the root calculation for the linear, tangent, and two-root cases. The printed result is intentionally plain Python output, which helps connect the math to the notebook execution model."
+      },
+      {
+        "speakerNotes": "Turn on Grid, Vertex, Focus, Directrix, Roots, and Scale XY selectively. These controls demonstrate that one plot can expose several independent reactive options."
+      },
+      {
+        "speakerNotes": "Explain the vertex and focus formulas and note that invalid a values are handled explicitly. This is a good moment to show that validation and domain rules belong in ordinary Python."
+      },
+      {
+        "speakerNotes": "Describe how the plotted x and y values are derived from the current coefficients and how the range is chosen around the focus and vertex. The plot is data generated by upstream cells, not a static image."
+      },
+      {
+        "speakerNotes": "Show the radio button to see grid, vertex, etc,."
+      },
+      {
+        "speakerNotes": "Welcome anyone to contact me for help getting started "
+      },
+      {
+        "speakerNotes": "Anyone can deploy app to MoLab, or download wide variety of marimo notebook examples"
+      },
+      {
+        "speakerNotes": "Here are the files used for tonight's presentation"
+      },
+      {
+        "speakerNotes": "Thank everyone and offer this call to action"
+      }
+    ],
+    "deck": {
+      "transition": "fade",
+      "verticalAlign": "top"
+    }
+  }
+}
