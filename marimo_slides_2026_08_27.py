@@ -930,20 +930,18 @@ def _(
     return
 
 
-app._unparsable_cell(
-    r"""
+@app.cell
+def _(mo):
     mo.vstack([
         mo.md('''#Getting Started, Getting Help'''),
         mo.md('''##https://docs.marimo.io/getting_started/  '''),
         mo.md('''##Pair with AI: marimo-pair, marimo-agent.md'''),
         mo.md('''##Get VS Code Marimo add-on'''),
         mo.md('''##GitHub: https://www.github.com/marimo-team/marimo/tree/main/examples '''),
-        mo.md('''##Marimo Discord Channel''')
+        mo.md('''##Marimo Discord Channel'''),
         mo.md('''##Marimo YouTube Channel''')
-        ])
-    """,
-    name="_"
-)
+    ])
+    return
 
 
 @app.cell
@@ -960,8 +958,7 @@ def _(image_path, mo):
 def _(image_path, mo):
     mo.vstack([
         mo.md('''#Git Repo for this Presentation
-        https://github.com/Mike-Purtell/marimo_ba_python<br>'''
-        ''),
+        https://github.com/Mike-Purtell/marimo_ba_python<br>'''),
         mo.image(f'{image_path}GitHub.png')
     ])
     return

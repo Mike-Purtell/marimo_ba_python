@@ -109,9 +109,7 @@
       {
         "speakerNotes": "Show the radio button to see grid, vertex, etc,."
       },
-      {
-        "speakerNotes": "Welcome anyone to contact me for help getting started "
-      },
+      {},
       {
         "speakerNotes": "Anyone can deploy app to MoLab, or download wide variety of marimo notebook examples"
       },
