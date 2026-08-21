@@ -968,17 +968,17 @@ def _(
     return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(mo):
-    mo.vstack([
-        mo.md('''#Getting Started, Getting Help'''),
-        mo.md('''##https://docs.marimo.io/getting_started/  '''),
-        mo.md('''##Pair with AI: marimo-pair, marimo-agent.md'''),
-        mo.md('''##Get VS Code Marimo add-on'''),
-        mo.md('''##GitHub: https://www.github.com/marimo-team/marimo/tree/main/examples '''),
-        mo.md('''##Marimo Discord Channel'''),
-        mo.md('''##Marimo YouTube Channel''')
-    ])
+    mo.md(r"""
+    #Getting Started, Getting Help
+    1. https://docs.marimo.io/getting_started/
+    2. Pair with AI: marimo-pair, marimo-agent.
+    3. Get VS Code Marimo add-on
+    4. GitHub: https://www.github.com/marimo-team/marimo/tree/main/examples
+    5. Marimo Discord Channel
+    6. Marimo YouTube Channel
+    """)
     return
 
 
