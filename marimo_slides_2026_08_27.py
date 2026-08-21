@@ -39,7 +39,9 @@ def _(mo):
     #Marimo: Next Generation of Python Notebooks
 
     Mike Purtell
+    <br>
     Bay Area Python Interest Group
+    <br>
     August 27, 2026
     <br><br><br><br><br>
     _Quote from the Marimo GitHub_<br><br>
@@ -602,7 +604,7 @@ def _(fig1_ui, fig2_ui, set_selected_county):
 
 @app.cell
 def _(go):
-    def q_annotate_point(fig, name, color, size, x=None, y=None, textposition=None):
+    def annotate_point(fig, name, color, size, x=None, y=None, textposition=None):
         point_x = 0 if x is None else x
         point_y = 0 if y is None else y
         textposition = "below" if textposition is None else textposition
@@ -619,309 +621,312 @@ def _(go):
         )
         return fig
 
-    return (q_annotate_point,)
+    return (annotate_point,)
 
 
 @app.cell
 def _(mo):
-    q_a_number = mo.ui.number(value=1.0)
-    q_b_number = mo.ui.number(value=-4.0)
-    q_c_number = mo.ui.number(value=3.0)
-    return q_a_number, q_b_number, q_c_number
+    a_number = mo.ui.number(value=1.0)
+    b_number = mo.ui.number(value=-4.0)
+    c_number = mo.ui.number(value=3.0)
+    return a_number, b_number, c_number
 
 
 @app.cell
-def _(q_a_number, q_b_number, q_c_number):
-    q_a = q_a_number.value
-    q_a_legal = abs(q_a) > 0
-    q_a_sign = 1 if q_a > 0 else -1
-    q_b = q_b_number.value
-    q_c = q_c_number.value
-    return q_a, q_a_legal, q_a_sign, q_b, q_c
+def _(a_number, b_number, c_number):
+    a = a_number.value
+    a_legal = abs(a) > 0
+    a_sign = 1 if a > 0 else -1
+    b = b_number.value
+    c = c_number.value
+    return a, a_legal, a_sign, b, c
 
 
 @app.cell
-def _(mo, q_a_number, q_b_number, q_c_number):
-    q_a_stack = mo.vstack([mo.md("a: (x<sup>2</sup> term)"), q_a_number])
-    q_b_stack = mo.vstack([mo.md("b: (x) term:"), q_b_number])
-    q_c_stack = mo.vstack([mo.md("c: (constant)"), q_c_number])
-    return q_a_stack, q_b_stack, q_c_stack
+def _(a_number, b_number, c_number, mo):
+    a_stack = mo.vstack([mo.md("a: (x<sup>2</sup> term)"), a_number])
+    b_stack = mo.vstack([mo.md("b: (x) term:"), b_number])
+    c_stack = mo.vstack([mo.md("c: (constant)"), c_number])
+    return a_stack, b_stack, c_stack
 
 
 @app.cell
-def _(q_a, q_b, q_c):
-    q_has_two_roots = False
-    q_has_one_root = False
-    q_has_no_roots = False
-    if q_a != 0:
-        q_discriminant = (q_b ** 2) - (4 * q_a * q_c)
-        q_has_no_roots = q_discriminant < 0
-        q_has_one_root = q_discriminant == 0
-        q_has_two_roots = q_discriminant > 0
+def _(a, b, c):
+    has_two_roots = False
+    has_one_root = False
+    has_no_roots = False
+    if a != 0:
+        discriminant = (b ** 2) - (4 * a * c)
+        has_no_roots = discriminant < 0
+        has_one_root = discriminant == 0
+        has_two_roots = discriminant > 0
     else:
-        q_has_one_root = q_b != 0
-    return q_has_one_root, q_has_two_roots
+        has_one_root = b != 0
+    return has_one_root, has_two_roots
 
 
 @app.cell
-def _(math, q_a, q_b, q_c, q_has_one_root, q_has_two_roots):
-    q_root = None
-    q_root1 = None
-    q_root2 = None
+def _(a, b, c, has_one_root, has_two_roots, math):
+    root = None
+    root1 = None
+    root2 = None
 
-    if q_a == 0:
-        if q_b == 0:
+    if a == 0:
+        if b == 0:
             print("No root: this is not a quadratic equation and does not intersect y = 0")
         else:
-            q_root = -q_c / q_b
-            print(f"Linear equation, one root, intersects (0, {q_root:.3f})")
-    elif q_has_one_root:
-        q_root = -q_b / (2 * q_a)
-    elif q_has_two_roots:
-        q_root_discriminant = math.sqrt(q_b ** 2 - (4 * q_a * q_c))
-        q_root1 = ((-q_b) + q_root_discriminant) / (2 * q_a)
-        q_root2 = ((-q_b) - q_root_discriminant) / (2 * q_a)
-        q_root1, q_root2 = sorted((q_root1, q_root2))
+            root = -c / b
+            print(f"Linear equation, one root, intersects (0, {root:.3f})")
+    elif has_one_root:
+        root = -b / (2 * a)
+    elif has_two_roots:
+        root_discriminant = math.sqrt(b ** 2 - (4 * a * c))
+        root1 = ((-b) + root_discriminant) / (2 * a)
+        root2 = ((-b) - root_discriminant) / (2 * a)
+        root1, root2 = sorted((root1, root2))
 
-    if q_has_one_root and q_a != 0:
-        print(f"One root, intersects (0, {q_root:.3f})")
-    elif q_has_two_roots:
-        print(f"Two roots, intersects (0, {q_root1:.3f}), (0, {q_root2:.3f})")
-    return q_root, q_root1, q_root2
+    if has_one_root and a != 0:
+        print(f"One root, intersects (0, {root:.3f})")
+    elif has_two_roots:
+        print(f"Two roots, intersects (0, {root1:.3f}), (0, {root2:.3f})")
+    return root, root1, root2
 
 
 @app.cell
 def _(mo):
-    q_show_grid = mo.ui.checkbox(value=False, label="Show Grid")
-    q_show_vertex = mo.ui.checkbox(value=False, label="Vertex")
-    q_show_focus = mo.ui.checkbox(value=False, label="Focus")
-    q_show_directrix = mo.ui.checkbox(value=False, label="Directrix")
-    q_show_roots = mo.ui.checkbox(value=False, label="Roots")
-    q_scale_xy = mo.ui.checkbox(value=False, label="Scale XY")
+    show_grid = mo.ui.checkbox(value=False, label="Show Grid")
+    show_vertex = mo.ui.checkbox(value=False, label="Vertex")
+    show_focus = mo.ui.checkbox(value=False, label="Focus")
+    show_directrix = mo.ui.checkbox(value=False, label="Directrix")
+    show_roots = mo.ui.checkbox(value=False, label="Roots")
+    scale_xy = mo.ui.checkbox(value=False, label="Scale XY")
     return (
-        q_scale_xy,
-        q_show_directrix,
-        q_show_focus,
-        q_show_grid,
-        q_show_roots,
-        q_show_vertex,
+        scale_xy,
+        show_directrix,
+        show_focus,
+        show_grid,
+        show_roots,
+        show_vertex,
     )
 
 
 @app.cell
-def _(q_a, q_a_legal, q_b, q_c):
-    if q_a_legal:
-        q_h = -q_b / (2 * q_a)
-        q_k = q_c - (q_b ** 2) / (4 * q_a)
-        q_x_focus = q_h
-        q_y_focus = q_k + (1 / (4 * q_a))
+def _(a, a_legal, b, c):
+    if a_legal:
+        parabola_h = -b / (2 * a)
+        k = c - (b ** 2) / (4 * a)
+        x_focus = parabola_h
+        y_focus = k + (1 / (4 * a))
     else:
-        q_h = q_k = q_x_focus = q_y_focus = 0.0
+        parabola_h = 0
+        k = 0
+        x_focus = 0
+        y_focus = 0
         print("Invalid value of a: it cannot be 0 for a parabola")
-    return q_h, q_k, q_x_focus, q_y_focus
+    return k, parabola_h, x_focus, y_focus
 
 
 @app.cell
-def _(q_a, q_a_legal, q_b, q_c, q_h, q_x_focus):
-    if q_a_legal:
-        q_x_offset = 1 / (2 * q_a)
-        q_x_left, q_x_right = sorted((q_h - q_x_offset, q_h + q_x_offset))
-        q_width = q_x_right - q_x_left
-        q_x_start = q_x_focus - (5 * q_width)
-        q_x_stop = q_x_focus + (5 * q_width)
-        q_x_vals = [q_x_start + i * (q_x_stop - q_x_start) / 1000 for i in range(1001)]
-        q_y_vals = [q_a * x * x + q_b * x + q_c for x in q_x_vals]
+def _(a, a_legal, b, c, parabola_h, x_focus):
+    if a_legal:
+        x_offset = 1 / (2 * a)
+        x_left, x_right = sorted((parabola_h - x_offset, parabola_h + x_offset))
+        width = x_right - x_left
+        x_start = x_focus - (5 * width)
+        x_stop = x_focus + (5 * width)
+        x_vals = [x_start + i * (x_stop - x_start) / 1000 for i in range(1001)]
+        y_vals = [a * x * x + b * x + c for x in x_vals]
     else:
-        q_x_left = q_x_right = q_width = 1.0
-        q_x_vals = [-5 + i / 100 for i in range(1001)]
-        q_y_vals = [q_b * x + q_c for x in q_x_vals]
-    return q_width, q_x_vals, q_y_vals
+        x_left = x_right = width = 1.0
+        x_vals = [-5 + i / 100 for i in range(1001)]
+        y_vals = [b * x + c for x in x_vals]
+    return width, x_vals, y_vals
 
 
 @app.cell
-def _(q_a, q_a_legal, q_k):
-    q_y_directrix = q_k - (1 / (4 * q_a)) if q_a_legal else None
-    return (q_y_directrix,)
+def _(a, a_legal, k):
+    y_directrix = k - (1 / (4 * a)) if a_legal else None
+    return (y_directrix,)
 
 
 @app.cell
 def _(
+    a,
+    a_legal,
+    a_number,
+    a_sign,
+    a_stack,
+    annotate_point,
+    b,
+    b_number,
+    b_stack,
+    c,
+    c_number,
+    c_stack,
     go,
+    has_one_root,
+    has_two_roots,
+    k,
     mo,
-    q_a,
-    q_a_legal,
-    q_a_number,
-    q_a_sign,
-    q_a_stack,
-    q_annotate_point,
-    q_b,
-    q_b_number,
-    q_b_stack,
-    q_c,
-    q_c_number,
-    q_c_stack,
-    q_h,
-    q_has_one_root,
-    q_has_two_roots,
-    q_k,
-    q_root,
-    q_root1,
-    q_root2,
-    q_scale_xy,
-    q_show_directrix,
-    q_show_focus,
-    q_show_grid,
-    q_show_roots,
-    q_show_vertex,
-    q_width,
-    q_x_focus,
-    q_x_vals,
-    q_y_directrix,
-    q_y_focus,
-    q_y_vals,
+    parabola_h,
+    root,
+    root1,
+    root2,
+    scale_xy,
+    show_directrix,
+    show_focus,
+    show_grid,
+    show_roots,
+    show_vertex,
+    width,
+    x_focus,
+    x_vals,
+    y_directrix,
+    y_focus,
+    y_vals,
 ):
-    q_fig = go.Figure(data=go.Scatter(x=q_x_vals, y=q_y_vals, showlegend=False))
+    parabola_fig = go.Figure(data=go.Scatter(x=x_vals, y=y_vals, showlegend=False))
 
-    if q_has_one_root and q_a != 0:
-        q_subtitle = f"One Root at x = {q_root:.6f}".rstrip("0").rstrip(".")
-    elif q_has_two_roots:
-        q_subtitle = f"Two Roots at x = {q_root1:.6f}, {q_root2:.6f}"
+    if has_one_root and a != 0:
+        subtitle = f"One Root at x = {root:.6f}".rstrip("0").rstrip(".")
+    elif has_two_roots:
+        subtitle = f"Two Roots at x = {root1:.6f}, {root2:.6f}"
     else:
-        q_subtitle = "No Real Roots" if q_a != 0 else "Linear Equation"
+        subtitle = "No Real Roots" if a != 0 else "Linear Equation"
 
-    if q_a_number.value == -1:
-        q_a_expression = "y = -x<sup>2</sup>"
-    elif q_a_number.value == 1:
-        q_a_expression = "y = x<sup>2</sup>"
-    elif q_a_number.value == 0:
-        q_a_expression = "y = "
+    if a_number.value == -1:
+        a_expression = "y = -x<sup>2</sup>"
+    elif a_number.value == 1:
+        a_expression = "y = x<sup>2</sup>"
+    elif a_number.value == 0:
+        a_expression = "y = "
     else:
-        q_a_expression = f"y = {q_a}x<sup>2</sup>"
+        a_expression = f"y = {a}x<sup>2</sup>"
 
-    if q_b_number.value == -1:
-        q_b_expression = " - x"
-    elif q_b_number.value == 1:
-        q_b_expression = " + x"
-    elif q_b_number.value == 0:
-        q_b_expression = ""
-    elif q_b_number.value > 0:
-        q_b_expression = f" + {q_b}x"
+    if b_number.value == -1:
+        b_expression = " - x"
+    elif b_number.value == 1:
+        b_expression = " + x"
+    elif b_number.value == 0:
+        b_expression = ""
+    elif b_number.value > 0:
+        b_expression = f" + {b}x"
     else:
-        q_b_expression = f" - {abs(q_b)}x"
+        b_expression = f" - {abs(b)}x"
 
-    if q_c_number.value == 0:
-        q_c_expression = ""
-    elif q_c_number.value > 0:
-        q_c_expression = f" + {q_c}"
+    if c_number.value == 0:
+        c_expression = ""
+    elif c_number.value > 0:
+        c_expression = f" + {c}"
     else:
-        q_c_expression = f" - {abs(q_c)}"
+        c_expression = f" - {abs(c)}"
 
-    q_title = f"{q_a_expression}{q_b_expression}{q_c_expression}"
-    q_fig.update_layout(
+    title = f"{a_expression}{b_expression}{c_expression}"
+    parabola_fig.update_layout(
         title=dict(
-            text=q_title,
+            text=title,
             x=0.5,
             xanchor="center",
             font=dict(family="Arial, sans-serif", size=26, color="white"),
             subtitle=dict(
-                text=q_subtitle,
+                text=subtitle,
                 font=dict(family="Arial, sans-serif", size=15, color="dimgray"),
             ),
         )
     )
-    q_marker_size = 6
+    marker_size = 6
 
-    if q_show_vertex.value and q_a_legal:
-        textposition = "bottom center" if q_a_sign > 0 else "top center"
-        q_fig = q_annotate_point(
-            q_fig,
+    if show_vertex.value and a_legal:
+        textposition = "bottom center" if a_sign > 0 else "top center"
+        parabola_fig = annotate_point(
+            parabola_fig,
             "Vertex",
             "crimson",
-            q_marker_size,
-            x=q_h,
-            y=q_k,
+            marker_size,
+            x=parabola_h,
+            y=k,
             textposition=textposition,
         )
 
-    if q_show_focus.value and q_a_legal:
-        textposition = "bottom center" if q_a_sign < 0 else "top center"
-        q_fig = q_annotate_point(
-            q_fig,
+    if show_focus.value and a_legal:
+        textposition = "bottom center" if a_sign < 0 else "top center"
+        parabola_fig = annotate_point(
+            parabola_fig,
             "Focus",
             "crimson",
-            q_marker_size,
-            x=q_h,
-            y=q_y_focus,
+            marker_size,
+            x=parabola_h,
+            y=y_focus,
             textposition=textposition,
         )
 
-    if q_show_directrix.value and q_y_directrix is not None:
-        q_fig.add_hline(y=q_y_directrix, line_dash="dot")
+    if show_directrix.value and y_directrix is not None:
+        parabola_fig.add_hline(y=y_directrix, line_dash="dot")
 
-    if q_show_roots.value:
-        if q_has_one_root and q_a != 0:
-            textposition = "bottom center" if q_a_sign < 0 else "top center"
-            q_fig = q_annotate_point(
-                q_fig,
+    if show_roots.value:
+        if has_one_root and a != 0:
+            textposition = "bottom center" if a_sign < 0 else "top center"
+            parabola_fig = annotate_point(
+                parabola_fig,
                 "Root",
                 "crimson",
-                q_marker_size,
-                x=q_root,
+                marker_size,
+                x=root,
                 textposition=textposition,
             )
-        elif q_has_two_roots:
-            q_fig = q_annotate_point(
-                q_fig,
+        elif has_two_roots:
+            parabola_fig = annotate_point(
+                parabola_fig,
                 "Root 1",
                 "crimson",
-                q_marker_size,
-                x=q_root1,
+                marker_size,
+                x=root1,
                 textposition="middle left",
             )
-            q_fig = q_annotate_point(
-                q_fig,
+            parabola_fig = annotate_point(
+                parabola_fig,
                 "Root 2",
                 "crimson",
-                q_marker_size,
-                x=q_root2,
+                marker_size,
+                x=root2,
                 textposition="middle right",
             )
 
-    if q_show_grid.value:
-        q_fig.update_xaxes(showgrid=True, visible=True)
-        q_fig.update_yaxes(showgrid=True, visible=True)
+    if show_grid.value:
+        parabola_fig.update_xaxes(showgrid=True, visible=True)
+        parabola_fig.update_yaxes(showgrid=True, visible=True)
     else:
-        q_fig.update_xaxes(showgrid=False, visible=False)
-        q_fig.update_yaxes(showgrid=False, visible=False)
+        parabola_fig.update_xaxes(showgrid=False, visible=False)
+        parabola_fig.update_yaxes(showgrid=False, visible=False)
 
-    if q_a_legal:
-        q_y_range_max = q_y_directrix + q_a_sign * (3 * abs(q_y_focus - q_y_directrix))
-        q_y_range_min = q_y_directrix - (q_a_sign * 0.1 * abs(q_k - q_y_directrix))
-        q_x_range_max = q_x_focus + (2 * q_width)
-        q_x_range_min = q_x_focus - (2 * q_width)
-        q_x_range = [q_x_range_min, q_x_range_max]
-        q_y_range = sorted([q_y_range_min, q_y_range_max])
-        if q_scale_xy.value:
-            q_fig.update_layout(xaxis=dict(scaleanchor="y"), yaxis=dict(scaleanchor="x"))
+    if a_legal:
+        y_range_max = y_directrix + a_sign * (3 * abs(y_focus - y_directrix))
+        y_range_min = y_directrix - (a_sign * 0.1 * abs(k - y_directrix))
+        x_range_max = x_focus + (2 * width)
+        x_range_min = x_focus - (2 * width)
+        x_range = [x_range_min, x_range_max]
+        y_range = sorted([y_range_min, y_range_max])
+        if scale_xy.value:
+            parabola_fig.update_layout(xaxis=dict(scaleanchor="y"), yaxis=dict(scaleanchor="x"))
         else:
-            q_fig.update_yaxes(range=q_y_range)
-        q_fig.update_xaxes(range=q_x_range)
+            parabola_fig.update_yaxes(range=y_range)
+        parabola_fig.update_xaxes(range=x_range)
 
-    q_fig.update_layout(template="plotly_dark")
+    parabola_fig.update_layout(template="plotly_dark")
 
     mo.vstack([
         mo.md("#Quadratic Analyzer"),
-        mo.hstack([q_a_stack, q_b_stack, q_c_stack]),
+        mo.hstack([a_stack, b_stack, c_stack]),
         mo.hstack(
             [
-                mo.ui.plotly(q_fig),
+                mo.ui.plotly(parabola_fig),
                 mo.vstack([
-                    q_show_grid,
-                    q_show_vertex,
-                    q_show_focus,
-                    q_show_directrix,
-                    q_show_roots,
-                    q_scale_xy,
+                    show_grid,
+                    show_vertex,
+                    show_focus,
+                    show_directrix,
+                    show_roots,
+                    scale_xy,
                 ]),
             ],
             widths=[3, 1],
