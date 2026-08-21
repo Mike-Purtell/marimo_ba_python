@@ -327,6 +327,8 @@ def _(mo, pl):
 
 @app.cell
 def _(mo, pl):
+    # Load the county data once; later cells react to this dataframe.
+    # The chained Polars operations clean, calculate, rank, and collect the data.
     df_cal = (
         pl.read_excel("assets/california_counties_wikipedia.xlsx")
         .lazy()
@@ -374,6 +376,8 @@ def _(mo, pl):
         .collect()
     )
 
+    # This widget is a public value owned by this cell.
+    # Other cells should read demo.value rather than create another demo.
     demo = mo.ui.radio(
         options=["Population", "Population Density", "Area"],
         value="Population",
@@ -391,8 +395,11 @@ def _(mo):
 
 @app.cell
 def _(demo, df_cal, get_selected_county, go, mo, pl, px):
+    # Reading demo.value creates a reactive dependency on the radio widget.
+    # When the selection changes, marimo reruns this cell and its dependents.
     demo_view = demo.value if demo.value else None
     print(f"display top 10 and bottom 10 charts by county {demo_view}")
+    # Start with empty figures so both chart variables are defined for every choice.
     fig1 = fig2 = go.Figure()
 
     if demo_view == "Population":
@@ -449,8 +456,11 @@ def _(demo, df_cal, get_selected_county, go, mo, pl, px):
             labels={"Area_Sq_Mile": "Area (Square Miles)"},
         )
 
+    # The selected county comes from another cell through marimo state.
     selected_county = get_selected_county()
 
+    # These names belong to this cell. Marimo requires each public name to
+    # have one owner, so another cell must not define h or w again.
     h = 400
     w = 400
     fig1.update_layout(
@@ -465,6 +475,7 @@ def _(demo, df_cal, get_selected_county, go, mo, pl, px):
         template="plotly_dark",
         yaxis=dict(ticklabelstandoff=10),
     )
+    # Apply the same click and selection styling to both charts.
     for fig in (fig1, fig2):
         fig.update_layout(clickmode="event+select")
         selected_indices = (
@@ -596,6 +607,8 @@ def _(layout):
 
 @app.cell
 def _(fig1_ui, fig2_ui, set_selected_county):
+    # Plotly reports clicked points through the UI objects.
+    # Updating marimo state causes the county-information cells to rerun.
     selected_points = fig1_ui.points + fig2_ui.points
     if selected_points:
         set_selected_county(selected_points[0].get("y"))
@@ -634,6 +647,7 @@ def _(mo):
 
 @app.cell
 def _(a_number, b_number, c_number):
+    # Widget values are read here and become reactive inputs for the math cells.
     a = a_number.value
     a_legal = abs(a) > 0
     a_sign = 1 if a > 0 else -1
@@ -652,6 +666,8 @@ def _(a_number, b_number, c_number, mo):
 
 @app.cell
 def _(a, b, c):
+    # The discriminant tells us how many real roots the quadratic has:
+    # positive means two, zero means one, and negative means none.
     has_two_roots = False
     has_one_root = False
     has_no_roots = False
@@ -667,10 +683,13 @@ def _(a, b, c):
 
 @app.cell
 def _(a, b, c, has_one_root, has_two_roots, math):
+    # Keep separate names for the possible roots because later cells display them.
+    # This cell owns these names; dependent cells only read them.
     root = None
     root1 = None
     root2 = None
 
+    # If a is zero, the equation is linear rather than quadratic.
     if a == 0:
         if b == 0:
             print("No root: this is not a quadratic equation and does not intersect y = 0")
@@ -712,6 +731,9 @@ def _(mo):
 
 @app.cell
 def _(a, a_legal, b, c):
+    # Calculate the vertex (parabola_h, k), focus, and focus height.
+    # parabola_h is intentionally unique: marimo does not allow a public name
+    # to be defined by more than one cell.
     if a_legal:
         parabola_h = -b / (2 * a)
         k = c - (b ** 2) / (4 * a)
@@ -728,6 +750,8 @@ def _(a, a_legal, b, c):
 
 @app.cell
 def _(a, a_legal, b, c, parabola_h, x_focus):
+    # Build x-values around the vertex, then calculate y = ax^2 + bx + c.
+    # This cell reads parabola_h from the previous cell; it does not redefine it.
     if a_legal:
         x_offset = 1 / (2 * a)
         x_left, x_right = sorted((parabola_h - x_offset, parabola_h + x_offset))
@@ -745,6 +769,8 @@ def _(a, a_legal, b, c, parabola_h, x_focus):
 
 @app.cell
 def _(a, a_legal, k):
+    # The directrix is horizontal and lies opposite the focus from the vertex.
+    # This cell owns y_directrix so the plotting cell can react to it.
     y_directrix = k - (1 / (4 * a)) if a_legal else None
     return (y_directrix,)
 
@@ -785,8 +811,11 @@ def _(
     y_focus,
     y_vals,
 ):
+    # Create the graph from the x/y points calculated in the earlier cell.
+    # parabola_fig has a unique name because marimo gives each public variable one owner.
     parabola_fig = go.Figure(data=go.Scatter(x=x_vals, y=y_vals, showlegend=False))
 
+    # The subtitle explains which root case is currently displayed.
     if has_one_root and a != 0:
         subtitle = f"One Root at x = {root:.6f}".rstrip("0").rstrip(".")
     elif has_two_roots:
@@ -834,8 +863,10 @@ def _(
             ),
         )
     )
+    # Add optional markers for the vertex, focus, directrix, and roots.
     marker_size = 6
 
+    # Each checkbox is another reactive input, so changing one reruns this cell.
     if show_vertex.value and a_legal:
         textposition = "bottom center" if a_sign > 0 else "top center"
         parabola_fig = annotate_point(
@@ -892,6 +923,7 @@ def _(
                 textposition="middle right",
             )
 
+    # Show or hide the grid without rebuilding the underlying data.
     if show_grid.value:
         parabola_fig.update_xaxes(showgrid=True, visible=True)
         parabola_fig.update_yaxes(showgrid=True, visible=True)
@@ -899,6 +931,7 @@ def _(
         parabola_fig.update_xaxes(showgrid=False, visible=False)
         parabola_fig.update_yaxes(showgrid=False, visible=False)
 
+    # Choose plot ranges that keep the important parabola geometry visible.
     if a_legal:
         y_range_max = y_directrix + a_sign * (3 * abs(y_focus - y_directrix))
         y_range_min = y_directrix - (a_sign * 0.1 * abs(k - y_directrix))
