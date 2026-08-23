@@ -21,7 +21,8 @@ def _(mo):
 
 @app.cell
 def _():
-    x = 22
+    x = 1100
+
     return (x,)
 
 
@@ -49,7 +50,13 @@ def _(mo, x):
 
 @app.cell
 def _():
-    # x = 10
+    _x = 778
+
+    return
+
+
+@app.cell
+def _():
     return
 
 

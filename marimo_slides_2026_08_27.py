@@ -303,7 +303,7 @@ def _(mo):
 
             Interactive column select, row filters and other transforms
 
-            Save csv, partquet or other formats
+            Save csv, parquet or other formats
 
             Interactive built-in data viz, save code to python
             """
