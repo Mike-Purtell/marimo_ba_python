@@ -22,7 +22,7 @@ def _(mo):
 
 @app.cell
 def _():
-    x = 1
+    x = 40
     print(f'{x = }')
     return (x,)
 
@@ -60,7 +60,6 @@ def _(mo, z):
 @app.cell
 def _():
     _z = 778
-
     return
 
 

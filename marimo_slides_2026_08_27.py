@@ -126,7 +126,7 @@ def _(image_path, mo):
                 "vincent.png",
                 """
                  Vincent is a senior data professional with many meaningful contributions to the PyData stack. He has 
-                 pubished many videos on the Marimo YouTube channel. I have seen quite a few, and leared a lot.
+                 pubished many videos on the Marimo YouTube channel. I have seen quite a few, and learned so much.
                 """,
             ),
            _attribution_card(
@@ -973,7 +973,7 @@ def _(mo):
     mo.md(r"""
     #Getting Started, Getting Help
     1. https://docs.marimo.io/getting_started/
-    2. Pair with AI: marimo-pair, marimo-agent.
+    2. Pair with AI: marimo-pair, marimo-agent
     3. Get VS Code Marimo add-on
     4. GitHub: https://www.github.com/marimo-team/marimo/tree/main/examples
     5. Marimo Discord Channel
