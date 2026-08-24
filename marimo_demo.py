@@ -8,6 +8,7 @@ app = marimo.App(width="medium")
 def _():
     import marimo as mo
 
+
     return (mo,)
 
 
@@ -21,15 +22,23 @@ def _(mo):
 
 @app.cell
 def _():
-    x = 1100
-
+    x = 1
+    print(f'{x = }')
     return (x,)
 
 
 @app.cell
-def _(x):
-    print(f'{x = }')
-    return
+def _():
+    y = 10
+    print(f'{y = }')
+    return (y,)
+
+
+@app.cell
+def _(x, y):
+    z = x + y
+    print(f'{z = }')
+    return (z,)
 
 
 @app.cell(hide_code=True)
@@ -41,22 +50,17 @@ def _(mo):
 
 
 @app.cell
-def _(mo, x):
+def _(mo, z):
     mo.md(f'''# Marimo Reactivity Demo
-    x = {x}
+    z = {z}
     ''')
     return
 
 
 @app.cell
 def _():
-    _x = 778
+    _z = 778
 
-    return
-
-
-@app.cell
-def _():
     return
 
 

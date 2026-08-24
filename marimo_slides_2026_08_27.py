@@ -154,32 +154,40 @@ def _(image_path, mo):
 def _(mo):
     mo.vstack([
         mo.md("#Jupyter/Marimo Demo"),
-        mo.md('mo.accordian'),
-            mo.accordion(
-                {
-                    "Jupyter": mo.md(
-                        """
-                        - Classic, linear execution with hidden state
-                        - Stores large .ipynb JSON files (often multiple MB with outputs)
-                        - Multi‑language support: Python, Julia, R
-                        - Outputs and visualizations baked into the notebook, making git diffs heavy
-                        """
-                    )
-                }
-            ).style(max_height="300px", overflow="auto"),
-            mo.md(''),
-            mo.accordion(
-                {
-                    "Marimo": mo.md(
-                        """
-                        - Reactive execution with automatic dependency tracking, natural mechanism for callbacks
-                        - Saves pure .py files—lightweight, git‑friendly, no JSON output blobs
-                        - Python‑only, with focused and streamlined supports
-                        - Interactive widgets and app‑like behavior without hidden state
-                        """
-                    )
-                }
-            ).style(max_height="300px", overflow="auto"),
+        mo.md("mo.accordion"),
+        mo.hstack([
+            mo.vstack([
+                mo.accordion(
+                    {
+                        "Jupyter": mo.md(
+                            """
+                            - Classic, linear execution with hidden state
+                            - Stores large .ipynb JSON files (often multiple MB with outputs)
+                            - Multi-language support: Python, Julia, R
+                            - Outputs and visualizations baked into the notebook, making git diffs heavy
+                            """
+                        )
+                    }
+                ).style(max_height="300px", overflow="auto").left(),
+                mo.md(""),
+                mo.accordion(
+                    {
+                        "Marimo": mo.md(
+                            """
+                            - Reactive execution with automatic dependency tracking, natural mechanism for callbacks
+                            - Saves pure .py files—lightweight, git-friendly, no JSON output blobs
+                            - Python-only, with focused and streamlined support
+                            - Interactive widgets and app-like behavior without hidden state
+                            """
+                        )
+                    }
+                ).style(max_height="300px", overflow="auto").left(),
+            ]),
+            mo.Html(""),
+            mo.image("assets/Paws.png", width=200, caption="Let's Paws for notebook demos"),
+        ]),
+        # mo.Html(""),
+        # mo.image("assets/Paws.png", width=200, caption="Let's Paws for notebook demos"),
     ])
     return
 
@@ -333,12 +341,6 @@ def _(mo, pl):
         pl.read_excel("assets/california_counties_wikipedia.xlsx")
         .lazy()
         .with_columns(
-            pl.concat_str(
-                [
-                    pl.lit("06"),
-                    pl.col("FIPS").cast(pl.Int64).cast(pl.String).str.zfill(3),
-                ]
-            ).alias("FIPS"),
             pl.col("Established").cast(pl.UInt16),
             pl.col("Pop").cast(pl.UInt32),
             pl.col("Area_Sq_Mile").cast(pl.UInt16),
@@ -370,7 +372,6 @@ def _(mo, pl):
                 "Pop_Density_Rank",
                 "Formation",
                 "Etymology",
-                "FIPS",
             ]
         )
         .collect()
@@ -578,7 +579,7 @@ def _(county_info, demo, description, fig1_ui, fig2_ui, mo):
         mo.left(demo),
         mo.hstack([fig1_ui, fig2_ui], widths="equal"),
     ])
-    return (layout,)
+    return
 
 
 @app.cell
@@ -600,8 +601,7 @@ def _(mo):
 
 
 @app.cell
-def _(layout):
-    layout
+def _():
     return
 
 
