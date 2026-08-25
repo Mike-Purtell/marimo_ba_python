@@ -43,9 +43,6 @@ def _(mo):
     Bay Area Python Interest Group
     <br>
     August 27, 2026
-    <br><br><br><br><br>
-    _Quote from the Marimo GitHub_<br><br>
-    A reactive notebook for Python -- run experiments, query with SQL, execute as a script, deploy as an app, and version with git. Stored as pure Python. All in a modern, AI-native editor.
     """)
     return
 
@@ -77,6 +74,20 @@ def _(mo):
 def _(mo):
     mo.md(r"""
     <br>This is not a slide deck to accompany the demo. This slide deck is the demo.
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    # Marimo - A Reactive Notebook for Python
+    - Reactive Execution Model – Automatically updates outputs when inputs change
+    - Lightweight & Script-Based – Stored as plain .py files, version-control friendly
+    - Interactive UI – Supports widgets, forms, and live visualizations
+    - Seamless Data Exploration – Ideal for analysis, prototyping, and app building
+    - Export & Share – Save as HTML, present as slides, or deploy as web apps
+    - Reproducible Workflows – Deterministic execution ensures consistent results
     """)
     return
 
@@ -119,7 +130,7 @@ def _(image_path, mo):
         )
 
     mo.vstack([
-        mo.md("#Inspiration Move me Brightly"),
+        mo.md("#Marimo Leadership"),
         mo.vstack([
             _attribution_card(
                 "Vincent Warmerdam (Founding Engineer)",
@@ -186,8 +197,15 @@ def _(mo):
             mo.Html(""),
             mo.image("assets/Paws.png", width=200, caption="Let's Paws for notebook demos"),
         ]),
-        # mo.Html(""),
-        # mo.image("assets/Paws.png", width=200, caption="Let's Paws for notebook demos"),
+    ])
+    return
+
+
+@app.cell
+def _(mo):
+    mo.vstack([
+        mo.md('#Dependency Graph'),  
+        mo.image('assets//dependency_graph.png')
     ])
     return
 
@@ -567,7 +585,7 @@ def _(df_cal, mo):
 
 @app.cell
 def _(county_info, demo, description, fig1_ui, fig2_ui, mo):
-    layout = mo.vstack([
+    mo.vstack([
         mo.Html("<br>"),
         mo.left(mo.md(f"#California County {demo.value}")),
         mo.left(mo.md('Tip #1: hover over bar to see county statistics')),
@@ -589,7 +607,7 @@ def _(mo):
             """#Marimo Notebooks as Apps
 
             Reactivity makes callbacks a breeze
-
+    f
             Run apps on local machine, deploy to Molab, or run from GitHub
 
             Share with colleagues who don't want to see code

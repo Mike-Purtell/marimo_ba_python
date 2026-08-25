@@ -1,13 +1,13 @@
 {
   "version": "1",
   "metadata": {
-    "marimo_version": "0.23.16",
-    "script_metadata_hash": null
+    "marimo_version": "0.24.0",
+    "script_metadata_hash": "2de726ced834abf3b4bfd7779e01a8a8"
   },
   "cells": [
     {
       "id": "Hbol",
-      "code_hash": null,
+      "code_hash": "e8e916e92dd1469db4bba69879a0f02f",
       "outputs": [
         {
           "type": "data",
@@ -19,8 +19,21 @@
       "console": []
     },
     {
-      "id": "XFKV",
-      "code_hash": null,
+      "id": "MJUe",
+      "code_hash": "a6b7968d4f0fb668b36db073ca6869c8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"quadratic-coefficients\">quadratic coefficients</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vblA",
+      "code_hash": "3d75a61fea88d53caaab8183253fcaeb",
       "outputs": [
         {
           "type": "data",
@@ -32,8 +45,21 @@
       "console": []
     },
     {
-      "id": "Vrxr",
-      "code_hash": "b5247f94161e76d7152a144b0437eeb3",
+      "id": "bkHC",
+      "code_hash": "af9a8bcca4f52f8164ebb4e8d8b2f60c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"discriminant\">Discriminant</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "lEQa",
+      "code_hash": "60c1813f3b4b93316d34cdc18690e68d",
       "outputs": [
         {
           "type": "data",
@@ -45,26 +71,52 @@
       "console": []
     },
     {
-      "id": "fmjK",
-      "code_hash": "dad5c7eec30ee432f1fd9f33e9526a9b",
+      "id": "PKri",
+      "code_hash": "3cc39d23acc4ceb9f51ff0be876dd317",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">x = 10\nprint(f'{x =})</span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"count-the-roots\">Count the roots</h3></span>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "mqHa",
-      "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
+      "id": "Xref",
+      "code_hash": "16c865158e1989036d662b32fcd19ff3",
       "outputs": [
         {
           "type": "data",
           "data": {
             "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "SFPL",
+      "code_hash": "f14db7ed73cf25f80f9ce19d374710e0",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"show-the-results\">Show the results</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "BYtC",
+      "code_hash": "989b93ab65408ae04e02259ec32bbf01",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">a = 1<br>b = -4<br>c = 4<br>d = 0<br>One root, x = 2.000<br></span></span>"
           }
         }
       ],

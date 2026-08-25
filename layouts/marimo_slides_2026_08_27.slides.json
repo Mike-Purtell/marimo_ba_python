@@ -22,6 +22,7 @@
         "type": "fragment",
         "speakerNotes": "Emphsize why interactive slides are so cool and useful, story telling with data"
       },
+      {},
       {
         "type": "slide",
         "speakerNotes": "Comment on cool and unique name , marimo.  Unlike polars, pandas, or python,  marimo won't kill you and is vegetarian friendly"
@@ -32,6 +33,7 @@
       {
         "speakerNotes": "Break on this slide. Show simple jupyter and marimo notebooks, distinguish non-reactivity of jupyter, and the reactivity of  marimo. Open the accordians and speak to each one."
       },
+      {},
       {
         "speakerNotes": "Emphasize how reactivity with rich UI elements is well suited for dashboards"
       },
