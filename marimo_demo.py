@@ -104,5 +104,11 @@ def _(a, b, c, d, has_no_roots, has_one_root, has_two_roots, mo, sqrt):
     return
 
 
+@app.cell
+def _():
+    d=2
+    return (d,)
+
+
 if __name__ == "__main__":
     app.run()

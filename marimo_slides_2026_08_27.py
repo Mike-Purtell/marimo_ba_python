@@ -42,7 +42,12 @@ def _(mo):
     <br>
     Bay Area Python Interest Group
     <br>
-    August 27, 2026
+    August 27, 2026<br><br><br>
+    - Principal Test Engineeer for Cadence Design Systems
+    - Analysis and visualization of large data sets is a passion and profession
+    - User of python for data analysis since 2019 (started with jupyter, pandas, matplotlib)
+    - Favorite tools today are Polars, Plotly, and leaning into Marimo
+    - San Jose resident since 2004, Silicon Valley since 1981. Grew up in Albany NY
     """)
     return
 
@@ -52,7 +57,7 @@ def _(mo):
     mo.md(r"""
     #Agenda
     <br>
-    - Who/What is Marimo?
+    - Marimo overview
     - Reactivity
     - UI elements/widgets
     - Data Frames
@@ -606,11 +611,11 @@ def _(mo):
         mo.md(
             """#Marimo Notebooks as Apps
 
-            Reactivity makes callbacks a breeze
-    f
-            Run apps on local machine, deploy to Molab, or run from GitHub
+        - Reactivity makes callbacks a breeze
 
-            Share with colleagues who don't want to see code
+        -  Run apps on local machine, deploy to Molab, or run from GitHub
+
+        - Share with colleagues who don't want to see code
 
             """
         ),
@@ -1013,32 +1018,10 @@ def _(image_path, mo):
 @app.cell
 def _(image_path, mo):
     mo.vstack([
-        mo.md('''#Git Repo for this Presentation
+        mo.md('''#Git Repo for this Presentation - Thank you for coming
         https://github.com/Mike-Purtell/marimo_ba_python<br>'''),
         mo.image(f'{image_path}GitHub.png')
     ])
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(r"""
-    # Thank you all.
-
-    Show of hands, anyone interested in having a project night similar to SF Python last year?
-
-    Potential Format:
-
-    - Form 3 or 4 groups, each with a different data set
-
-    - Each group collaborates with a common git repo.
-
-    - Use any free/open source libraries to analyze, visualize and summarize findings.
-
-    - Each group gets 10 minutes to present results at the end
-
-    Winning team earns bragging rights
-    """)
     return
 
 
