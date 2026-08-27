@@ -106,8 +106,8 @@ def _(a, b, c, d, has_no_roots, has_one_root, has_two_roots, mo, sqrt):
 
 @app.cell
 def _():
-    d=2
-    return (d,)
+    # d=2
+    return
 
 
 if __name__ == "__main__":

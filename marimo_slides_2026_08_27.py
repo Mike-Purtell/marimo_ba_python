@@ -265,11 +265,12 @@ def _(mo):
             [
                 "Green Day",
                 "Jefferson Airplane",
+                "Credence Clearwater Revival",
                 "Metallica",
                 "Grateful Dead",
+                "Sly and the Family Stone",
                 "Santana",
                 "Journey",
-                "Petrichor",
             ]
         ),
         label="Your favorite Bay Area band (pick 1)",
