@@ -1,25 +1,42 @@
 # Learning Marimo: Interactive Python Notebooks
 
-This folder supports a talk and hands-on demonstration of **marimo**, a reactive
-Python notebook environment. The main teaching artifact is
-[mp_marimo_2026_08_27.py](mp_marimo_2026_08_27.py). It is designed to show how
-marimo turns ordinary Python cells into a dependency-aware, interactive
-notebook that can also run as an application.
+This folder contains the materials for the Bay Area Python Interest Group
+presentation on August 27, 2026. The main topic is **marimo**, a reactive
+Python notebook environment. The examples are arranged to introduce the
+problems with traditional notebook workflows, then show how marimo addresses
+them.
+
+## Presentation Files
+
+### Interactive slide deck: `marimo_slides_2026_08_27.py`
+
+Open [marimo_slides_2026_08_27.py](marimo_slides_2026_08_27.py) as a marimo
+notebook to run the interactive slide deck. It uses the slide layout in
+[layouts/marimo_slides_2026_08_27.slides.json](layouts/marimo_slides_2026_08_27.slides.json)
+and presentation assets from the `assets/` directory.
+
+### Jupyter comparison: `jupyter_demo.ipynb`
+
+[jupyter_demo.ipynb](jupyter_demo.ipynb) demonstrates Jupyter notebook
+attributes that marimo is designed to solve, including execution-order issues,
+hidden state, and stale or out-of-sync outputs. It provides the baseline for
+understanding why marimo's reactive model is useful.
+
+### Reactivity demonstration: `marimo_demo.py`
+
+[marimo_demo.py](marimo_demo.py) focuses on marimo reactivity. Its cells show
+how changing an input automatically updates dependent values, tables, charts,
+and other UI elements. The file is stored as regular Python, so it is readable,
+executable, and friendly to Git.
 
 The central idea is simple: cells form a dataflow graph. When an input changes,
 marimo automatically re-runs the cells that depend on it. There is no need to
 manually hunt for stale outputs or remember which cells were run first.
 
-## Main Demo: `mp_marimo_2026_08_27.py`
+## What the marimo examples show
 
-Open the app as a marimo notebook and follow the sections in order. The file is
-stored as regular Python, so it is readable, executable, and friendly to Git.
-It uses a slide layout from
-[layouts/mp_marimo_2026_08_27.slides.json](layouts/mp_marimo_2026_08_27.slides.json)
-and presentation images and data from the `assets/` directory.
-
-The demo focuses on the features that make marimo different from a traditional
-notebook:
+The marimo files focus on the features that make marimo different from a
+traditional notebook:
 
 ### Reactive execution
 
@@ -70,37 +87,16 @@ a notebook can be served as an app. The same source can be edited as a
 notebook, run as a script with default UI values, or served with code hidden
 for an application-style experience.
 
-## Run the Marimo Demo
+## Run the Marimo Files
 
-The file includes its dependency metadata. With the project environment
-active, start the editor with:
+With the project environment active, start the interactive slide deck with:
 
-```powershell
-marimo edit mp_marimo_2026_08_27.py
 ```
-
-To serve it as a read-only app:
-
-```powershell
-marimo run mp_marimo_2026_08_27.py
+marimo edit --sandbox marimo_slides_2026_08_27.py
 ```
-
-Before launching the notebook, validate the slide layout JSON and speaker
-notes coverage:
-
-```powershell
-./validate_slides_layout.ps1
-```
-
-To validate a different layout file:
-
-```powershell
-./validate_slides_layout.ps1 -Path layouts/your_file.slides.json
-```
-
 The declared dependencies include marimo, Polars, NumPy, Plotly, and
-`fastexcel`. The app also expects the presentation images and the county Excel
-data referenced by the cells to be available in the project assets.
+`fastexcel`. The examples also expect the presentation images and county Excel
+data referenced by the cells to be available in this project.
 
 Useful marimo commands to explore after the demo include:
 
@@ -111,16 +107,5 @@ marimo tutorial for-jupyter-users
 ```
 
 ## Supporting Files
-
-- [layouts/mp_marimo_2026_08_27.slides.json](layouts/mp_marimo_2026_08_27.slides.json): slide-oriented layout for the main presentation.
 - [assets/styles.css](assets/styles.css): supporting presentation styles.
 - [marimo.agent.md](marimo.agent.md): local notes about marimo notebook conventions.
-
-## Jupyter Baseline
-
-At the bottom of this project is [marimo-talk-jupyter.ipynb](marimo-talk-jupyter.ipynb),
-a small Jupyter notebook used only as a comparison point. It demonstrates
-Jupyter's execution-order behavior, dataframe displays, and Plotly output so
-the talk can motivate why marimo's reactive model and code-only file format
-matter. The goal of this project, however, is to learn and demonstrate marimo's
-important features, not to maintain parallel Jupyter examples.
