@@ -123,45 +123,45 @@ def _(image_path, mo):
             [
                 mo.image(f"{image_path}{image_name}", width=175, rounded=True,
                          style={
-                            "max-width": "100%",
-                            "border-radius": "8px",
-                            "box-shadow": "0 4px 8px rgba(0,0,0,0.2)",
-                            "display": "block",
-                            "margin": "auto"
+                            'max-width': '100%',
+                            'border-radius': '8px',
+                            'box-shadow': '0 4px 8px rgba(0,0,0,0.2)',
+                            'display': 'block',
+                            'margin': 'auto'
                         },),
                 mo.accordion({name: mo.md(description)}),
             ],
-            widths="equal",
+            widths='equal',
         )
 
     mo.vstack([
-        mo.md("#Marimo Leadership"),
+        mo.md('#Marimo Leadership'),
         mo.vstack([
             _attribution_card(
-                "Vincent Warmerdam (Founding Engineer)",
-                "vincent.png",
-                """
+                'Vincent Warmerdam (Founding Engineer)',
+                'vincent.png',
+                '''
                  Vincent is a senior data professional with many meaningful contributions to the PyData stack. He has 
                  pubished many videos on the Marimo YouTube channel. I have seen quite a few, and learned so much.
-                """,
+                ''',
             ),
            _attribution_card(
-                "Akshay Agrawal(Co-Founder, CEO)",
-                "Akshay.png",
-                """
+                'Akshay Agrawal(Co-Founder, CEO)',
+                'Akshay.png',
+                '''
                 Akshay is a former engineer at Google Brain, where he helped build TensorFlow, and is a NeurIPS-published
                 PhD from Stanford University, where he focused on vector embeddings and machine learning.
-                """,
+                ''',
             ),
             _attribution_card(
-                "Sarah Tsai (Developer Relations)",
-                "sarah.png",
+                'Sarah Tsai (Developer Relations)',
+                'sarah.png',
                 """
                   Sarah is a former data scientist at Genentech, where she built interactive visual analytics dashboards,
                   and led campus community growth as Bumble's events manager at UC Berkeley.
                 """,
             ),
-        ], heights="equal"),
+        ], heights='equal'),
     ])
     return
 
@@ -169,38 +169,38 @@ def _(image_path, mo):
 @app.cell
 def _(mo):
     mo.vstack([
-        mo.md("#Jupyter/Marimo Demo"),
-        mo.md("mo.accordion"),
+        mo.md('#Jupyter/Marimo Demo'),
+        mo.md('mo.accordion'),
         mo.hstack([
             mo.vstack([
                 mo.accordion(
                     {
-                        "Jupyter": mo.md(
-                            """
+                        'Jupyter': mo.md(
+                            '''
                             - Classic, linear execution with hidden state
                             - Stores large .ipynb JSON files (often multiple MB with outputs)
                             - Multi-language support: Python, Julia, R
                             - Outputs and visualizations baked into the notebook, making git diffs heavy
-                            """
+                            '''
                         )
                     }
-                ).style(max_height="300px", overflow="auto").left(),
-                mo.md(""),
+                ).style(max_height='300px', overflow='auto').left(),
+                mo.md(''),
                 mo.accordion(
                     {
-                        "Marimo": mo.md(
-                            """
+                        'Marimo': mo.md(
+                            '''
                             - Reactive execution with automatic dependency tracking, natural mechanism for callbacks
                             - Saves pure .py files—lightweight, git-friendly, no JSON output blobs
                             - Python-only, with focused and streamlined support
                             - Interactive widgets and app-like behavior without hidden state
-                            """
+                            '''
                         )
                     }
-                ).style(max_height="300px", overflow="auto").left(),
+                ).style(max_height='300px', overflow='auto').left(),
             ]),
-            mo.Html(""),
-            mo.image("assets/Paws.png", width=200, caption="Let's Paws for notebook demos"),
+            mo.Html(''),
+            mo.image('assets/Paws.png', width=200, caption="Let's Paws for notebook demos"),
         ]),
     ])
     return
@@ -220,21 +220,19 @@ def _(mo):
     mo.md("""
     # UI elements
     <br><br>
-    Cells can output interactive UI elements. Interacting with a UI
-    element **automatically triggers notebook execution**: when
-    you interact with a UI element, its value is sent back to Python, and
-    every cell that references that element is re-run.
-    <br><br>
-    marimo provides a library of UI elements to choose from under
-    marimo.ui.
+    - Interacting with a UI element **automatically triggers notebook execution**
+    - when you interact with a UI element, its value is sent back to Python
+    - every cell that references an updted UI element is automatically re-run
+    - Implementing callbacks is a breeze
+    - marimo provides a library of UI elements to choose from under marimo.ui
+    - marimo supports anywidgets library
     """)
-    return
 
 
 @app.cell
 def _(mo):
     slider_max = 9  # 10 pets are allowed. slider max of 9 forces at least one of each type
-    pet_slider = mo.ui.slider(1, slider_max, 1, label="Cats or Dogs?", value=5)
+    pet_slider = mo.ui.slider(1, slider_max, 1, label='Cats or Dogs?', value=5)
     return (pet_slider,)
 
 
@@ -248,12 +246,12 @@ def _(pet_slider):
 @app.cell
 def _(cat_num, dog_num, mo, pet_slider):
     mo.vstack([
-        mo.md("#Slider demo, pick dogs and cats, 10 total"),
+        mo.md('#Slider demo, pick dogs and cats, 10 total'),
         mo.md(
             f"""{pet_slider} {cat_num} Cats, {dog_num} Dogs """
         ),
-        mo.md("##" + "🐱" * cat_num + f'  {cat_num} Cats'),
-        mo.md("##" + "🐶 " *  dog_num + f' {dog_num} Dogs'),
+        mo.md('##' + '🐱' * cat_num + f'  {cat_num} Cats'),
+        mo.md('##' + '🐶 ' *  dog_num + f' {dog_num} Dogs'),
     ])
     return
 
@@ -263,21 +261,22 @@ def _(mo):
     radio = mo.ui.radio(
         options=sorted(
             [
-                "Green Day",
-                "Jefferson Airplane",
-                "Credence Clearwater Revival",
-                "Metallica",
-                "Grateful Dead",
-                "Sly and the Family Stone",
-                "Santana",
-                "Journey",
+                'Banquet Beer Band',
+                'Green Day',
+                'Jefferson Airplane',
+                'Credence Clearwater Revival',
+                'Metallica',
+                'Grateful Dead',
+                'Sly and the Family Stone',
+                'Santana',
+                'Journey',
             ]
         ),
-        label="Your favorite Bay Area band (pick 1)",
+        label='Your favorite Bay Area band (pick 1)',
     )
     multiselect = mo.ui.multiselect(
-        options=["Springfield", "Chicago (tentative)", "New York (tentative)", "Los Angeles (tentative)"],
-        label="Simpson reference<br>Best city to see a Rolling Stones concert?",
+        options=['Springfield', 'Chicago (tentative)', 'New York (tentative)', 'Los Angeles (tentative)'],
+        label='Simpson reference<br>Best city to see a Rolling Stones concert?',
         max_selections=2,
     )
     checkbox = mo.ui.checkbox(label="yes I read the T's and C's", value=False)
@@ -287,39 +286,39 @@ def _(mo):
 @app.cell
 def _(checkbox, mo, multiselect, radio):
     mo.vstack([
-        mo.md("<h1>Interactive widgets</h1>"),
+        mo.md('<h1>Interactive widgets</h1>'),
         mo.hstack(
             [
                 radio,
-                mo.left(mo.Html(radio.value if radio.value is not None else "no selection yet")),
+                mo.left(mo.Html(radio.value if radio.value is not None else 'no selection yet')),
             ],
-            widths="equal",
+            widths='equal',
         ),
-        mo.Html("<br>"),
+        mo.Html('<br>'),
         mo.hstack(
             [
                 multiselect,
                 mo.center(
                     mo.Html(
-                        ", ".join(multiselect.value)
+                        ', '.join(multiselect.value)
                         if multiselect.value is not None
-                        else "no selection yet"
+                        else 'no selection yet'
                     )
                 ),
             ],
-            widths="equal",
+            widths='equal',
         ),
-        mo.Html("<br>"),
+        mo.Html('<br>'),
         mo.hstack(
             [
                 checkbox,
                 mo.left(
                     mo.Html(
-                        "Have read the Ts and Cs" if checkbox.value else "Have NOT read the Ts and Cs"
+                        'Have read the Ts and Cs' if checkbox.value else 'Have NOT read the Ts and Cs'
                     )
                 ),
             ],
-            widths="equal",
+            widths='equal',
         ),
     ])
     return
@@ -329,7 +328,7 @@ def _(checkbox, mo, multiselect, radio):
 def _(mo):
     mo.vstack([
         mo.md(
-            """#Dataframes
+            '''#Dataframes
 
             Pagination
 
@@ -338,7 +337,7 @@ def _(mo):
             Save csv, parquet or other formats
 
             Interactive built-in data viz, save code to python
-            """
+            '''
         ),
     ])
     return
@@ -351,7 +350,7 @@ def _(mo, pl):
         .with_columns(pl.all().cast(pl.UInt8))
     )
     mo.vstack([
-        mo.md("#Single Digit Times Table<br><sup>mo.ui.table(dataframe)</sup>"),
+        mo.md('#Single Digit Times Table<br><sup>mo.ui.table(dataframe)</sup>'),
         mo.ui.table(df_polars),
     ])
     return
@@ -362,40 +361,40 @@ def _(mo, pl):
     # Load the county data once; later cells react to this dataframe.
     # The chained Polars operations clean, calculate, rank, and collect the data.
     df_cal = (
-        pl.read_excel("assets/california_counties_wikipedia.xlsx")
+        pl.read_excel('assets/california_counties_wikipedia.xlsx')
         .lazy()
         .with_columns(
-            pl.col("Established").cast(pl.UInt16),
-            pl.col("Pop").cast(pl.UInt32),
-            pl.col("Area_Sq_Mile").cast(pl.UInt16),
-            pl.col("Area_Sq_KM").cast(pl.UInt16),
-            pl.col("County").str.strip_chars(),
+            pl.col('Established').cast(pl.UInt16),
+            pl.col('Pop').cast(pl.UInt32),
+            pl.col('Area_Sq_Mile').cast(pl.UInt16),
+            pl.col('Area_Sq_KM').cast(pl.UInt16),
+            pl.col('County').str.strip_chars(),
         )
         .with_columns(
-            Pop_Density_Sq_Mile=(pl.col("Pop") / pl.col("Area_Sq_Mile")).round(1),
-            Pop_Density_Sq_KM=(pl.col("Pop") / pl.col("Area_Sq_KM")).round(1),
+            Pop_Density_Sq_Mile=(pl.col('Pop') / pl.col('Area_Sq_Mile')).round(1),
+            Pop_Density_Sq_KM=(pl.col('Pop') / pl.col('Area_Sq_KM')).round(1),
         )
         .with_columns(
-            Pop_Rank=pl.col("Pop").rank(method="min", descending=True),
-            Pop_Density_Rank=pl.col("Pop_Density_Sq_Mile").rank(method="min", descending=True),
-            Area_Rank=pl.col("Area_Sq_Mile").rank(method="min", descending=True),
+            Pop_Rank=pl.col('Pop').rank(method='min', descending=True),
+            Pop_Density_Rank=pl.col('Pop_Density_Sq_Mile').rank(method='min', descending=True),
+            Area_Rank=pl.col('Area_Sq_Mile').rank(method='min', descending=True),
         )
-        .sort("County", descending=False)
+        .sort('County', descending=False)
         .select(
             [
-                "County",
-                "Seat",
-                "Established",
-                "Pop",
-                "Pop_Rank",
-                "Area_Sq_Mile",
-                "Area_Sq_KM",
-                "Area_Rank",
-                "Pop_Density_Sq_Mile",
-                "Pop_Density_Sq_KM",
-                "Pop_Density_Rank",
-                "Formation",
-                "Etymology",
+                'County',
+                'Seat',
+                'Established',
+                'Pop',
+                'Pop_Rank',
+                'Area_Sq_Mile',
+                'Area_Sq_KM',
+                'Area_Rank',
+                'Pop_Density_Sq_Mile',
+                'Pop_Density_Sq_KM',
+                'Pop_Density_Rank',
+                'Formation',
+                'Etymology',
             ]
         )
         .collect()
@@ -404,9 +403,9 @@ def _(mo, pl):
     # This widget is a public value owned by this cell.
     # Other cells should read demo.value rather than create another demo.
     demo = mo.ui.radio(
-        options=["Population", "Population Density", "Area"],
-        value="Population",
-        label="",
+        options=['Population', 'Population Density', 'Area'],
+        value='Population',
+        label='',
         inline=True,
     )
     return demo, df_cal
@@ -427,58 +426,58 @@ def _(demo, df_cal, get_selected_county, go, mo, pl, px):
     # Start with empty figures so both chart variables are defined for every choice.
     fig1 = fig2 = go.Figure()
 
-    if demo_view == "Population":
+    if demo_view == 'Population':
         fig1 = px.bar(
-            df_cal.sort("Pop_Rank", descending=True).tail(10),
-            x="Pop",
-            y="County",
-            title="Top 10",
+            df_cal.sort('Pop_Rank', descending=True).tail(10),
+            x='Pop',
+            y='County',
+            title='Top 10',
             subtitle=demo_view,
-            labels={"Pop": "Population"},
+            labels={'Pop': 'Population'},
         )
         fig2 = px.bar(
-            df_cal.sort("Pop_Rank", descending=True).head(10),
-            x="Pop",
-            y="County",
-            title="Bottom 10",
+            df_cal.sort('Pop_Rank', descending=True).head(10),
+            x='Pop',
+            y='County',
+            title='Bottom 10',
             subtitle=demo_view,
-            labels={"Pop": "Population"},
+            labels={'Pop': 'Population'},
         )
 
-    if demo_view == "Population Density":
+    if demo_view == 'Population Density':
         fig1 = px.bar(
-            df_cal.sort("Pop_Density_Sq_Mile", descending=False).tail(10),
-            x="Pop_Density_Sq_Mile",
-            y="County",
-            title="Top 10",
+            df_cal.sort('Pop_Density_Sq_Mile', descending=False).tail(10),
+            x='Pop_Density_Sq_Mile',
+            y='County',
+            title='Top 10',
             subtitle=demo_view,
-            labels={"Pop_Density_Sq_Mile": "Population per Square Mile"},
+            labels={'Pop_Density_Sq_Mile': 'Population per Square Mile'},
         )
         fig2 = px.bar(
-            df_cal.sort("Pop_Density_Sq_Mile", descending=False).head(10),
-            x="Pop_Density_Sq_Mile",
-            y="County",
-            title="Bottom 10",
+            df_cal.sort('Pop_Density_Sq_Mile', descending=False).head(10),
+            x='Pop_Density_Sq_Mile',
+            y='County',
+            title='Bottom 10',
             subtitle=demo_view,
-            labels={"Pop_Density_Sq_Mile": "Population per Square Mile"},
+            labels={'Pop_Density_Sq_Mile': 'Population per Square Mile'},
         )
 
-    if demo_view == "Area":
+    if demo_view == 'Area':
         fig1 = px.bar(
-            df_cal.sort("Area_Sq_Mile", descending=False).tail(10),
-            x="Area_Sq_Mile",
-            y="County",
-            title="Top 10",
+            df_cal.sort('Area_Sq_Mile', descending=False).tail(10),
+            x='Area_Sq_Mile',
+            y='County',
+            title='Top 10',
             subtitle=demo_view,
-            labels={"Area_Sq_Mile": "Area (Square Miles)"},
+            labels={'Area_Sq_Mile': 'Area (Square Miles)'},
         )
         fig2 = px.bar(
-            df_cal.sort("Area_Sq_Mile", descending=False).head(10),
-            x="Area_Sq_Mile",
-            y="County",
-            title="Bottom 10",
+            df_cal.sort('Area_Sq_Mile', descending=False).head(10),
+            x='Area_Sq_Mile',
+            y='County',
+            title='Bottom 10',
             subtitle=demo_view,
-            labels={"Area_Sq_Mile": "Area (Square Miles)"},
+            labels={'Area_Sq_Mile': 'Area (Square Miles)'},
         )
 
     # The selected county comes from another cell through marimo state.
@@ -491,18 +490,18 @@ def _(demo, df_cal, get_selected_county, go, mo, pl, px):
     fig1.update_layout(
         width=w,
         height=h,
-        template="plotly_dark",
+        template='plotly_dark',
         yaxis=dict(ticklabelstandoff=10),
     )
     fig2.update_layout(
         width=w,
         height=h,
-        template="plotly_dark",
+        template='plotly_dark',
         yaxis=dict(ticklabelstandoff=10),
     )
     # Apply the same click and selection styling to both charts.
     for fig in (fig1, fig2):
-        fig.update_layout(clickmode="event+select")
+        fig.update_layout(clickmode='event+select')
         selected_indices = (
             [
                 index
@@ -514,15 +513,15 @@ def _(demo, df_cal, get_selected_county, go, mo, pl, px):
         )
         fig.update_traces(
             selectedpoints=selected_indices,
-            selected=dict(marker=dict(color="green")),
-            unselected=dict(marker=dict(color="lightgray", opacity=0.65)),
+            selected=dict(marker=dict(color='green')),
+            unselected=dict(marker=dict(color='lightgray', opacity=0.65)),
         )
 
     fig1_ui = mo.ui.plotly(fig1)
     fig2_ui = mo.ui.plotly(fig2)
 
-    description = ""
-    if demo_view == "Population":
+    description = ''
+    if demo_view == 'Population':
         description = mo.Html(
             """
             <div style='padding: 0.75rem 1rem; border: 1px solid var(--border-color);'>
@@ -531,7 +530,7 @@ def _(demo, df_cal, get_selected_county, go, mo, pl, px):
             </div>
             """
         )
-    elif demo_view == "Population Density":
+    elif demo_view == 'Population Density':
         description = mo.Html(
             """
             <div style='padding: 0.75rem 1rem; border: 1px solid var(--border-color);'>
@@ -541,7 +540,7 @@ def _(demo, df_cal, get_selected_county, go, mo, pl, px):
             </div>
             """
         )
-    elif demo_view == "Area":
+    elif demo_view == 'Area':
         description = mo.Html(
             """
             <div style='padding: 0.75rem 1rem; border: 1px solid var(--border-color);'>
@@ -553,7 +552,7 @@ def _(demo, df_cal, get_selected_county, go, mo, pl, px):
         )
 
     selected_county_row = (
-        df_cal.filter(pl.col("County") == selected_county).row(0, named=True)
+        df_cal.filter(pl.col('County') == selected_county).row(0, named=True)
         if selected_county
         else None
     )
@@ -568,7 +567,7 @@ def _(demo, df_cal, get_selected_county, go, mo, pl, px):
             """
         )
     else:
-        county_info = mo.Html("")
+        county_info = mo.Html('')
 
     dataframe_info = """
     SHOW ME: This polars dataframe is used for all visualizations in this
@@ -582,7 +581,7 @@ def _(demo, df_cal, get_selected_county, go, mo, pl, px):
 @app.cell
 def _(df_cal, mo):
     mo.vstack([
-        mo.md("#California Counties - population statistics"),
+        mo.md('#California Counties - population statistics'),
         mo.md('df_cal'),
        df_cal
     ])
@@ -592,7 +591,7 @@ def _(df_cal, mo):
 @app.cell
 def _(county_info, demo, description, fig1_ui, fig2_ui, mo):
     mo.vstack([
-        mo.Html("<br>"),
+        mo.Html('<br>'),
         mo.left(mo.md(f"#California County {demo.value}")),
         mo.left(mo.md('Tip #1: hover over bar to see county statistics')),
         mo.left(mo.md('Tip #2: click on an bar for more information about that county')),
@@ -601,7 +600,7 @@ def _(county_info, demo, description, fig1_ui, fig2_ui, mo):
             county_info,
         ]),
         mo.left(demo),
-        mo.hstack([fig1_ui, fig2_ui], widths="equal"),
+        mo.hstack([fig1_ui, fig2_ui], widths='equal'),
     ])
     return
 
@@ -635,7 +634,7 @@ def _(fig1_ui, fig2_ui, set_selected_county):
     # Updating marimo state causes the county-information cells to rerun.
     selected_points = fig1_ui.points + fig2_ui.points
     if selected_points:
-        set_selected_county(selected_points[0].get("y"))
+        set_selected_county(selected_points[0].get('y'))
     return
 
 
@@ -644,12 +643,12 @@ def _(go):
     def annotate_point(fig, name, color, size, x=None, y=None, textposition=None):
         point_x = 0 if x is None else x
         point_y = 0 if y is None else y
-        textposition = "below" if textposition is None else textposition
+        textposition = 'below' if textposition is None else textposition
         fig.add_trace(
             go.Scatter(
                 x=[point_x],
                 y=[point_y],
-                mode="markers+text",
+                mode='markers+text',
                 text=name,
                 textposition=textposition,
                 marker=dict(size=size, color=color),
@@ -682,9 +681,9 @@ def _(a_number, b_number, c_number):
 
 @app.cell
 def _(a_number, b_number, c_number, mo):
-    a_stack = mo.vstack([mo.md("a: (x<sup>2</sup> term)"), a_number])
-    b_stack = mo.vstack([mo.md("b: (x) term:"), b_number])
-    c_stack = mo.vstack([mo.md("c: (constant)"), c_number])
+    a_stack = mo.vstack([mo.md('a: (x<sup>2</sup> term)'), a_number])
+    b_stack = mo.vstack([mo.md('b: (x) term:'), b_number])
+    c_stack = mo.vstack([mo.md('c: (constant)'), c_number])
     return a_stack, b_stack, c_stack
 
 
@@ -716,7 +715,7 @@ def _(a, b, c, has_one_root, has_two_roots, math):
     # If a is zero, the equation is linear rather than quadratic.
     if a == 0:
         if b == 0:
-            print("No root: this is not a quadratic equation and does not intersect y = 0")
+            print('No root: this is not a quadratic equation and does not intersect y = 0')
         else:
             root = -c / b
             print(f"Linear equation, one root, intersects (0, {root:.3f})")
@@ -737,12 +736,12 @@ def _(a, b, c, has_one_root, has_two_roots, math):
 
 @app.cell
 def _(mo):
-    show_grid = mo.ui.checkbox(value=False, label="Show Grid")
-    show_vertex = mo.ui.checkbox(value=False, label="Vertex")
-    show_focus = mo.ui.checkbox(value=False, label="Focus")
-    show_directrix = mo.ui.checkbox(value=False, label="Directrix")
-    show_roots = mo.ui.checkbox(value=False, label="Roots")
-    scale_xy = mo.ui.checkbox(value=False, label="Scale XY")
+    show_grid = mo.ui.checkbox(value=False, label='Show Grid')
+    show_vertex = mo.ui.checkbox(value=False, label='Vertex')
+    show_focus = mo.ui.checkbox(value=False, label='Focus')
+    show_directrix = mo.ui.checkbox(value=False, label='Directrix')
+    show_roots = mo.ui.checkbox(value=False, label='Roots')
+    scale_xy = mo.ui.checkbox(value=False, label='Scale XY')
     return (
         scale_xy,
         show_directrix,
@@ -768,7 +767,7 @@ def _(a, a_legal, b, c):
         k = 0
         x_focus = 0
         y_focus = 0
-        print("Invalid value of a: it cannot be 0 for a parabola")
+        print('Invalid value of a: it cannot be 0 for a parabola')
     return k, parabola_h, x_focus, y_focus
 
 
@@ -841,34 +840,34 @@ def _(
 
     # The subtitle explains which root case is currently displayed.
     if has_one_root and a != 0:
-        subtitle = f"One Root at x = {root:.6f}".rstrip("0").rstrip(".")
+        subtitle = f"One Root at x = {root:.6f}".rstrip('0').rstrip('.')
     elif has_two_roots:
         subtitle = f"Two Roots at x = {root1:.6f}, {root2:.6f}"
     else:
-        subtitle = "No Real Roots" if a != 0 else "Linear Equation"
+        subtitle = 'No Real Roots' if a != 0 else 'Linear Equation'
 
     if a_number.value == -1:
-        a_expression = "y = -x<sup>2</sup>"
+        a_expression = 'y = -x<sup>2</sup>'
     elif a_number.value == 1:
-        a_expression = "y = x<sup>2</sup>"
+        a_expression = 'y = x<sup>2</sup>'
     elif a_number.value == 0:
-        a_expression = "y = "
+        a_expression = 'y = '
     else:
         a_expression = f"y = {a}x<sup>2</sup>"
 
     if b_number.value == -1:
-        b_expression = " - x"
+        b_expression = ' - x'
     elif b_number.value == 1:
-        b_expression = " + x"
+        b_expression = ' + x'
     elif b_number.value == 0:
-        b_expression = ""
+        b_expression = ''
     elif b_number.value > 0:
         b_expression = f" + {b}x"
     else:
         b_expression = f" - {abs(b)}x"
 
     if c_number.value == 0:
-        c_expression = ""
+        c_expression = ''
     elif c_number.value > 0:
         c_expression = f" + {c}"
     else:
@@ -879,11 +878,11 @@ def _(
         title=dict(
             text=title,
             x=0.5,
-            xanchor="center",
-            font=dict(family="Arial, sans-serif", size=26, color="white"),
+            xanchor='center',
+            font=dict(family='Arial, sans-serif', size=26, color='white'),
             subtitle=dict(
                 text=subtitle,
-                font=dict(family="Arial, sans-serif", size=15, color="dimgray"),
+                font=dict(family='Arial, sans-serif', size=15, color='dimgray'),
             ),
         )
     )
@@ -892,11 +891,11 @@ def _(
 
     # Each checkbox is another reactive input, so changing one reruns this cell.
     if show_vertex.value and a_legal:
-        textposition = "bottom center" if a_sign > 0 else "top center"
+        textposition = 'bottom center' if a_sign > 0 else 'top center'
         parabola_fig = annotate_point(
             parabola_fig,
-            "Vertex",
-            "crimson",
+            'Vertex',
+            'crimson',
             marker_size,
             x=parabola_h,
             y=k,
@@ -904,11 +903,11 @@ def _(
         )
 
     if show_focus.value and a_legal:
-        textposition = "bottom center" if a_sign < 0 else "top center"
+        textposition = 'bottom center' if a_sign < 0 else 'top center'
         parabola_fig = annotate_point(
             parabola_fig,
-            "Focus",
-            "crimson",
+            'Focus',
+            'crimson',
             marker_size,
             x=parabola_h,
             y=y_focus,
@@ -916,15 +915,15 @@ def _(
         )
 
     if show_directrix.value and y_directrix is not None:
-        parabola_fig.add_hline(y=y_directrix, line_dash="dot")
+        parabola_fig.add_hline(y=y_directrix, line_dash='dot')
 
     if show_roots.value:
         if has_one_root and a != 0:
-            textposition = "bottom center" if a_sign < 0 else "top center"
+            textposition = 'bottom center' if a_sign < 0 else 'top center'
             parabola_fig = annotate_point(
                 parabola_fig,
-                "Root",
-                "crimson",
+                'Root',
+                'crimson',
                 marker_size,
                 x=root,
                 textposition=textposition,
@@ -932,19 +931,19 @@ def _(
         elif has_two_roots:
             parabola_fig = annotate_point(
                 parabola_fig,
-                "Root 1",
-                "crimson",
+                'Root 1',
+                'crimson',
                 marker_size,
                 x=root1,
-                textposition="middle left",
+                textposition='middle left',
             )
             parabola_fig = annotate_point(
                 parabola_fig,
-                "Root 2",
-                "crimson",
+                'Root 2',
+                'crimson',
                 marker_size,
                 x=root2,
-                textposition="middle right",
+                textposition='middle right',
             )
 
     # Show or hide the grid without rebuilding the underlying data.
@@ -964,15 +963,15 @@ def _(
         x_range = [x_range_min, x_range_max]
         y_range = sorted([y_range_min, y_range_max])
         if scale_xy.value:
-            parabola_fig.update_layout(xaxis=dict(scaleanchor="y"), yaxis=dict(scaleanchor="x"))
+            parabola_fig.update_layout(xaxis=dict(scaleanchor='y'), yaxis=dict(scaleanchor='x'))
         else:
             parabola_fig.update_yaxes(range=y_range)
         parabola_fig.update_xaxes(range=x_range)
 
-    parabola_fig.update_layout(template="plotly_dark")
+    parabola_fig.update_layout(template='plotly_dark')
 
     mo.vstack([
-        mo.md("#Quadratic Analyzer"),
+        mo.md('#Quadratic Analyzer'),
         mo.hstack([a_stack, b_stack, c_stack]),
         mo.hstack(
             [

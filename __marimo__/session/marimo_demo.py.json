@@ -121,6 +121,19 @@
         }
       ],
       "console": []
+    },
+    {
+      "id": "RGSE",
+      "code_hash": "0e543cbe159f805d7431daaf2c55348a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
     }
   ]
 }
